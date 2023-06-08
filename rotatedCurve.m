@@ -34,6 +34,15 @@ end
 
 A = [0 0; cumsum(A)];
 
+
+
+% set grid
+[X,Y]=meshgrid(-0.5:size);
+figure; hold on;
+plot(X,Y,'k');
+plot(Y,X,'k');
+axis off;
+
 rotation_matrix = [0 1; -1 0];
 A_rotated = A * rotation_matrix;
 % 180 deg
@@ -41,15 +50,7 @@ A_rotated = A * rotation_matrix;
 % 270 deg
 % A_rotated = A_rotated * rotation_matrix;
 
-% Create grid points
-grid_points = linspace(1, 1, size+1);
 
-% Plot the grid
-figure; hold on;
-for i = 1:size+1
-    plot([grid_points(i) grid_points(i)], [grid_points(1) grid_points(end)], 'k'); % Vertical lines
-    plot([grid_points(1) grid_points(end)], [grid_points(i) grid_points(i)], 'k'); % Horizontal lines
-end
 plot(A_rotated(:, 1), A_rotated(:, 2), '-or', 'clipping', 'off', 'LineWidth', 2);
 
 
