@@ -1,0 +1,311 @@
+Category: hotels & travel
+hotels & travel
+├── travel services
+│   └── travel agents
+│       └── Paradise Travel Management (34.060299, -106.892179)
+├── rv parks
+│   └── Midway Mobile Home & RV Park (34.055513, -106.888208)
+├── bed & breakfast
+│   └── Dos Casitas En Socorro Bed And Breakfast (34.05558, -106.897675)
+├── hotels
+│   ├── Best Western Socorro Hotel And Suites (34.071489, -106.892546)
+│   ├── Comfort Inn & Suites (34.078074, -106.8962)
+│   ├── Super 8 by Wyndham Socorro (34.073676, -106.894726)
+│   ├── Holiday Inn Express Socorro (34.071027, -106.892344)
+│   ├── America's Best Value Inn (34.069203, -106.893515)
+│   ├── San Miguel Inn (34.068913, -106.892062)
+│   ├── Econo Lodge Inn & Suites (34.064568, -106.892942)
+│   ├── Days Inn by Wyndham Socorro (34.062056, -106.892846)
+│   └── Economy Inn (34.060629, -106.89126)
+└── airports
+    └── Socorro Airport (ONM) (34.024105, -106.897449)
+
+Category: religious organizations
+religious organizations
+├── churches
+│   ├── St Paul United Methodist Church (34.061659, -106.903433)
+│   ├── Socorro Seventh-Day Adventist (34.056174, -106.895961)
+│   ├── Epiphany Episcopal Church (34.067932, -106.90322)
+│   ├── Church of Jesus Christ of Latter-day Saints (34.070885, -106.900094)
+│   ├── Socorro Church of Christ (34.068893, -106.89956)
+│   ├── San Miguel Church (34.060449, -106.893803)
+│   ├── First Presbytarian Church (34.054845, -106.894497)
+│   ├── First Baptist Church (34.053552, -106.893213)
+│   ├── Calvary Chapel (34.050242, -106.911268)
+│   └── Socorro Baptist Temple (34.040269, -106.899258)
+└── Family Christian Center (34.045054, -106.906838)
+
+Category: automotive
+automotive
+├── gas stations
+│   ├── Shell (34.047713, -106.891866)
+│   ├── Circle K (34.047858, -106.891649)
+│   ├── A-X Conoco (34.049056, -106.892173)
+│   ├── Valero (34.067177, -106.893174)
+│   ├── Exxon (34.072628, -106.893844)
+│   └── Alon (34.072587, -106.893162)
+├── truck rental
+│   └── trailer rental
+│       └── U-haul Neighborhood Dealer (34.039401, -106.89415)
+├── body shop
+│   ├── Goehrings Body Shop (34.048736, -106.89432)
+│   └── Hicks Body Shop & Towing (34.072884, -106.888833)
+├── auto repair
+│   └── Quick & Easy Tire & Lube (34.053006, -106.891935)
+├── car dealers
+│   └── Leseberg's Auto (34.050979, -106.90128)
+├── auto detailing
+│   └── C Bar D Trailer Sales & Services (34.056152, -106.891796)
+└── auto parts
+    └── AutoZone (34.070071, -106.893656)
+
+Category: arts & entertainment
+arts & entertainment
+└── rodeo
+    └── Socorro Soccer and Rodeo Complex (34.032387, -106.913692)
+
+Category: health & medical
+health & medical
+├── hospitals
+│   └── Socorro General Hospital (34.037458, -106.911436)
+├── home health care
+│   └── La Vida Felicidad (34.053025, -106.893752)
+├── physical therapy
+│   └── Socorro Physical Therapy (34.067623, -106.893888)
+├── dentists
+│   ├── C. Bonner Oats, DDS (34.059982, -106.899525)
+│   └── Duane H. Beers, DND, PC (34.057351, -106.890089)
+├── PHI Air Medical (34.023952, -106.89752)
+└── counseling & mental health
+    ├── PMS - Socorro Mental Health (34.037736, -106.911436)
+    └── Presbyterian Medical Services/ Socorro Community Health Center (34.032165, -106.917654)
+
+Category: food
+food
+├── food trucks
+│   └── Mi Jacalito (34.05953, -106.891423)
+├── coffee & tea
+│   └── M Mountain Coffee (34.057183, -106.892561)
+├── bakeries
+│   └── Sweet Occasions (34.05658, -106.89439)
+├── grocery
+│   └── John Brooks Supermarket (34.060212, -106.891111)
+└── farmers market
+    └── Socorro Farmers Market (34.054603, -106.893159)
+
+Category: nightlife
+nightlife
+├── bars
+│   └── Capitol Bar (34.05714, -106.892645)
+└── lounges
+    └── El Camino Restaurant & Lounge (34.064089, -106.89285)
+
+Category: public services & government
+public services & government
+├── Bureau of Land Management (34.046988, -106.892919)
+├── landmarks & historical buildings
+│   ├── Socorro County Historical Society (34.062508, -106.891137)
+│   ├── Socorro Historic Plaza (34.057278, -106.893437)
+│   └── San Miguel Church (34.060449, -106.893803)
+├── parks
+│   ├── Sedillo Park (34.069791, -106.897493)
+│   └── Clark Field (34.05277, -106.889466)
+├── museums
+│   └── Hammel Museum (34.06278, -106.891076)
+├── police departments
+│   └── NMT Campus Police (34.063168, -106.905343)
+├── post offices
+│   └── United States Post office (34.06577, -106.906523)
+├── Division of Vocational Rehabilitaiton (DVR) (34.070414, -106.892384)
+└── El Camino Real Housing Authority (34.060817, -106.88819)
+
+Category: local services
+local services
+├── cemeteries
+│   └── San Miguel Cemetery (34.057599, -106.90257)
+├── community service/non-profit
+│   └── Good Samaritan Village (34.036458, -106.915165)
+├── shipping centers
+│   └── UPS Customer Center (34.024488, -106.895451)
+├── forestry
+│   └── NM State Forestry Department (34.0339, -106.917722)
+├── pest control
+│   ├── Socorro Animal Control (34.058117, -106.893962)
+│   └── Milton Ulibarri Pest Management (34.058388, -106.891415)
+├── funeral services & cemeteries
+│   └── Daniels Family Funeral Service (34.0456412, -106.898765)
+├── community services/non-profit
+│   └── Good Samaritan Village (34.036307, -106.915246)
+└── appraisal services
+    └── Winton Appraisal Co. (34.064848, -106.892804)
+
+Category: restaurants
+restaurants
+├── Chartwells (34.065724, -106.905894)
+├── american (new)
+│   ├── Socorro Spring Restaurants (34.07004, -106.892579)
+│   ├── Sourdough Mine Restaurant (34.058495, -106.893357)
+│   └── steakhouses
+│       └── seafood
+│           └── Yo Mama's Grill (34.067616, -106.893306)
+├── burgers
+│   ├── Bodega Burger Co. And Lounge (34.062903, -106.891689)
+│   └── fast food
+│       └── Burger King (34.07077, -106.892781)
+├── breakfast & brunch
+│   └── burgers
+│       └── hot dogs
+│           └── Blake's Lotaburger (34.065392, -106.892843)
+├── chinese
+│   └── buffets
+│       └── China Best Buffet (34.06656, -106.892286)
+├── fast food
+│   └── burgers
+│       ├── coffee & tea
+│       │   └── McDonald's (34.072236, -106.892964)
+│       └── ice cream & frozen yogurt
+│           └── Sonic Drive-In (34.07198, -106.894008)
+├── mexican
+│   ├── Armijo's Mexican Restaurant (34.050844, -106.891033)
+│   ├── El Sombrero Café (34.075376, -106.891806)
+│   ├── La Pasadita Café (34.056158, -106.896908)
+│   ├── Mi Jacalito (34.059493, -106.891419)
+│   ├── breakfast & brunch
+│   │   ├── El Camino Restaurants & Lounge (34.064089, -106.892853)
+│   │   └── Don Juan's Cocina (34.057346, -106.890576)
+│   └── burgers
+│       └── Sofia's Kitchen and Burrito Tyme (34.068962, -106.893961)
+├── pizza
+│   ├── fast food
+│   │   └── Little Caesars Pizza (34.068827, -106.893356)
+│   └── chicken wings
+│       └── sandwiches
+│           └── Domino's Pizza (34.068269, -106.893344)
+└── sandwiches
+    └── fast food
+        └── Subway (34.065157, -106.892342)
+
+Category: pets
+pets
+├── animal shelters
+│   └── Socorro Animal Shelter (34.024275, -106.895979)
+└── veterinarians
+    ├── Ark of Socorro Veterinary Clinic (34.033212, -106.916635)
+    └── Animal Haven Veterinary Clinic (34.084313, -106.896723)
+
+Category: shopping
+shopping
+├── discount stores
+│   ├── Dollar Tree (34.051584, -106.890683)
+│   └── Family Dollar (34.070791, -106.894635)
+├── mobile phones
+│   └── Verizon Authorized Retailer - Russel Cellular (34.052085, -106.890924)
+├── flowers & gifts
+│   ├── Alamo Gallery And Gifts (34.069818, -106.892358)
+│   └── gift shops
+│       ├── Harold's Southwestern Gifts (34.049665, -106.891577)
+│       ├── Sundance Gifts (34.056888, -106.893809)
+│       └── Casa de Regalos (34.056875, -106.893698)
+├── fashion
+│   └── women's clothing
+│       └── Jessie's (34.056839, -106.893043)
+├── thrift stores
+│   └── Secondhand Rose Thrift Shop (34.057988, -106.892059)
+├── home & garden
+│   ├── hardware stores
+│   │   └── Socorro True Value Hardware (34.057518, -106.892262)
+│   ├── San Miguel Potteryland (34.058635, -106.892014)
+│   └── furniture stores
+│       └── Aaron's (34.070303, -106.894122)
+├── art galleries
+│   └── Vertu Fine Art Gallery (34.057201, -106.892675)
+├── flea markets
+│   └── Socorro Flea Market (34.05859, -106.891457)
+└── department stores
+    └── Walmart Supercenter (34.064909, -106.889549)
+
+Category: education
+education
+├── middle & high schools
+│   ├── Socorro High School (34.042605, -106.906587)
+│   └── Raymond S. Sarracino Middle School (34.082446, -106.901552)
+├── elementary schools
+│   ├── Parkview Elementary School (34.071687, -106.897481)
+│   └── Cottonwood Valley Charter School (34.059926, -106.900254)
+└── colleges & universities
+    └── New Mexico Insitute of Mining and Technology (34.066273, -106.905464)
+
+Category: active life
+active life
+├── swimming pools
+│   ├── NMT Swimming Pool (34.064192, -106.90581)
+│   └── Sedillo Park Swimming Pool (34.069039, -106.89877)
+├── fitness & instructions
+│   └── gyms
+│       └── NMT Gym (34.065767, -106.905306)
+└── golf
+    └── NMT Golf Course (34.0671, -106.913567)
+
+Category: financial services
+financial services
+├── banks & credit unions
+│   ├── Washington Federal (34.057646, -106.893767)
+│   ├── First State Bank (34.057804, -106.890958)
+│   ├── Nusenda Credit Union (34.058022, -106.891478)
+│   └── Wells Fargo Bank (34.061715, -106.892722)
+├── tax services
+│   ├── Ritter Richard T CPA (34.049741, -106.89151)
+│   └── Bookkeeping & Tax Keeping (34.057179, -106.894434)
+├── insurance
+│   ├── Damien Ocampo State Farm Agency (34.068994, -106.892771)
+│   └── Michael Olguin Insurance Agent (34.060297, -106.89217)
+├── title loans
+│   └── Security Title Abstract Co. Inc. (34.058197, -106.893175)
+└── Farm Bureau Financial Services (34.065719, -106.89226)
+
+Category: mass media 
+mass media 
+├── radio stations
+│   └── 102.1 KYRN - Rio Grande Valley Radio (34.04617, -106.906464)
+└── print media
+    └── El Defensor Chieftain (34.056189, -106.892869)
+
+Category: professional services
+professional services
+├── advertising
+│   └── JH Enterprises LLC (34.056189, -106.892869)
+├── web design
+│   └── Ether Tear, LLC (34.050461, -106.912506)
+├── business consulting
+│   └── AMEC Environment & Infrastructure (34.058667, -106.893234)
+├── accountants
+│   ├── Beckham & Penner, CPA (34.058718, -106.890978)
+│   └── Ritter Richard T CPA (34.049741, -106.89151)
+├── bookkeepers
+│   └── Bookkeeping & Tax Keeping (34.057179, -106.894434)
+└── lawyers
+    └── Deschamps Law Firm (34.055819, -106.889485)
+
+Category: home services
+home services
+├── plumbing
+│   └── Bar J Plumbing, LLC (33.992774, -106.876674)
+├── utilities
+│   └── electricity suppliers
+│       └── Socorro Electric Cooperative (34.057774, -106.889485)
+├── Frances Deters Property Care (34.070104, -106.904026)
+├── real estate
+│   ├── real estate agents
+│   │   └── Betty Houston - Coldwell Banker Legacy (34.051563, -106.892665)
+│   ├── home developers
+│   │   └── Richardson Development Company (34.064525, -106.903109)
+│   └── solar installation
+│       └── Solaro Energy, Inc (34.028603, -106.920165)
+└── real estate 
+    └── property management
+        └── Landers Enterprises (34.063016, -106.891776)
+
+Category: beauty & spas
+beauty & spas
+└── Plaza Beauty Salon (34.056853, -106.89296)
+
