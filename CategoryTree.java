@@ -1,8 +1,9 @@
-public class CategoryTree extends Node{
+public class CategoryTree {
 
     private Node root;
     private int numberOfLevels;
     private int numberOfNodes;
+    private String category;
 
     // constructors
     public CategoryTree(){
@@ -11,6 +12,17 @@ public class CategoryTree extends Node{
         root = new Node();
         numberOfLevels = 1;
         numberOfNodes = 1;
+        category = "newCategory";
+
+    }
+
+    public CategoryTree(String desiredCategoryString){
+
+        // constructs a tree with one node, no children, and category label
+        root = new Node(desiredCategoryString);
+        numberOfLevels = 1;
+        numberOfNodes = 1;
+        category = desiredCategoryString;
 
     }
 
@@ -24,6 +36,15 @@ public class CategoryTree extends Node{
 
     public int getNumberOfNodes(){
         return numberOfNodes;
+    }
+
+    public Node getRoot(){
+        return root;
+    }
+
+    // sort nodes at level from least children to most children 
+    public void sortLevel(int level){
+
     }
 
 }

@@ -1,4 +1,5 @@
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 public class TreeTesting{
@@ -10,7 +11,7 @@ public class TreeTesting{
         Node rootTest = new Node();
         System.out.printf("RootTest node has %d children \n", rootTest.getNumberOfChildren());
 
-        // build test tree out of nodes
+        // build test tree out of Nodes adding each manually
         Node root = new Node("1");
         //second level
         root.children.add(new Node("2"));
@@ -27,8 +28,28 @@ public class TreeTesting{
         //print tree
         printNAryTree(root);
 
+        // build test tree out of Nodes by passing a list of children to constructor
+        
+        // create LinkedList of children to add to root
+        List<Node> childrenToAdd = new LinkedList<Node>();
+
+        // creates a list of Nodes like : <"5", "6", "7", "8", "9", "10", "11">
+        for(int categoryToAdd = 5; categoryToAdd < 12; categoryToAdd++){
+            String categoryAsString = Integer.toString(categoryToAdd);
+            Node child = new Node(categoryAsString);
+            childrenToAdd.add(categoryToAdd - 5, child);
+        }
+
+        // populate a CategoryTree with our list of children to add
+        CategoryTree T1 = new CategoryTree("Salons");
+        T1.getRoot().setChildren(childrenToAdd);
+
+        // print T1
+        printNAryTree(T1.getRoot());
+
     }
 
+    // function to print the CategoryTree
     private static void printNAryTree(Node root){
 
         if(root == null) return;
