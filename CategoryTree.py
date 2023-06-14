@@ -44,4 +44,4 @@ with open('trees.txt', 'w', encoding= 'utf-8') as file:
             file.write(f"{pre}{node.name}\n")
         file.write('\n')
 
-print("Category trees have been saved to 'trees.txt'")
+print("trees have been saved to 'trees.txt'")
