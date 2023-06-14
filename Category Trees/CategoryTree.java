@@ -38,6 +38,10 @@ public class CategoryTree {
         return numberOfNodes;
     }
 
+    public String getCategory() {
+        return category;
+    }
+
     public Node getRoot(){
         return root;
     }
