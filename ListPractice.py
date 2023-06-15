@@ -117,12 +117,12 @@ def generate_random_string(length):
     return random_string
 
 # now lets add this as an element of our add random number of children function
-
+"""
 def addrandomchildren_withnames(list):
-    if len(list) > 1 :
-        for i in range(1,random.randrange(1, len(list))):
-            list.append([])
-            list[i].append(generate_random_string(4))
+        list.append([])
+        if len(list) > 1:
+            for i in range(1,random.randrange(1, 4)):
+                list[len(list) - 1].append(generate_random_string(4))
 
 # let's make a new list cause this is getting messy with list_7 :/
 
@@ -172,11 +172,82 @@ def recursive_random(list, increment):
     addrandomchildren_withnames(list[1])
     increment += 1
     if increment < max:
-        if len(list[1]) > 1:
+        if len(list[1]) > 2:
             for i in range(1, random.randrange(2, len(list[1]))):
-                recursive_random(list, increment)
+                recursive_random(list[1], increment)
     else:
         return list
 
 recursive_random(list, increment)
 print(list)
+"""
+# maybe generate a list of siblings at the bottom node
+
+def generate_list_of_siblings(min_groups, max_groups, max_in_each_group):
+
+    number_of_groups = random.randrange(min_groups, max_groups)
+
+    list_of_siblings = []
+    for i in range(0, number_of_groups):
+        list_of_siblings.append([])
+
+    for group in list_of_siblings:
+        for i in range(1, random.randrange(2, max_in_each_group)):
+            group.append(generate_random_string(4))
+    
+    return list_of_siblings
+
+list_of_siblings = generate_list_of_siblings(1,5,5)
+print(list_of_siblings)
+
+list_of_parents = generate_list_of_siblings(len(list_of_siblings), 5, 5)
+print(list_of_parents)
+
+family = []
+family.append(list_of_parents[1][0][0])
+family.append(list_of_siblings[0])
+
+list_of_parents[1][0] = family
+
+print(list_of_parents)
+
+
+
+
+def create_tree(level, list_of_siblings):
+
+    if level == 1:
+
+        list_of_parents = []
+
+        for i in range(len(list_of_siblings), 5):
+            list_of_parents.append(generate_random_string(4))
+
+        for j in range(len(list_of_siblings)):
+            family = []
+            family.append(list_of_parents[j])
+            family.append(list_of_siblings[j])
+            list_of_parents[j] = family
+        
+        final_tree = ['root']
+        final_tree.append(list_of_parents)
+        return final_tree
+
+    if level > 2:
+
+        list_of_parents = generate_list_of_siblings(len(list_of_siblings), 5, 5)
+
+        for i in range(len(list_of_siblings)):
+            family = []
+            family.append(list_of_parents[i][0])
+            family.append(list_of_siblings[i])
+            list_of_parents[i][0] = family
+    
+        create_tree(level - 1, list_of_parents)
+
+
+final_tree = create_tree(5, list_of_parents)
+
+print(final_tree)
+
+
