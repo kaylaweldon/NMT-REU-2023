@@ -87,13 +87,96 @@ add3children(list_7[1][1])
 print(list_7)
 
 
-def addNchildren(list):
+def addrandomchildren(list):
     for i in range(1,random.randrange(1,4)):
         list.append([])
         list[i].append("child")
 
-addNchildren(list_7[2][1])
+addrandomchildren(list_7[2][1])
 print(list_7)
 
+#let's try adding an element of random names for things
 
+#size of string
+N = 3
 
+# using random.choices()
+# generating random strings
+res = ''.join(random.choices(string.ascii_lowercase +
+                             string.digits, k=N))
+
+print("The generated random string : " + str(res))
+
+# lets just make a function for this
+
+def generate_random_string(length):
+    # Get all the ASCII letters in lowercase and uppercase
+    letters = string.ascii_letters + string.digits
+    # Randomly choose characters from letters for the given length of the string
+    random_string = ''.join(random.choice(letters) for i in range(length))
+    return random_string
+
+# now lets add this as an element of our add random number of children function
+
+def addrandomchildren_withnames(list):
+    if len(list) > 1 :
+        for i in range(1,random.randrange(1, len(list))):
+            list.append([])
+            list[i].append(generate_random_string(4))
+
+# let's make a new list cause this is getting messy with list_7 :/
+
+list_8 = ['root']
+
+addrandomchildren_withnames(list_8)
+
+print(list_8)
+
+for i in range(1,len(list_8)):
+    addrandomchildren_withnames(list_8[i])
+
+print(list_8)
+
+# okay, this is looking good, but we're only doing 2 or 3 levels here.
+# we need to have an arbitrary amount of levels
+
+final_list = []
+final_list.append('root')
+
+mid_list = []
+mid_list.append(generate_random_string(4))
+
+# for a random amount of levels, let's say between 1 and 5
+# this doesn't exactly work how i want it to. we need something recursive,
+# but with a limit
+for i in range(1, random.randrange(1,5)):
+    level_list = []
+    level_list.append(generate_random_string(4))
+    level_list.append([])
+    addrandomchildren_withnames(level_list[1])
+    mid_list.append(level_list)
+
+final_list.append(mid_list)
+print(final_list)
+
+# testing a recursive random list generator function
+
+list = []
+list.append('root')
+increment = 0
+max = 20
+
+def recursive_random(list, increment):
+    list.append([])
+    list[1].append(generate_random_string(4))
+    addrandomchildren_withnames(list[1])
+    increment += 1
+    if increment < max:
+        if len(list[1]) > 1:
+            for i in range(1, random.randrange(2, len(list[1]))):
+                recursive_random(list, increment)
+    else:
+        return list
+
+recursive_random(list, increment)
+print(list)

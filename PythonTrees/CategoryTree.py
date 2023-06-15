@@ -10,7 +10,8 @@ class CategoryTree:
     def normalize(self):
 
     # print out the representation of the tree
+    """
     def printTree(self):
     
     def printListOfTree(self):
-        
+    """
