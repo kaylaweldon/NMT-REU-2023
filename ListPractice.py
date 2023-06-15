@@ -180,7 +180,7 @@ def recursive_random(list, increment):
 
 recursive_random(list, increment)
 print(list)
-"""
+
 # maybe generate a list of siblings at the bottom node
 
 def generate_list_of_siblings(min_groups, max_groups, max_in_each_group):
@@ -246,8 +246,109 @@ def create_tree(level, list_of_siblings):
         create_tree(level - 1, list_of_parents)
 
 
+
 final_tree = create_tree(5, list_of_parents)
 
 print(final_tree)
+"""
+
+from random import randint
+
+## QUICKSORT for normalizing the trees
+
+def quicksort(nodes):
+
+    # If the input array contains fewer than two elements,
+    # then return it as the result of the function
+
+    if len(nodes) == 1:
+
+        return nodes
+    
+    if len(nodes) == 0:
+
+        return []
+
+    # if there are only single items in the list,
+    # i.e. no lists within the list, 
+    # then they are all leaves and we can stop
+
+    hasList = False
+
+    for node in nodes:
+        if isinstance(node, list):
+            hasList = True 
+    
+    if hasList == False:
+
+        return nodes
+    
+
+    low, same, high = [], [], []
 
 
+    # Select pivot element randomly
+    # but of course not the root node
+
+    pivot = nodes[randint(0, len(node) - 1) + 1]
+
+    # if it is a leaf, set children to zero
+    if not isinstance(pivot, list):
+        pivot_children = 0
+    
+    else:
+        pivot_children = len(pivot) - 1
+
+    for node in nodes:
+
+        if node == nodes[0]:
+            low.append(node)
+            continue
+
+        # Elements that are smaller than the `pivot` go to
+
+        # the `low` list. Elements that are larger than
+
+        # `pivot` go to the `high` list. Elements that are
+
+        # equal to `pivot` go to the `same` list.
+
+        node_children = 0
+
+        # if 
+        if isinstance(node, list):
+
+            node_children = len(node) - 1
+
+        if node_children < pivot_children:
+
+            low.append(node)
+
+        elif node_children == pivot_children:
+
+            same.append(node)
+
+        elif node_children > pivot_children:
+
+            high.append(node)
+
+
+    # The final result combines the sorted `low` list
+
+    # with the `same` list and the sorted `high` list
+
+    low = quicksort(low)
+    high = quicksort(high)
+
+    low.append(same)
+    low.append(high)
+
+    return low 
+
+# cool let's try this out!
+
+mylist = ['A', ['B', 'E', 'F', ['H', 'I']], 'C', 'D']
+
+sorted = quicksort(mylist)
+
+print(sorted)
