@@ -1,5 +1,6 @@
 from Node import Node
 from Visualize import Visualize
+from RandomTreeGenerator import RandomTreeGenerator
 
 import matplotlib.pyplot as plt
 
@@ -50,3 +51,15 @@ class Main:
     child1.add_child(child5)
     child1.add_child(child6)
     child6.add_child(child7)"""
+
+    RandomTreeGenerator = RandomTreeGenerator(4)
+
+    random_tree = RandomTreeGenerator.create_tree(4, RandomTreeGenerator.list_of_base_children)
+    random_tree_nodes = constructTree(random_tree)
+
+    plt.figure(figsize=(6, 6))
+    visualization = Visualize.visualizeTree(random_tree_nodes)
+    plt.axis('off')
+    plt.show()
+
+
