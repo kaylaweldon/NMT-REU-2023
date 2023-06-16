@@ -117,12 +117,12 @@ def generate_random_string(length):
     return random_string
 
 # now lets add this as an element of our add random number of children function
-
+"""
 def addrandomchildren_withnames(list):
-    if len(list) > 1 :
-        for i in range(1,random.randrange(1, len(list))):
-            list.append([])
-            list[i].append(generate_random_string(4))
+        list.append([])
+        if len(list) > 1:
+            for i in range(1,random.randrange(1, 4)):
+                list[len(list) - 1].append(generate_random_string(4))
 
 # let's make a new list cause this is getting messy with list_7 :/
 
@@ -172,11 +172,200 @@ def recursive_random(list, increment):
     addrandomchildren_withnames(list[1])
     increment += 1
     if increment < max:
-        if len(list[1]) > 1:
+        if len(list[1]) > 2:
             for i in range(1, random.randrange(2, len(list[1]))):
-                recursive_random(list, increment)
+                recursive_random(list[1], increment)
     else:
         return list
 
 recursive_random(list, increment)
 print(list)
+
+# maybe generate a list of siblings at the bottom node
+
+def generate_list_of_siblings(min_groups, max_groups, max_in_each_group):
+
+    number_of_groups = random.randrange(min_groups, max_groups)
+
+    list_of_siblings = []
+    for i in range(0, number_of_groups):
+        list_of_siblings.append([])
+
+    for group in list_of_siblings:
+        for i in range(1, random.randrange(2, max_in_each_group)):
+            group.append(generate_random_string(4))
+    
+    return list_of_siblings
+
+list_of_siblings = generate_list_of_siblings(1,5,5)
+print(list_of_siblings)
+
+list_of_parents = generate_list_of_siblings(len(list_of_siblings), 5, 5)
+print(list_of_parents)
+
+family = []
+family.append(list_of_parents[1][0][0])
+family.append(list_of_siblings[0])
+
+list_of_parents[1][0] = family
+
+print(list_of_parents)
+
+
+
+
+def create_tree(level, list_of_siblings):
+
+    if level == 1:
+
+        list_of_parents = []
+
+        for i in range(len(list_of_siblings), 5):
+            list_of_parents.append(generate_random_string(4))
+
+        for j in range(len(list_of_siblings)):
+            family = []
+            family.append(list_of_parents[j])
+            family.append(list_of_siblings[j])
+            list_of_parents[j] = family
+        
+        final_tree = ['root']
+        final_tree.append(list_of_parents)
+        return final_tree
+
+    if level > 2:
+
+        list_of_parents = generate_list_of_siblings(len(list_of_siblings), 5, 5)
+
+        for i in range(len(list_of_siblings)):
+            family = []
+            family.append(list_of_parents[i][0])
+            family.append(list_of_siblings[i])
+            list_of_parents[i][0] = family
+    
+        create_tree(level - 1, list_of_parents)
+
+
+
+final_tree = create_tree(5, list_of_parents)
+
+print(final_tree)
+"""
+
+from random import randint
+
+## QUICKSORT for normalizing the trees
+
+def quicksort(nodes):
+
+    # If the input array contains fewer than two elements,
+    # then return it as the result of the function
+
+    # if leaf
+    if len(nodes) == 1:
+
+        return nodes
+    
+    # check if there is a list
+    hasList = False
+
+    for node in nodes:
+        if isinstance(node, list):
+            hasList = True 
+    
+    # if there is no list, then all children are leaves
+    if hasList == False:
+
+        return nodes
+    
+    # create three lists to store low, same, high
+
+    low, same, high = [], [], []
+
+
+    # Select pivot element as first child, for simplicity
+    # We're assuming they'll be random lists anyways
+    # but of course not the root node
+
+    pivot = nodes[1]
+
+    # if it is a leaf, set children to zero
+    if not isinstance(pivot, list):
+        pivot_children = 0
+    
+    else:
+        pivot_children = len(pivot) - 1
+        pivot = quicksort(pivot)
+
+    for node in nodes:
+
+        if node == nodes[0]:
+            low.append(node)
+            continue
+
+        # Elements that are smaller than the `pivot` go to
+
+        # the `low` list. Elements that are larger than
+
+        # `pivot` go to the `high` list. Elements that are
+
+        # equal to `pivot` go to the `same` list.
+
+        node_children = 0
+
+        # if the node is a list
+        if isinstance(node, list):
+
+            # access its number of children
+            node_children = len(node) - 1
+
+            # we need to sort that subtree as well
+            node = quicksort(node)
+
+        if node_children < pivot_children:
+
+            low.append(node)
+
+        elif node_children == pivot_children:
+
+            same.append(node)
+
+        elif node_children > pivot_children:
+
+            high.append(node)
+
+
+    # The final result combines the sorted `low` list
+
+    # with the `same` list and the sorted `high` list
+
+    low = quicksort(low)
+    high = quicksort(high)
+
+    if len(same) > 0:
+        for same_item in same:
+            low.append(same_item)
+    if len(high) > 0:
+        for high_item in high:
+            low.append(high_item)
+
+    return low 
+
+# cool let's try this out!
+
+mylist = ['A', ['B', 'E', 'F', ['H', 'I']], 'C', 'D']
+
+mylist2 = ['A', ['B', 'E', 'F', ['H', ['I', 'K'], 'G']], 'C', ['D', 'J']]
+
+mylist3 = ['A', ['L', ['M', ['N', 'O'], 'P'], 'Q'], ['B', 'E', 'F', ['H', ['I', 'K'], 'G']], 'C', ['D', 'J']]
+
+sorted = quicksort(mylist)
+
+sorted2 = quicksort(mylist2)
+
+sorted3 = quicksort(mylist3)
+
+
+print(sorted)
+print(sorted2)
+print(sorted3)
