@@ -53,7 +53,7 @@ class Main:
     child6.add_child(child7)"""
 
     RandomTreeGenerator = RandomTreeGenerator()
-    random_tree = RandomTreeGenerator.generate(5)
+    random_tree = RandomTreeGenerator.generate(8)
     random_tree_nodes = constructTree(random_tree)
 
     print(random_tree)
@@ -62,3 +62,13 @@ class Main:
     visualization = Visualize.visualizeTree(random_tree_nodes)
     plt.axis('off')
     plt.show()
+
+    random_tree_normalized = RandomTreeGenerator.normalize(random_tree)
+    random_tree_nodes = constructTree(random_tree_normalized)
+
+    plt.figure(figsize=(6, 6))
+    visualization = Visualize.visualizeTree(random_tree_nodes)
+    plt.axis('off')
+    plt.show()
+
+    print(random_tree_normalized)

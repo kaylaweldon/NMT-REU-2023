@@ -42,13 +42,17 @@ class RandomTreeGenerator:
                 list_of_parents.append(self.generate_random_string(4))
 
             for j in range(len(list_of_siblings)):
+                """
                 family = []
                 family.append(list_of_parents[j])
-                family.append(list_of_siblings[j])
-                list_of_parents[j] = family
+                family.append(list_of_siblings[j])"""
+                list_of_parents.insert(j+1, list_of_siblings[j])
             
             final_tree = ['root']
-            final_tree.append(list_of_parents)
+
+            for item in list_of_parents:
+                final_tree.append(item)
+
             return final_tree
 
         elif level > 1:
@@ -56,10 +60,14 @@ class RandomTreeGenerator:
             list_of_parents = self.generate_list_of_siblings(len(list_of_siblings), level, self.max_in_each_group)
 
             for i in range(len(list_of_siblings)):
+                """
                 family = []
                 family.append(list_of_parents[i][0])
                 family.append(list_of_siblings[i])
                 list_of_parents[i][0] = family
+                """
+                #for item in list_of_siblings[i]:
+                list_of_parents[i].append(list_of_siblings[i])
         
             return self.create_tree(level - 1, list_of_parents)
 
