@@ -22,7 +22,8 @@ def constructTree(lst):
     return root
 
 mylist = ['A', ['B', 'E', 'F', ['H', 'I']], 'C', 'D']
-rootNode = constructTree(mylist)
+mylist2 = ['active life', ['swimming pools', 'NMT Swimming Pool ', 'Sedillo Park Swimming Pool'], ['fitness & instructions',  ['gyms', 'NMT Gym']],  ['golf', 'NMT Golf Course']]
+rootNode = constructTree(mylist2)
 
 class Main:
 
