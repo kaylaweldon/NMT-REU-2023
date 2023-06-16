@@ -261,36 +261,33 @@ def quicksort(nodes):
     # If the input array contains fewer than two elements,
     # then return it as the result of the function
 
+    # if leaf
     if len(nodes) == 1:
 
         return nodes
     
-    if len(nodes) == 0:
-
-        return []
-
-    # if there are only single items in the list,
-    # i.e. no lists within the list, 
-    # then they are all leaves and we can stop
-
+    # check if there is a list
     hasList = False
 
     for node in nodes:
         if isinstance(node, list):
             hasList = True 
     
+    # if there is no list, then all children are leaves
     if hasList == False:
 
         return nodes
     
+    # create three lists to store low, same, high
 
     low, same, high = [], [], []
 
 
-    # Select pivot element randomly
+    # Select pivot element as first child, for simplicity
+    # We're assuming they'll be random lists anyways
     # but of course not the root node
 
-    pivot = nodes[randint(0, len(node) - 1) + 1]
+    pivot = nodes[1]
 
     # if it is a leaf, set children to zero
     if not isinstance(pivot, list):
@@ -298,6 +295,7 @@ def quicksort(nodes):
     
     else:
         pivot_children = len(pivot) - 1
+        pivot = quicksort(pivot)
 
     for node in nodes:
 
@@ -315,10 +313,14 @@ def quicksort(nodes):
 
         node_children = 0
 
-        # if 
+        # if the node is a list
         if isinstance(node, list):
 
+            # access its number of children
             node_children = len(node) - 1
+
+            # we need to sort that subtree as well
+            node = quicksort(node)
 
         if node_children < pivot_children:
 
@@ -340,8 +342,12 @@ def quicksort(nodes):
     low = quicksort(low)
     high = quicksort(high)
 
-    low.append(same)
-    low.append(high)
+    if len(same) > 0:
+        for same_item in same:
+            low.append(same_item)
+    if len(high) > 0:
+        for high_item in high:
+            low.append(high_item)
 
     return low 
 
@@ -349,6 +355,17 @@ def quicksort(nodes):
 
 mylist = ['A', ['B', 'E', 'F', ['H', 'I']], 'C', 'D']
 
+mylist2 = ['A', ['B', 'E', 'F', ['H', ['I', 'K'], 'G']], 'C', ['D', 'J']]
+
+mylist3 = ['A', ['L', ['M', ['N', 'O'], 'P'], 'Q'], ['B', 'E', 'F', ['H', ['I', 'K'], 'G']], 'C', ['D', 'J']]
+
 sorted = quicksort(mylist)
 
+sorted2 = quicksort(mylist2)
+
+sorted3 = quicksort(mylist3)
+
+
 print(sorted)
+print(sorted2)
+print(sorted3)
