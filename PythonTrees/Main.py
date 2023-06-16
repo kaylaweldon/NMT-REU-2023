@@ -52,8 +52,13 @@ class Main:
     child1.add_child(child6)
     child6.add_child(child7)"""
 
+    ### TESTS OF RANDOM TREES
+
+    # create new random tree generator
     RandomTreeGenerator = RandomTreeGenerator()
-    random_tree = RandomTreeGenerator.generate(8)
+
+    # generate random tree of max specified levels
+    random_tree = RandomTreeGenerator.generate(2)
     random_tree_nodes = constructTree(random_tree)
 
     print(random_tree)
@@ -72,3 +77,5 @@ class Main:
     plt.show()
 
     print(random_tree_normalized)
+
+
