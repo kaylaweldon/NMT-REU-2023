@@ -6,8 +6,14 @@ class Forest:
     from RandomTreeGenerator import RandomTreeGenerator
     import random
 
-    # 
+    # the list containing trees of the forest
     forest = []
+
+    partitioned_forest = []
+
+    def __get_forest__(self):
+        return self.forest
+    
 
     def generate_forest(self, number_of_trees, max_levels):
 
@@ -23,40 +29,149 @@ class Forest:
             # add that tree to the forest
             self.forest.append(random_tree)
     
-    
-    # TO DO
-    def __get_forest__(self):
-        return self.forest
-    
-    # TO DO 
     # I think sorting by number of nodes is better than level
     # since there won't be THAT much difference in levels
     # in the case of subcategories and such
-    def sort_by_number_of_levels(self):
-        return None
+    # Let's do a quicksort with this, it sorts from low to high number of nodes
+
+    # TO DO: test this
+    def sort_by_number_of_nodes(self, forest):
+
+        if len(forest) == 1:
+            return forest
+
+        # choose first tree as pivot
+        pivot = forest[0]
+        number_of_nodes_in_pivot = self.number_of_nodes(pivot)
+
+        # create three arrays
+        low, same, high = [], [], []
+
+        # sort each tree into low, high, or same,
+        # depending on if it has more or less nodes than
+        # the pivot element
+
+        for tree in forest:
+
+            number_of_nodes_in_tree = self.number_of_nodes(tree)
+
+            if tree == pivot:
+                continue
+
+            if number_of_nodes_in_tree < number_of_nodes_in_pivot:
+
+                low.append(tree)
+            
+            if number_of_nodes_in_tree > number_of_nodes_in_pivot:
+
+                high.append(tree)
+            
+            else:
+                same.append(tree)
+        
+        # sort the high and low arrays, 'same' does not need sorting
+
+        low = self.sort_by_number_of_nodes(low)
+
+        high = self.sort_by_number_of_nodes(high)
+
+        # append the three sorted arrays together
+
+        sorted_forest = low
+            
+        if len(same) > 0:
+
+            for same_item in same:
+
+                sorted_forest.append(same_item)
+
+        if len(high) > 0:
+
+            for high_item in high:
+
+                sorted_forest.append(high_item)
+
+
+        return sorted_forest
     
-    # TEST THIS
+    # TO DO: test this
+    def partition_forest(self, k):
+
+        # sort the forest
+        self.forest = self.sort_by_number_of_nodes(self.forest)
+
+        # if k is too big there is nothing to be done
+        if k >= len(self.forest) + 1:
+            return
+
+        # otherwise
+        # calculate number of groups needed
+        # in order to have k trees in each group
+
+        number_of_groups = len(self.forest) // k
+
+        # counter to keep track of where we are in the forest list
+        index_in_forest = 0
+
+        # for each group there is to do
+        for i in range (1, number_of_groups):
+            
+            # create a group for the k or more trees
+            group = []
+            
+            # append k trees to the group
+            for tree in range(1, k):
+
+                group.append(self.forest[index_in_forest])
+    
+                # increase counter
+                index_in_forest += 1
+
+            # to take care of the leftover trees
+            
+            # TO DO: double check these indices! They probably don't work!
+
+            if (len(self.forest) - index_in_forest + 1) < k:
+
+                # append all leftover trees to the last group
+
+                while (index_in_forest != len(self.forest) - 1):
+
+                    group.append(self.forest[index_in_forest])
+
+                    index_in_forest += 1
+
+            # add the group to the partitioned forest
+
+            self.partitioned_forest.append(group)
+
+    # TO DO: test this
     def number_of_nodes(self, tree):
 
+        # initialize nodes
         nodes = 0
 
+        # for each node in the tree
         for node in list:
+
+            # if the node is a subtree
             if isinstance(node, list):
+
+                # count the nodes in that subtree, add to node count
                 nodes += self.number_of_nodes(node)
+            
+            # otherwise is is a regular node to count
             else:
                 nodes += 1
         
+        # return ttotal number of nodes
         return nodes
 
-    # TO DO
+    # TO DO: write this
     def number_of_levels(list):
 
         deepest_level = 0
 
-        return None
-    
-    # TO DO
-    def sort_by_number_of_nodes(self):
         return None
 
     def normalize_forest(self):
@@ -173,5 +288,5 @@ class Forest:
 
 
     def __init__(self):
-        self.trees = []
+        self.forest = []
 

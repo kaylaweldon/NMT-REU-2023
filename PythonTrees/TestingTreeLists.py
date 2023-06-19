@@ -41,7 +41,7 @@ class Main:
     RandomTreeGenerator = RandomTreeGenerator()
 
     # generate random tree of max specified levels
-    random_tree = RandomTreeGenerator.generate(6)
+    random_tree = RandomTreeGenerator.generate(4)
     random_tree_nodes = constructTree(random_tree)
 
     print(random_tree)
@@ -67,7 +67,7 @@ class Main:
     nice_forest = Forest()
 
     # generate forest of 5 trees each of max 6 levels
-    nice_forest.generate_forest(5, 6)
+    nice_forest.generate_forest(4, 6)
 
     list_of_trees = nice_forest.__get_forest__()
 
