@@ -1,4 +1,7 @@
 import pandas as pd
+import matplotlib.pyplot as plt
+from Node import Node
+from Visualize import Visualize
 
 df = pd.read_excel('SocorroPOI.xlsx')
 
@@ -36,8 +39,33 @@ for _, row in df.iterrows():
             category_entry[1].append([subcategory3])
         categories.append(category_entry)
 
+def constructTree(lst):
+    if not lst: 
+        return None
+
+    rootVal = lst[0]
+    root = Node(rootVal)
+
+    for item in lst[1:]:
+       # checks if item in list is a list
+        if isinstance(item, list):
+            child = constructTree(item)
+            root.add_child(child)
+        else:
+            child = Node(item)
+            root.add_child(child)
+            
+    return root
+
 for category_entry in categories:
     print(category_entry)
+    rootNode = constructTree(category_entry)
+     # Visualize the tree
+    plt.figure(figsize=(6, 6))
+    visualization = Visualize.visualizeTree(rootNode)
+    plt.axis('off')
+    plt.show()
+
 
 
 
