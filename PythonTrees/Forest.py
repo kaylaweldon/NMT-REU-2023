@@ -144,12 +144,6 @@ class Forest:
             # add the group to the partitioned forest
 
             self.partitioned_forest.append(group)
-            
-                
-
-
-
-
 
     # TO DO: test this
     def number_of_nodes(self, tree):
