@@ -1,6 +1,7 @@
 from Node import Node
 from Visualize import Visualize
 from RandomTreeGenerator import RandomTreeGenerator
+from Forest import Forest
 
 import matplotlib.pyplot as plt
 
@@ -59,7 +60,7 @@ class Main:
     RandomTreeGenerator = RandomTreeGenerator()
 
     # generate random tree of max specified levels
-    random_tree = RandomTreeGenerator.generate(2)
+    random_tree = RandomTreeGenerator.generate(6)
     random_tree_nodes = constructTree(random_tree)
 
     print(random_tree)
@@ -78,5 +79,17 @@ class Main:
     plt.show()
 
     print(random_tree_normalized)
+
+
+    ### TESTS OF FOREST GENERATION
+
+    nice_forest = Forest()
+
+    # generate forest of 5 trees each of max 6 levels
+    nice_forest.generate_forest(5, 6)
+
+    list_of_trees = nice_forest.__get_forest__()
+
+    print(list_of_trees)
 
 
