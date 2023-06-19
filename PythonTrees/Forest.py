@@ -9,6 +9,12 @@ class Forest:
     # the list containing trees of the forest
     forest = []
 
+    partitioned_forest = []
+
+    def __get_forest__(self):
+        return self.forest
+    
+
     def generate_forest(self, number_of_trees, max_levels):
 
         # initialize a random tree generator
@@ -22,10 +28,6 @@ class Forest:
 
             # add that tree to the forest
             self.forest.append(random_tree)
-    
-    
-    def __get_forest__(self):
-        return self.forest
     
     # I think sorting by number of nodes is better than level
     # since there won't be THAT much difference in levels
@@ -93,6 +95,63 @@ class Forest:
         return sorted_forest
     
     # TO DO: test this
+    def partition_forest(self, k):
+
+        # sort the forest
+        self.forest = self.sort_by_number_of_nodes(self.forest)
+
+        # if k is too big there is nothing to be done
+        if k >= len(self.forest) + 1:
+            return
+
+        # otherwise
+        # calculate number of groups needed
+        # in order to have k trees in each group
+
+        number_of_groups = len(self.forest) // k
+
+        # counter to keep track of where we are in the forest list
+        index_in_forest = 0
+
+        # for each group there is to do
+        for i in range (1, number_of_groups):
+            
+            # create a group for the k or more trees
+            group = []
+            
+            # append k trees to the group
+            for tree in range(1, k):
+
+                group.append(self.forest[index_in_forest])
+    
+                # increase counter
+                index_in_forest += 1
+
+            # to take care of the leftover trees
+            
+            # TO DO: double check these indices! They probably don't work!
+
+            if (len(self.forest) - index_in_forest + 1) < k:
+
+                # append all leftover trees to the last group
+
+                while (index_in_forest != len(self.forest) - 1):
+
+                    group.append(self.forest[index_in_forest])
+
+                    index_in_forest += 1
+
+            # add the group to the partitioned forest
+
+            self.partitioned_forest.append(group)
+            
+                
+
+
+
+
+
+    # TO DO: test this
     def number_of_nodes(self, tree):
 
         # initialize nodes
@@ -120,7 +179,6 @@ class Forest:
         deepest_level = 0
 
         return None
-    
 
     def normalize_forest(self):
         
