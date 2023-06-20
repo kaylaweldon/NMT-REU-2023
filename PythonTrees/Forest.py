@@ -183,6 +183,60 @@ class Forest:
             
         return None
     
+    def canonize_tree(self, tree):
+
+        # if leaf, it is already sorted
+
+        if len(tree) == 1:
+
+            canonical_number = "10"
+
+            return canonical_number
+        
+        # otherwise make an array to store
+        # the canonical numbers of each child
+
+        canonical_numbers_to_sort = []
+
+        # and then canonize each child
+        # while simulateously identifying the 
+        # longest canonical number
+
+        longest_number_length = 0
+
+        for child in tree:
+            
+            # request canonical number, recursively
+            child_canonical_number = self.canonize_tree(child)
+
+            # append the canonical number to the array
+            canonical_numbers_to_sort.append[child_canonical_number]
+
+            # compare to longest_number
+            if len(child_canonical_number) > longest_number_length:
+
+                longest_number_length = len(child_canonical_number)
+
+        # sort the numbers of children lexiographically
+
+        # first pad each with leading zeroes so all are the same length
+        for number in canonical_numbers_to_sort:
+
+            # attain their difference in length
+            length_difference = len(number) - longest_number_length
+
+            # use zfill to pad the beginning of the string with zeroes
+            number = number.zfill(length_difference)
+        
+        
+
+
+
+
+        
+
+
+    # our first attempt at normalization
     def normalize_tree(self, tree):
     
         # if leaf, return
