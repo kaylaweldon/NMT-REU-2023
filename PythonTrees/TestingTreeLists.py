@@ -41,7 +41,7 @@ class Main:
     RandomTreeGenerator = RandomTreeGenerator()
 
     # generate random tree of max specified levels
-    random_tree = RandomTreeGenerator.generate(4)
+    random_tree = RandomTreeGenerator.generate(6)
     random_tree_nodes = constructTree(random_tree)
 
     print(random_tree)
