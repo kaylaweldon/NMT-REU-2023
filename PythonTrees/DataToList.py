@@ -19,25 +19,33 @@ for _, row in df.iterrows():
         if entry[0] == category:
             found_category = entry
             break
-    
+
     # If the category is already in the list, check if the subcategory is not already present
     if found_category:
-        if pd.notna(subcategory1) and subcategory1 not in found_category[1]:
-            found_category[1].append(subcategory1)
-        if pd.notna(subcategory2) and subcategory2 not in found_category[1]:
-            found_category[1].append([subcategory2])
-        if pd.notna(subcategory3) and subcategory3 not in found_category[1]:
-            found_category[1].append([subcategory3])
+        # If not null and not already listed, add it to the found_category list
+        if pd.notna(subcategory1) and subcategory1 not in found_category:
+            if pd.notna(subcategory2):
+                if pd.notna(subcategory3):
+                    found_category.append([subcategory1, [subcategory2, subcategory3]])
+                else:
+                    found_category.append([subcategory1, [subcategory2]])
+            else:
+                found_category.append(subcategory1)
+
     else:
         # If the category is not already in the list, add it with subcategories
-        category_entry = [category, []]
+        category_entry = [category]
         if pd.notna(subcategory1):
-            category_entry[1].append(subcategory1)
-        if pd.notna(subcategory2):
-            category_entry[1].append([subcategory2])
-        if pd.notna(subcategory3):
-            category_entry[1].append([subcategory3])
+            if pd.notna(subcategory2):
+                if pd.notna(subcategory3):
+                    category_entry.append([subcategory1, [subcategory2, subcategory3]])
+                else:
+                    category_entry.append([subcategory1, [subcategory2]])
+            else:
+                category_entry.append(subcategory1)
         categories.append(category_entry)
+print(categories)
+
 
 def constructTree(lst):
     if not lst: 
@@ -56,6 +64,7 @@ def constructTree(lst):
             root.add_child(child)
             
     return root
+
 
 for category_entry in categories:
     print(category_entry)
