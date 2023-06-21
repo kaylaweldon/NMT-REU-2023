@@ -183,6 +183,8 @@ class Forest:
             
         return None
     
+    # achieve the canonical number of a tree
+
     def canonize_tree(self, tree):
 
         # if leaf, it is already sorted
@@ -205,12 +207,16 @@ class Forest:
         longest_number_length = 0
 
         for child in tree:
+
+            # skip over the root name
+            if child == tree[0]:
+                continue
             
             # request canonical number, recursively
             child_canonical_number = self.canonize_tree(child)
 
             # append the canonical number to the array
-            canonical_numbers_to_sort.append[child_canonical_number]
+            canonical_numbers_to_sort.append(child_canonical_number)
 
             # compare to longest_number
             if len(child_canonical_number) > longest_number_length:
@@ -218,23 +224,94 @@ class Forest:
                 longest_number_length = len(child_canonical_number)
 
         # sort the numbers of children lexiographically
+        # meaning high to low
 
         # first pad each with leading zeroes so all are the same length
         for number in canonical_numbers_to_sort:
 
-            # attain their difference in length
-            length_difference = len(number) - longest_number_length
-
             # use zfill to pad the beginning of the string with zeroes
-            number = number.zfill(length_difference)
+            number = number.zfill(longest_number_length)
         
+        # sort the canonical numbers
+        canonical_numbers = self.sort_canonical_numbers(canonical_numbers_to_sort , 0, longest_number_length)
+
+        # append them to be one big number, wrap with 1 and 0
+
+        canonical_number = "1"
+
+        for number in canonical_numbers:
+
+            canonical_number += number
         
+        canonical_number += "0"
+
+        return canonical_number
 
 
+    def sort_canonical_numbers(self, canonical_numbers_to_sort, index, max_length):
 
+        # if there is nothing to sort
+        if len(canonical_numbers_to_sort) < 2 or index > max_length - 1:
 
+            # return the list
+            return canonical_numbers_to_sort
+
+        # otherwise put numbers into two bins based on their significant digit
+
+        # for ones
+        high = []
+
+        # for zeroes
+        low = []
+
+        for number in canonical_numbers_to_sort:
+
+            if number[index] == "1":
+
+                high.append(number)
+            
+            else:
+
+                low.append(number)
         
+        # sort each bin according to the digit at the next index
+        high = self.sort_canonical_numbers(high, index + 1, max_length)
 
+        low = self.sort_canonical_numbers(low, index + 1, max_length)
+
+        # let's now remove the leading zeroes for each number
+        # because we won't need them anymore
+
+        # for high
+        for item in range(0, len(high)):
+
+            index = 0
+
+            while (high[item][index] != "1"):
+
+                index += 1
+            
+            high[item] = high[item][index:]
+
+        # and low
+        for item in range(0, len(low)):
+
+            index = 0
+
+            while (low[item][index] != "1"):
+
+                index += 1
+
+            low[item] = low[item][index:]
+        
+        # append each item in low to the high bin
+
+        for number in low:
+
+            high.append(number)
+        
+        return high
+    
 
     # our first attempt at normalization
     def normalize_tree(self, tree):
@@ -344,3 +421,48 @@ class Forest:
     def __init__(self):
         self.forest = []
 
+
+    def main(self):
+
+        practice_list = ['root', ['xvae', 'L7h1'], ['N2Di', '7iCo'], ['5g5d', 'elPP', '5Q0K']]
+
+        # testing canonical number sorter
+
+        canonical_numbers_to_sort = ["10","110100"]
+
+        longest_number_length = 6
+
+        # first pad each with leading zeroes so all are the same length
+
+        for i in range(0, len(canonical_numbers_to_sort)):
+            
+            number = canonical_numbers_to_sort[i]
+            # use zfill to pad the beginning of the string with zeroes
+            canonical_numbers_to_sort[i] = number.zfill(longest_number_length)
+        
+        canonical_numbers = self.sort_canonical_numbers(canonical_numbers_to_sort , 0, longest_number_length)
+
+        print(canonical_numbers)
+
+        print("hello world")
+
+        # testing canonical number generator
+
+        tree1 = ["hello"]
+        tree2 = ["hello", ["world"]]
+        tree3 = ["hello", ["world"], ["we're"], ["back"]]
+        tree4 = ["hello", ["world"], ["did", ["you"], ["miss", ["me"]]]]
+
+        print(self.canonize_tree(tree1))
+        print(self.canonize_tree(tree2))
+        print(self.canonize_tree(tree3))
+        print(self.canonize_tree(tree4))
+
+
+
+
+
+
+
+if __name__ == '__main__':
+    Forest().main()
