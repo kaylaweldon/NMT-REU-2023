@@ -313,7 +313,23 @@ class Forest:
         return high
     
 
-    # our first attempt at normalization
+    def is_subtree(self, tree1, tree2):
+
+        if self.canonize_tree(tree1) == self.canonize_tree(tree2):
+            return True
+
+        if self.number_of_nodes(tree1) > self.number_of_nodes(tree2):
+
+            subTree = tree2
+            mainTree = tree1
+
+        else:
+            subTree = tree1
+            mainTree = tree2
+
+        
+
+    # our first attempt at normalization, not good don't use
     def normalize_tree(self, tree):
     
         # if leaf, return
