@@ -1,4 +1,5 @@
 from typing import Any
+from queue import Queue
 
 
 class Forest:
@@ -10,6 +11,9 @@ class Forest:
     forest = []
 
     partitioned_forest = []
+
+    queue = Queue()
+
 
     def __get_forest__(self):
         return self.forest
@@ -326,6 +330,19 @@ class Forest:
         else:
             subTree = tree1
             mainTree = tree2
+
+        return self.test_subtree(subTree, mainTree)
+
+    
+    def test_subtree(self, subTree, mainTree):
+
+        if self.canonize_tree(subTree) == self.canonize_tree(mainTree):
+            return True
+        
+        for child in mainTree:
+            self.queue.put(child)
+        
+        # if there are no more children to check and no success has been found
 
         
 
