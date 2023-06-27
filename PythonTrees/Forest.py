@@ -406,7 +406,7 @@ class Forest:
     
     # TO DO: write method to test if a successful combination exists
     # within a success matrix
-    def test_success_matrix(successMatrix):
+    def test_success_matrix(self, successMatrix):
 
         # base case: if there is only one child with at least one possibility
         if len(successMatrix) == 1 and len(successMatrix[0]) > 1:
@@ -431,15 +431,41 @@ class Forest:
                     continue
 
                 # delete that test path from each of the remaining subtree children
+                # and test if the resulting matrix is also successful
 
                 for otherChild in successMatrix:
 
                     if otherChild == subTreeChild:
                         continue
                     
-                    testPathSuccessMatrix.append(otherChild)
+                    newChild = []
 
+                    # fill newChild with all paths from otherChild except the path already chosen
+                    for childTestPath in otherChild:
 
+                        newChild.append([])
+
+                        # add all paths which are not equal to the path already chosen
+                        if childTestPath != testPath:
+
+                            newChild[len(newChild) - 1].append(childTestPath)
+
+                    # add this corrected child to the new success matrix to test
+                    testPathSuccessMatrix.append(newChild)
+
+                # now we have the altered success matrix, 
+                # and we can test if that matrix is also successful
+
+                # if it is successful return true
+
+                if self.test_success_matrix(testPathSuccessMatrix):
+
+                    return True
+                
+                # if it was not successful, the for loop will continue to check the next 
+                # possible path
+
+        # if we have exhausted all possibilities, no path exists
         return False
 
 
