@@ -36,7 +36,7 @@ class Forest:
     # in the case of subcategories and such
     # Let's do a quicksort with this, it sorts from low to high number of nodes
 
-    # TO DO: test this
+    # TO DO: test this. should sort from low to high
     def sort_by_number_of_nodes(self, forest):
 
         if len(forest) == 1:
@@ -388,13 +388,27 @@ class Forest:
                 if self.test_subtree(subChild, possibility):
 
                     successMatrix[len(successMatrix) - 1].append(possibility)
-            
+        
+        # sort the matrix for ease of further testing
+        # sorts from low to high
+        successMatrix = self.sort_by_number_of_nodes(successMatrix)
+
+        # if there exists a viable combination in the success matrix
+        # then return true
         if self.test_success_matrix(successMatrix):
             return True
+        
+        # else this path was not successful and we return false
+        else:
+            return False
+        
     
     # TO DO: write method to test if a successful combination exists
     # within a success matrix
     def test_success_matrix(successMatrix):
+
+        successMatrixCopy = successMatrix
+
         return False
 
 
