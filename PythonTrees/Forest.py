@@ -343,6 +343,10 @@ class Forest:
         if self.canonize_tree(subTree) == self.canonize_tree(mainTree):
             return True
         
+        # if there are sufficiently little nodes, it is already true
+        if self.number_of_nodes(subTree) <= 2:
+            return True
+        
         # create a matrix for keeping track of successful pathways
         successMatrix = []
 
@@ -359,12 +363,14 @@ class Forest:
 
                 # if a subtree is remotely possible,
                 # i.e. if mainChild is of sufficient degree
-                # and of sufficient total levels
+                # TO DO: and of sufficient total levels (finish level counter method above)
                 if len(mainChild) >= len(subChild) \
-                and self.number_of_nodes(mainChild) >= self.number_of_nodes(subChild) \
-                and self.number_of_levels(mainChild) >= self.number_of_levels(subChild):
+                and self.number_of_nodes(mainChild) >= self.number_of_nodes(subChild):
 
-                    # add the mainChild to the possibilities queue
+                    # add the mainChild to the possibilities queue (deque, really)
+                    # we are adding in this way to they are ordered such that the
+                    # possibilities with the greatest number of nodes are at the front
+                    # (right) of the queue
                     possibilitiesQueue.appendleft(mainChild)
             
             # if the queue is empty then there were no possible routes
@@ -378,7 +384,7 @@ class Forest:
                 # grab the largest child from the queue
                 possibility = possibilitiesQueue.pop()
 
-                # recursive step
+                # recursive step, check if it is indeed a successful route
                 if self.test_subtree(subChild, possibility):
 
                     successMatrix[len(successMatrix) - 1].append(possibility)
@@ -389,12 +395,8 @@ class Forest:
     # TO DO: write method to test if a successful combination exists
     # within a success matrix
     def test_success_matrix(successMatrix):
-        return None
+        return False
 
-
-
-
-        
 
     # our first attempt at normalization, not good don't use
     def normalize_tree(self, tree):
