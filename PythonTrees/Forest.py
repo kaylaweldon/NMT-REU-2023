@@ -353,7 +353,8 @@ class Forest:
         # for each subChild from biggest to smallest node size
         for subChild in subTree:
 
-            successMatrix.append(subChild)
+            successMatrix.append([])
+            successMatrix[len(successMatrix) - 1].append(subChild)
 
             # create a queue for possibilities to check
             possibilitiesQueue = deque()
@@ -407,7 +408,37 @@ class Forest:
     # within a success matrix
     def test_success_matrix(successMatrix):
 
-        successMatrixCopy = successMatrix
+        # base case: if there is only one child with at least one possibility
+        if len(successMatrix) == 1 and len(successMatrix[0]) > 1:
+            return True
+        
+        # if any of the children have exhausted their possibilities, return false
+        for subTreeChild in successMatrix:
+
+            if len(subTreeChild) < 2:
+
+                return False
+
+        for subTreeChild in successMatrix:
+
+            for testPath in subTreeChild:
+
+                # create a new success matrix to be passed during the recursive step
+                testPathSuccessMatrix = []
+
+                # skip the first element in the list
+                if testPath == subTreeChild[0]:
+                    continue
+
+                # delete that test path from each of the remaining subtree children
+
+                for otherChild in successMatrix:
+
+                    if otherChild == subTreeChild:
+                        continue
+                    
+                    testPathSuccessMatrix.append(otherChild)
+
 
         return False
 
