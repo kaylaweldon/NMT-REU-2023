@@ -1,5 +1,5 @@
 from typing import Any
-from queue import Queue
+from collections import deque
 
 
 class Forest:
@@ -11,8 +11,6 @@ class Forest:
     forest = []
 
     partitioned_forest = []
-
-    queue = Queue()
 
 
     def __get_forest__(self):
@@ -319,9 +317,11 @@ class Forest:
 
     def is_subtree(self, tree1, tree2):
 
+        # if the trees are isomorphic then return true
         if self.canonize_tree(tree1) == self.canonize_tree(tree2):
             return True
 
+        # treat the smaller one as the potential subtree
         if self.number_of_nodes(tree1) > self.number_of_nodes(tree2):
 
             subTree = tree2
@@ -331,18 +331,68 @@ class Forest:
             subTree = tree1
             mainTree = tree2
 
+        # TO DO BEFORE, very IMPORTANT: NORMALIZE THE ACTUAL TREES
+        # USING CANONICAL NUMBERS SCHEME!
+
         return self.test_subtree(subTree, mainTree)
 
     
     def test_subtree(self, subTree, mainTree):
 
+        # if the trees are isomorphic return true
         if self.canonize_tree(subTree) == self.canonize_tree(mainTree):
             return True
         
-        for child in mainTree:
-            self.queue.put(child)
-        
-        # if there are no more children to check and no success has been found
+        # create a matrix for keeping track of successful pathways
+        successMatrix = []
+
+        # for each subChild from biggest to smallest node size
+        for subChild in subTree:
+
+            successMatrix.append(subChild)
+
+            # create a queue for possibilities to check
+            possibilitiesQueue = deque()
+
+            # for each mainChild from biggest to smallest node size
+            for mainChild in mainTree:
+
+                # if a subtree is remotely possible,
+                # i.e. if mainChild is of sufficient degree
+                # and of sufficient total levels
+                if len(mainChild) >= len(subChild) \
+                and self.number_of_nodes(mainChild) >= self.number_of_nodes(subChild) \
+                and self.number_of_levels(mainChild) >= self.number_of_levels(subChild):
+
+                    # add the mainChild to the possibilities queue
+                    possibilitiesQueue.appendleft(mainChild)
+            
+            # if the queue is empty then there were no possible routes
+            # so we return false
+            if not possibilitiesQueue.bool():
+                return False
+            
+            # while there are still items in the queue
+            while possibilitiesQueue.bool():
+
+                # grab the largest child from the queue
+                possibility = possibilitiesQueue.pop()
+
+                # recursive step
+                if self.test_subtree(subChild, possibility):
+
+                    successMatrix[len(successMatrix) - 1].append(possibility)
+            
+        if self.test_success_matrix(successMatrix):
+            return True
+    
+    # TO DO: write method to test if a successful combination exists
+    # within a success matrix
+    def test_success_matrix(successMatrix):
+        return None
+
+
+
 
         
 
