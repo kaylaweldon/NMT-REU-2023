@@ -1,5 +1,5 @@
 from typing import Any
-from queue import Queue
+from collections import deque
 
 
 class Forest:
@@ -11,8 +11,6 @@ class Forest:
     forest = []
 
     partitioned_forest = []
-
-    queue = Queue()
 
 
     def __get_forest__(self):
@@ -38,10 +36,10 @@ class Forest:
     # in the case of subcategories and such
     # Let's do a quicksort with this, it sorts from low to high number of nodes
 
-    # TO DO: test this
+    # TO DO: test this. should sort from low to high
     def sort_by_number_of_nodes(self, forest):
 
-        if len(forest) == 1:
+        if len(forest) < 1:
             return forest
 
         # choose first tree as pivot
@@ -60,7 +58,7 @@ class Forest:
             number_of_nodes_in_tree = self.number_of_nodes(tree)
 
             if tree == pivot:
-                continue
+                same.append(tree)
 
             if number_of_nodes_in_tree < number_of_nodes_in_pivot:
 
@@ -152,11 +150,15 @@ class Forest:
     # TO DO: test this
     def number_of_nodes(self, tree):
 
+        if not isinstance(tree, list):
+
+            return 1
+
         # initialize nodes
         nodes = 0
 
         # for each node in the tree
-        for node in list:
+        for node in tree:
 
             # if the node is a subtree
             if isinstance(node, list):
@@ -231,13 +233,13 @@ class Forest:
         # meaning high to low
 
         # first pad each with leading zeroes so all are the same length
-        for number in canonical_numbers_to_sort:
+        for number in range(0, len(canonical_numbers_to_sort)):
 
             # use zfill to pad the beginning of the string with zeroes
-            number = number.zfill(longest_number_length)
+            canonical_numbers_to_sort[number] = canonical_numbers_to_sort[number].zfill(longest_number_length)
         
         # sort the canonical numbers
-        canonical_numbers = self.sort_canonical_numbers(canonical_numbers_to_sort , 0, longest_number_length)
+        canonical_numbers = self.sort_canonical_numbers(canonical_numbers_to_sort, 0, longest_number_length)
 
         # append them to be one big number, wrap with 1 and 0
 
@@ -319,9 +321,11 @@ class Forest:
 
     def is_subtree(self, tree1, tree2):
 
+        # if the trees are isomorphic then return true
         if self.canonize_tree(tree1) == self.canonize_tree(tree2):
             return True
 
+        # treat the smaller one as the potential subtree
         if self.number_of_nodes(tree1) > self.number_of_nodes(tree2):
 
             subTree = tree2
@@ -331,20 +335,164 @@ class Forest:
             subTree = tree1
             mainTree = tree2
 
+        # TO DO BEFORE, very IMPORTANT: NORMALIZE THE ACTUAL TREES
+        # USING CANONICAL NUMBERS SCHEME!
+
         return self.test_subtree(subTree, mainTree)
 
     
     def test_subtree(self, subTree, mainTree):
 
+        if len(subTree) > len(mainTree):
+            return False
+        
+        if self.number_of_nodes(subTree) > self.number_of_nodes(mainTree):
+            return False
+
+        # if the trees are isomorphic return true
         if self.canonize_tree(subTree) == self.canonize_tree(mainTree):
             return True
         
-        for child in mainTree:
-            self.queue.put(child)
+        # if there are sufficiently little nodes, it is already true
+        if self.number_of_nodes(subTree) <= 2:
+            return True
         
-        # if there are no more children to check and no success has been found
+        # create a matrix for keeping track of successful pairings
+        successMatrix = []
 
+        # after a certain threshhold, if the trees are sorted, you don't need to check afterwards
+
+        # for each subChild from biggest to smallest node size
+        for subChild in subTree:
+
+            # skip the root node
+            if subChild == subTree[0]:
+                continue
+
+            if isinstance(subChild, list):
+
+                successMatrix.append(subChild)
+            
+            else:
+
+                successMatrix.append([])
+                successMatrix[len(successMatrix) - 1].append(subChild)
+
+            # create a queue for possibilities to check
+            possibilitiesQueue = deque()
+
+            # for each mainChild from biggest to smallest node size
+            for mainChild in mainTree:
+                
+                # skip the root node
+                if mainChild == mainTree[0]:
+                    continue
+
+                # if a subtree is remotely possible,
+                # i.e. if mainChild is of sufficient degree
+                # and of sufficient number of descendants
+                # TO DO: and of sufficient total levels (finish level counter method above)
+                if len(mainChild) >= len(subChild) \
+                and self.number_of_nodes(mainChild) >= self.number_of_nodes(subChild):
+
+                    # add the mainChild to the possibilities queue (deque, really)
+                    # we are adding in this way to they are ordered such that the
+                    # possibilities with the greatest number of nodes are at the front
+                    # (right) of the queue
+                    possibilitiesQueue.appendleft(mainChild)
+            
+            # if the queue is empty then there were no possible routes
+            # so we return false
+            if len(possibilitiesQueue) == 0:
+                return False
+            
+            # while there are still items in the queue
+            while len(possibilitiesQueue) > 0:
+
+                # grab the largest child from the queue
+                possibility = possibilitiesQueue.pop()
+
+                # recursive step, check if it is indeed a successful route
+                if self.test_subtree(subChild, possibility):
+
+                    successMatrix[len(successMatrix) - 1].append(possibility[0])
         
+        # sort the matrix for ease of further testing
+        # sorts from low to high
+        successMatrix = self.sort_by_number_of_nodes(successMatrix)
+
+        # if there exists a viable combination in the success matrix
+        # then return true
+        if self.test_success_matrix(successMatrix):
+            return True
+        
+        # else this path was not successful and we return false
+        else:
+            return False
+        
+    
+    # TO DO: write method to test if a successful combination exists
+    # within a success matrix
+    def test_success_matrix(self, successMatrix):
+
+        # base case: if there is only one child with at least one possibility
+        if len(successMatrix) == 1 and len(successMatrix[0]) > 1:
+            return True
+        
+        # if any of the children have exhausted their possibilities, return false
+        for subTreeChild in successMatrix:
+
+            if len(subTreeChild) < 2:
+
+                return False
+
+        for subTreeChild in successMatrix:
+
+            for testPath in subTreeChild:
+
+                # skip the first element in the list
+                if testPath == subTreeChild[0]:
+                    continue
+
+                # create a new success matrix to be passed during the recursive step
+                testPathSuccessMatrix = []
+
+                # delete that test path from each of the remaining subtree children
+                # and test if the resulting matrix is also successful
+
+                for otherChild in successMatrix:
+
+                    if otherChild == subTreeChild:
+                        continue
+                    
+                    newChild = []
+
+                    # fill newChild with all paths from otherChild except the path already chosen
+                    for childTestPath in otherChild:
+
+                        # add all paths which are not equal to the path already chosen
+                        if childTestPath != testPath:
+
+                            newChild.append(childTestPath)
+
+                    # add this corrected child to the new success matrix to test
+                    testPathSuccessMatrix.append(newChild)
+
+                # now we have the altered success matrix, 
+                # and we can test if that matrix is also successful
+
+                # if it is successful return true
+
+                if self.test_success_matrix(testPathSuccessMatrix):
+
+                    return True
+                
+                # if it was not successful, the for loop will continue to check the next 
+                # possible path
+
+        # if we have exhausted all possibilities, no path exists
+        return False
+
 
     # our first attempt at normalization, not good don't use
     def normalize_tree(self, tree):
@@ -479,7 +627,9 @@ class Forest:
 
         print("hello world")
 
-        # testing canonical number generator
+        """
+        testing canonical number generator
+        """ 
 
         tree1 = ["hello"]
         tree2 = ["hello", ["world"]]
@@ -492,10 +642,71 @@ class Forest:
         print(self.canonize_tree(tree4))
 
 
+        """
+        testing successMatrix confirmation
+        """
+
+        # should return true
+        testSuccessMatrix1 = [["A1", "B1", "B3"], ["A2", "B1", "B3"], ["A3", "B4"]]
+        print("First test matrix:")
+        print(self.test_success_matrix(testSuccessMatrix1))
+
+        # second testSuccessMatrix
+        # should return false
+        testSuccessMatrix2 = [["A1", "B1", "B3"], ["A2", "B1", "B3"], ["A3", "B1", "B3"]]     
+        print("Second test matrix:")
+        print(self.test_success_matrix(testSuccessMatrix2))   
+
+        # third testSuccessMatrix
+        # should return true
+        testSuccessMatrix3 = [["A1", "B1"], ["A2", "B2"], ["A3", "B3"]]               
+        print("third test matrix:")
+        print(self.test_success_matrix(testSuccessMatrix3))
+
+        # fourth testSuccessMatrix
+        # should return false
+        testSuccessMatrix4 = [["A1", "B1"], ["A2", "B2"], ["A3", "B1"]]               
+        print("fourth test matrix:")
+        print(self.test_success_matrix(testSuccessMatrix4))
+
+        """ 
+        testing isSubtree method
+        """
+        # first test
+        # should return true
+        mainTree1 = ["root", ["1"], ["2"]]
+        subTree1 = ["root", ["3"], ["4"]]
+        print("first subtree test:")
+        print(self.test_subtree(subTree1, mainTree1))
+
+        # second test
+        # should return true
+        mainTree2 = ["root", ["1"], ["2"]]
+        subTree2= ["root", ["1"]]
+        print("second subtree test:")
+        print(self.test_subtree(subTree2, mainTree2))
+
+        # third test
+        # should return false
+        mainTree3 = ["3", ["1"], ["2"]]
+        subTree3= ["3", ["1"], ["2"], ["3"]]
+        print("third subtree test:")
+        print(self.test_subtree(subTree3, mainTree3))
+
+        # fourth test
+        # should return true
+        mainTree4 = ["r", ["1"], ["2"], ["3", ["4", ["5"]]], ["6", ["7"], ["8"]]]
+        subTree4 = ["r", ["1", ["2", ["3"]]], ["4", ["5"], ["6"]]]
+        print("fourth subtree test:")
+        print(self.test_subtree(subTree4, mainTree4))
 
 
-
-
+        # fifth test
+        # should return false
+        mainTree5 = ["r", ["1", ["2", ["3"]]], ["4", ["5"], ["6"]]]
+        subTree5 = ["r", ["1"], ["2"], ["3", ["4", ["5"]]], ["6", ["7"], ["8"]]]
+        print("fifth subtree test:")
+        print(self.test_subtree(subTree5, mainTree5))
 
 if __name__ == '__main__':
     Forest().main()
