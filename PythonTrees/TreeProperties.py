@@ -43,19 +43,6 @@ class TreeProperties:
                 hammingDist += 1
         return hammingDist
 
-    def isSubtree(self, t1, t2):
-        if t1 is None:
-            return False
-        
-        if self.match_tree(t1, t2):
-            return True
-
-        for child in t1.children:
-            if self.isSubtree(child, t2):
-                return True
-
-        return False
-        
     def matchTree(self, node1, node2): 
         if len(node1.children) != len(node2.children):
             return False
@@ -63,6 +50,19 @@ class TreeProperties:
             if not self.matchTree(node1.children[i], node2.children[i]):
                 return False
         return True
+    
+    def isSubtree(self, t1, t2):
+        if t1 is None or t2 is None:
+            return False
+        
+        if self.matchTree(t1, t2):
+            return True
+
+        for child in t1.children:
+            if self.isSubtree(child, t2):
+                return True
+
+        return False    
 
 
     def main(self):
@@ -89,11 +89,12 @@ class TreeProperties:
         child1.add_child(child4)
         t2Root.add_child(child5)
         t2Root.add_child(child6)
+        child5.add_child(child8)
 
 
 
 
-        print(self.isSubtree(self, t1Root, t2Root)) 
+        print(self.isSubtree(t1Root, t2Root)) 
             
 if __name__ == '__main__':
     TreeProperties().main()
