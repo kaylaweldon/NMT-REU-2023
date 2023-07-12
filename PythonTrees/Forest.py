@@ -1,4 +1,3 @@
-from typing import Any
 from collections import deque
 
 
@@ -363,12 +362,13 @@ class Forest:
         # after a certain threshhold, if the trees are sorted, you don't need to check afterwards
 
         # for each subChild from biggest to smallest node size
-        for subChild in subTree:
+        
+        ''' for subChild in subTree:
 
             # skip the root node
             if subChild == subTree[0]:
-                continue
-
+                continue '''
+        for subChild in subTree[1]:
             if isinstance(subChild, list):
 
                 successMatrix.append(subChild)
