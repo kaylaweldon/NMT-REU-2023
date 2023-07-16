@@ -367,13 +367,15 @@ class Forest:
         for child in range(1, len(distancesAndTrees)):
 
             alteredMatrix.append(distancesAndTrees[child])
-             
-                # starting from range zero so as to include the original subtree associated with the child
-                # although maybe this is not necessary
+
+            """
+            # starting from range zero so as to include the original subtree associated with the child
+            # although maybe this is not necessary
             for alteredMatches in range(0, len(distancesAndTrees[child])):
-                
-                #  we append to our altered matrix
-                alteredMatrix[len(alteredMatrix) - 1].append(distancesAndTrees[child][alteredMatches])
+            
+            #  we append to our altered matrix
+            alteredMatrix[len(alteredMatrix) - 1].append(distancesAndTrees[child][alteredMatches])
+            """
             
         
 
@@ -1325,7 +1327,7 @@ class Forest:
         T6 = ['c', ['x', ['K', ['l', ['E']], ['4', ['a', ['y'], ['f'], ['l']]], ['G', ['J', ['3'], ['A']]]]], ['K', ['C']]]
         T56 = self.leastUpperBound(T5, T6)
         print("T56:")
-        print(T56)
+        print(T56)"""
 
         T7 = ['a', ['b', ['c']], ['d', ['e', ['f'], ['g'], ['h']]]]
         T8 = ['A', ['B', ['C']], ['D', ['E', ['F']]], ['G', ['H', ['I'], ['J']]], ['K', ['L']], ['M', ['N']]]
@@ -1333,7 +1335,7 @@ class Forest:
         ['x', ['x', ['C']], ['x', ['x', ['f'], ['I'], ['J']]], [['D', ['E', ['F']]], 2], ['K', ['L']], ['M', ['N']]]
         # with edit distance 9
         print("T78: ")
-        print(T78)"""
+        print(T78)
 
         """self.generate_forest(4, 5, 3)
         # print(self.forest)
