@@ -105,12 +105,12 @@ class newListTree:
         treeList= [niceForest0, niceForest1, lubStr]
         tree_visualizer = newListTree(treeList)
         tree_visualizer.visualize_trees()
-
-        DataToList = self.DataToList()
+        
+        """DataToList = self.DataToList()
         treeLst = DataToList.dataToList()
         treeLst = newListTree.listToString(self, treeLst)
         tree_visualizer = newListTree(treeLst)
-        tree_visualizer.visualize_trees()
+        tree_visualizer.visualize_trees()"""
 
 if __name__ == '__main__':
     newListTree([[]]).main()
