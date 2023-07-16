@@ -19,17 +19,33 @@ class Forest:
     def __get_forest__(self):
         return self.forest
     
+    def gather_edit_distances_for_forest(self):
 
-    def generate_forest(self, number_of_trees, max_levels):
+        self.forestEditDistanceMatrix = []
+
+        for tree in range(0, len(self.forest)):
+
+            self.forestEditDistanceMatrix.append([self.forest[tree]])
+
+            for match in range(0, len(self.forest)):
+
+                self.forestEditDistanceMatrix[tree].append([self.forest[match]])
+
+                self.forestEditDistanceMatrix[tree][match + 1].append(self.leastUpperBound(self.forest[tree], self.forest[match]))
+        print("edit distance matrix: ")
+        print(self.forestEditDistanceMatrix)
+    
+
+    def generate_forest(self, number_of_trees, max_levels, max_fan):
 
         # initialize a random tree generator
         RandomTreeGenerator = self.RandomTreeGenerator()
 
         # for each tree to generate
-        for i in range(1, number_of_trees):
+        for i in range(0, number_of_trees):
 
             # generate a tree of max levels 
-            random_tree = RandomTreeGenerator.generate(max_levels)
+            random_tree = RandomTreeGenerator.generate(max_levels, max_fan)
 
             # add that tree to the forest
             self.forest.append(random_tree)
@@ -46,6 +62,7 @@ class Forest:
 
         # base case
         # if either T1 or T2 consists of a single node
+
         if len(T1) == 1 or len(T2) == 1:
 
             T1nodes = self.number_of_nodes(T1)
@@ -97,21 +114,21 @@ class Forest:
                 # consult dictionary to see if trees isomorphic to childT1 and childT2 have
                 # already been evaluated
 
-                pairingResult = self.search_Dictionary(T1[childT1], T2[childT2])
+                # pairingResult = self.search_Dictionary(T1[childT1], T2[childT2])
 
                 # if there was an entry in the dictionary, return the entry
-                if pairingResult != None:
+                # if pairingResult != None:
 
-                    """
-                    print("Dictionary result found. Result: of ")
-                    print(T1[childT1])
-                    print("and ")
-                    print(T2[childT2])
-                    print("is: ")
-                    print(pairingResult)
-                    """
+                """
+                print("Dictionary result found. Result: of ")
+                print(T1[childT1])
+                print("and ")
+                print(T2[childT2])
+                print("is: ")
+                print(pairingResult)
+                """
 
-                    return pairingResult[0]
+                # return pairingResult[0]
                 
                 # otherwise we must find the answer ourselves
                 # THIS IS THE RECURSIVE STEP
@@ -1263,9 +1280,8 @@ class Forest:
     def main(self):
 
         self.test_LUB_method()
-        # self.test_optimal_combination()
 
-
+        # extra examples
         T5 = ['f', ['x', ['6']], ['u', ['2', ['q'], ['M']]]]
         T6 = ['c', ['x', ['K', ['l', ['E']], ['4', ['a', ['y'], ['f'], ['l']]], ['G', ['J', ['3'], ['A']]]]], ['K', ['C']]]
         T56 = self.leastUpperBound(T5, T6)
@@ -1273,7 +1289,13 @@ class Forest:
         print("T56:")
         print(T56)
 
+        self.generate_forest(4, 5, 3)
+        print(self.forest)
 
+        for tree in self.forest:
+            print(tree)
+        
+        self.gather_edit_distances_for_forest()
 
 
 
