@@ -49,7 +49,7 @@ class RandomTreeGenerator:
 
         # Get all the ASCII letters in lowercase and uppercase
 
-        letters = self.string.ascii_letters + self.string.digits
+        letters = self.string.ascii_letters #+ self.string.digits
 
         # Randomly choose characters from letters for the given length of the string
 
