@@ -9,17 +9,18 @@ class Forest:
     # the list containing trees of the forest
     forest = []
 
-    partitioned_forest = []
-
     # dictionary for keeping track of Least upper bounds found
     # we should store things as their canonical numbers so isomorphic trees can be found
     LUBdictionary = []
 
 
     def __get_forest__(self):
+
         return self.forest
     
-    def anonymize_forest(self):
+    def anonymize_forest(self, forest):
+        
+        leastEditDistance = forest[0][1][1]
 
         return None
     
@@ -32,13 +33,13 @@ class Forest:
 
         self.forestEditDistanceMatrix = []
 
-        for tree in range(0, len(self.sorted_forest)):
+        for tree in range(0, len(sorted_forest)):
 
-            self.forestEditDistanceMatrix.append([self.sorted_forest[tree]])
+            self.forestEditDistanceMatrix.append([sorted_forest[tree]])
 
             for match in range(0, len(self.forest)):
                 
-                self.forestEditDistanceMatrix[tree].append([self.sorted_forest[match]])
+                self.forestEditDistanceMatrix[tree].append([sorted_forest[match]])
 
                 # this represents the trees matching with themselves along the diagonal
                 # instead of filling it in with a zero, we are going to use it to represent 
@@ -46,12 +47,12 @@ class Forest:
                 # create a tree of equal number of nodes
                 if match == tree:
 
-                    LUBTandEditDistance = [self.sorted_forest[match], self.number_of_nodes(self.sorted_forest[match])]
+                    LUBTandEditDistance = [sorted_forest[match], self.number_of_nodes(sorted_forest[match])]
                 
                 # otherwise we just find the edit distance and LUBT of the two different trees
                 else:
 
-                    LUBTandEditDistance = self.leastUpperBound(self.sorted_forest[tree], self.sorted_forest[match])
+                    LUBTandEditDistance = self.leastUpperBound(sorted_forest[tree], sorted_forest[match])
 
                 self.forestEditDistanceMatrix[tree][match + 1].append(LUBTandEditDistance)
     
@@ -1342,8 +1343,8 @@ class Forest:
         print("forest after sorting: ")
         for tree in sorted_forest:
             print(tree)
-
-
+        
+        #self.anonymize_forest(sorted_forest)
 
 
 
