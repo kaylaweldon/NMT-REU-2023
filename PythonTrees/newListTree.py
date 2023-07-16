@@ -1,6 +1,7 @@
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
-class Visualize:
+class newListTree:
+    from Forest import Forest
     '''def numNodes(tree):
         nodes = 0
         for char in tree:
@@ -96,18 +97,50 @@ class Visualize:
         )
         
         self.fig.show()
+    def listToString(self, lst): 
+        result = ""
+        if isinstance(lst, list):
+            result += "["
+            for item in lst:
+                result += self.listToString(item) + ", "
+            result = result.rstrip(", ") + "]"
+        else:
+            result += str(lst)
+        return result
+
+    def main(self):
+        Forest = self.Forest()
+        Forest.generate_forest(4, 4, 4)
+        niceForest = Forest.__get_forest__()
+        print(niceForest)
+        lub = Forest.leastUpperBound(niceForest[0], niceForest[1])
+        print(lub)
+        niceForest0 = newListTree.listToString(self, niceForest[0])
+        niceForest1 = newListTree.listToString(self, niceForest[1])
+        print(niceForest[0])
+        print(niceForest[1])
+        lubStr = newListTree.listToString(self, lub[0])
+        treeList= [niceForest0, niceForest1, lubStr]
+        tree_visualizer = newListTree(treeList)
+        tree_visualizer.visualize_trees()
 
 tree1 = '[travel services, [travel agents]], [rv parks], [bed & breakfast], [hotels], [airports]'
 tree2 = '[a[b][c]]'
-tree3 = ' ( ) '
+if __name__ == '__main__':
+    newListTree([tree1, tree2]).main()
+
+[['x', ['x', ['j']], ['x', ['x', ['j'], ['Z'], ['K']]], [['p', ['T', ['w']]], 2], ['Q', ['D']], ['C', ['0']]], 9]
+['7', ['6', ['z']], ['3', ['9', ['j'], ['u'], ['U']]]]
+['5', ['g', ['j']], ['p', ['T', ['w']]], ['b', ['9', ['Z'], ['K']]], ['Q', ['D']], ['C', ['0']]]
+
+
+'''tree3 = ' ( ) '
 tree4 = '(((()()))(()())(()))'
 tree5 = ' ( )( ) '
 trees = [tree1, tree2, tree1, tree2]
-tree_visualizer = Visualize(trees)
-tree_visualizer.visualize_trees()
 
 
-''' treeDict1 = buildTree(tree1)
+''treeDict1 = buildTree(tree1)
     treeDict2 = buildTree(tree2)
     assign_coordinates(treeDict1)
     assign_coordinates(treeDict2)
