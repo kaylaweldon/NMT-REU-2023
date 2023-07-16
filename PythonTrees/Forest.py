@@ -28,19 +28,32 @@ class Forest:
     # puts them in a global structure called forestEditDistanceMatrix
     def gather_edit_distances_for_forest(self):
 
+        sorted_forest = self.sort_by_number_of_nodes(self.forest)
+
         self.forestEditDistanceMatrix = []
 
-        for tree in range(0, len(self.forest)):
+        for tree in range(0, len(self.sorted_forest)):
 
-            self.forestEditDistanceMatrix.append([self.forest[tree]])
+            self.forestEditDistanceMatrix.append([self.sorted_forest[tree]])
 
             for match in range(0, len(self.forest)):
+                
+                self.forestEditDistanceMatrix[tree].append([self.sorted_forest[match]])
 
-                self.forestEditDistanceMatrix[tree].append([self.forest[match]])
+                # this represents the trees matching with themselves along the diagonal
+                # instead of filling it in with a zero, we are going to use it to represent 
+                # the case where we choose to duplicate the tree and therefore need to 
+                # create a tree of equal number of nodes
+                if match == tree:
 
-                self.forestEditDistanceMatrix[tree][match + 1].append(self.leastUpperBound(self.forest[tree], self.forest[match]))
-        # print("edit distance matrix: ")
-        # print(self.forestEditDistanceMatrix)
+                    LUBTandEditDistance = [self.sorted_forest[match], self.number_of_nodes(self.sorted_forest[match])]
+                
+                # otherwise we just find the edit distance and LUBT of the two different trees
+                else:
+
+                    LUBTandEditDistance = self.leastUpperBound(self.sorted_forest[tree], self.sorted_forest[match])
+
+                self.forestEditDistanceMatrix[tree][match + 1].append(LUBTandEditDistance)
     
 
     def generate_forest(self, number_of_trees, max_levels, max_fan):
@@ -839,7 +852,7 @@ class Forest:
     # TO DO: test this. should sort from low to high
     def sort_by_number_of_nodes(self, forest):
 
-        if len(forest) < 1:
+        if len(forest) <= 1:
             return forest
 
         # choose first tree as pivot
@@ -857,7 +870,7 @@ class Forest:
 
             number_of_nodes_in_tree = self.number_of_nodes(tree)
 
-            if tree == pivot:
+            if number_of_nodes_in_tree == number_of_nodes_in_pivot:
                 same.append(tree)
 
             if number_of_nodes_in_tree < number_of_nodes_in_pivot:
@@ -867,9 +880,6 @@ class Forest:
             if number_of_nodes_in_tree > number_of_nodes_in_pivot:
 
                 high.append(tree)
-            
-            else:
-                same.append(tree)
         
         # sort the high and low arrays, 'same' does not need sorting
 
@@ -1296,7 +1306,6 @@ class Forest:
         print(self.canonize_tree(tree3))
         print(self.canonize_tree(tree4))
 
-
     def __init__(self):
 
         self.forest = []
@@ -1323,6 +1332,18 @@ class Forest:
         #    print(tree)
         
         self.gather_edit_distances_for_forest()
+        
+        print("forest before sorting: ")
+        for tree in self.forest:
+            print(tree)
+
+        sorted_forest = self.sort_by_number_of_nodes(self.forest)
+
+        print("forest after sorting: ")
+        for tree in sorted_forest:
+            print(tree)
+
+
 
 
 

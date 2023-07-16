@@ -89,7 +89,6 @@ class RandomTreeGenerator:
         # return a randomly generated tree
         return self.create_tree(max_levels - 1, self.list_of_base_children)
 
-
     def __init__(self):
 
         # initialize list of base children
