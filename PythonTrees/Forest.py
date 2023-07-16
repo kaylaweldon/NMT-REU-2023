@@ -39,6 +39,11 @@ class Forest:
     """
     def leastUpperBound(self, T1, T2):
 
+        # dictionaryEntry = self.search_Dictionary(T1, T2)
+
+        # if dictionaryEntry != None:
+        #     return dictionaryEntry[0] 
+
         # base case
         # if either T1 or T2 consists of a single node
         if len(T1) == 1 or len(T2) == 1:
@@ -102,11 +107,13 @@ class Forest:
                     print("is: ")
                     print(pairingResult)
 
-                    return pairingResult
+                    return pairingResult[0]
                 
                 # otherwise we must find the answer ourselves
                 # THIS IS THE RECURSIVE STEP
                 pairingResult = self.leastUpperBound(T1[childT1], T2[childT2])
+
+                # self.add_Dictionary(T1[childT1], T2[childT2], pairingResult)
 
                 print("LUBT and edit Distance of :")
                 print(T1[childT1])
@@ -176,6 +183,21 @@ class Forest:
 
         # initialize a list of leftovers to keep track of
         leftovers = []
+
+        # if the length of the first child is zero, that means the options have been run out of
+        if len(distancesAndTrees[0]) == 1:
+
+                # that child itself must be constructed but there are no other leftovers
+                # the edit distace is the number of nodes contained in child
+                childrenToReturn = []
+                editDistance = 0
+
+                for child in distancesAndTrees:
+
+                    childrenToReturn.append(child[0])
+                    editDistance += self.number_of_nodes(child)
+
+                return [childrenToReturn, editDistance]
 
         # base case
         # if the matrix contains only one child of T1
@@ -258,6 +280,47 @@ class Forest:
         # other wise if it is not a base case
         # we first initialize a data structure to store information about every possible combination of matches
         combinationOptions = []
+        
+        # FIRST CHILD REPLICATE OPTION
+        # account for the case where the first child is chosen to be replicated
+        combinationOptions.append([])
+        combinationOptions[len(combinationOptions) - 1].append([[distancesAndTrees[0][0]]])
+        combinationOptions[len(combinationOptions) - 1][0].append(self.number_of_nodes(distancesAndTrees[0][0]))
+        combinationOptions[len(combinationOptions) - 1][0].append([distancesAndTrees[0][0]])
+
+        print("combination options after adding first child replicate case: ")
+        print(combinationOptions)
+        
+        alteredMatrix = []
+
+        for child in range(1, len(distancesAndTrees)):
+
+            alteredMatrix.append(distancesAndTrees[child])
+            """  
+                # starting from range zero so as to include the original subtree associated with the child
+                # although maybe this is not necessary
+            for alteredMatches in range(0, len(distancesAndTrees[child])):
+                
+                #  we append to our altered matrix
+                alteredMatrix[len(alteredMatrix) - 1].append(distancesAndTrees[child][alteredMatches])
+            """  
+        
+
+        print("altered Matrix to send recursively for first child replicate case: ")
+        print(alteredMatrix)
+
+        alteredMatrixBestOption = self.optimal_pairing(alteredMatrix)
+
+        print("altered matrix best option: ")
+        print(alteredMatrixBestOption)
+
+        alteredMatrixBestOption = self.optimal_pairing(alteredMatrix)
+
+        combinationOptions[len(combinationOptions) - 1].append(alteredMatrixBestOption)
+        print("combinationOptions after adding result of altered matrix: ")
+        print(combinationOptions)
+
+        
 
         # for each match of the first child in the matrix (distancesAndTrees)
         for match in range(1, len(distancesAndTrees[0])):
@@ -308,6 +371,7 @@ class Forest:
             combinationOptions[len(combinationOptions) - 1].append(alteredMatrixBestOption)
             print("combinationOptions after adding result of altered matrix: ")
             print(combinationOptions)
+
         # finally sum up the edit distances of each of the options
         # assume the first one is the best and compare it to the rest
         bestOption = combinationOptions[0]
@@ -1027,12 +1091,48 @@ class Forest:
         print(T1112)
         # """
 
-    def test_optimal_combination(self):
+        print("BEGINNING OF SEVENTH EXAMPLE: ")
+        T13 = ['rT1', ['a', ['c'], ['d']], ['b', ['e', ['f'], ['g']]]]
+        T14 = ['r', ['A', ['C', ['E'], ['F']], ['D']], ['B']]
+        # result should be T1314 = [['r', ['x', ['x'], ['x']], ['x', ['x', ['x'], ['x']], ['x']]], 3]
+        T1314 = self.leastUpperBound(T13, T14)
+        #              got:        [['x', ['a', ['c'], ['d']], ['x', ['x', ['E'], ['F']], ['D']]], 3]
 
+        print("T1314:")
+        print(T1314)
+
+        print("BEGINNING OF EIGHTH EXAMPLE: ")
+        T15 = ['r', ['a', ['b', ['c']]]]
+        T16 = ['r', ['A'], ['B'], ['C']]
+        T1516 = self.leastUpperBound(T16, T15)
+        # returned [['x', ['A'], ['B'], ['a', ['b', ['c']]]], 4]
+        print("T1516: ")
+        print(T1516)
+        
+        print("BEGINNING OF NINTH EXAMPLE: ")
+        T17 = ['a', ['b', ['c'], ['d']], ['f'], ['e']]
+        T18 = ['A', ['B', ['C'], ['D']]]
+        T1718 = self.leastUpperBound(T17, T18)
+        print("T17T18: ")
+        # returned [['x', ['x', ['C'], ['D']], ['f'], ['e']], 2]
+        print(T1718)
+
+
+        print("BEGINNING OF TENTH EXAMPLE: ")
+        T19 = ['a', ['b', ['c'], ['d', ['e']]], ['f'], ['g']]
+        T20 = ['A', ['B', ['C', ['D']]]]
+        T1920 = self.leastUpperBound(T19, T20)
+        # returned correct = [['x', ['x', ['c'], ['x', ['D']]], ['f'], ['g']], 3]
+        print("T1920: ")
+        print(T1920)
+        
+    def test_optimal_combination(self):
+        """
         distancesAndTrees1 = [['a', [['A'], 0], [['B', ['C']], 1]],
                               ['b', [['A'], 0], [['B', ['C']], 1]] ]
         
         print(self.optimal_pairing(distancesAndTrees1))
+        """
 
     def test_subtree_method(self):
         """
@@ -1145,8 +1245,18 @@ class Forest:
 
     def main(self):
 
-        self.test_LUB_method()
-        self.test_optimal_combination()
+        # self.test_LUB_method()
+        # self.test_optimal_combination()
+
+
+        T5 = ['r', ['a', ['b', ['c'], ['d'], ['e']]]]
+        T6 = ['r', ['A', ['B'], ['C'], ['D']]]
+        T56 = self.leastUpperBound(T5, T6)
+        got = ['x', ['x', ['b', ['c'], ['d'], ['e']], ['C'], ['D']]]
+        print("T56:")
+        print(T56)
+
+
 
 
 if __name__ == '__main__':
