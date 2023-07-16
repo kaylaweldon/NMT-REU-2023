@@ -19,6 +19,13 @@ class Forest:
     def __get_forest__(self):
         return self.forest
     
+    def anonymize_forest(self):
+
+        return None
+    
+    # given a forest, calculate the edit distance and LUBT for every possible 
+    # pair of trees within the forest 
+    # puts them in a global structure called forestEditDistanceMatrix
     def gather_edit_distances_for_forest(self):
 
         self.forestEditDistanceMatrix = []
@@ -32,8 +39,8 @@ class Forest:
                 self.forestEditDistanceMatrix[tree].append([self.forest[match]])
 
                 self.forestEditDistanceMatrix[tree][match + 1].append(self.leastUpperBound(self.forest[tree], self.forest[match]))
-        print("edit distance matrix: ")
-        print(self.forestEditDistanceMatrix)
+        # print("edit distance matrix: ")
+        # print(self.forestEditDistanceMatrix)
     
 
     def generate_forest(self, number_of_trees, max_levels, max_fan):
@@ -114,45 +121,64 @@ class Forest:
                 # consult dictionary to see if trees isomorphic to childT1 and childT2 have
                 # already been evaluated
 
-                # pairingResult = self.search_Dictionary(T1[childT1], T2[childT2])
+                dictionaryPairingResult = self.search_Dictionary(T1[childT1], T2[childT2])
 
                 # if there was an entry in the dictionary, return the entry
-                # if pairingResult != None:
+                if dictionaryPairingResult != None:
 
-                """
-                print("Dictionary result found. Result: of ")
-                print(T1[childT1])
-                print("and ")
-                print(T2[childT2])
-                print("is: ")
-                print(pairingResult)
-                """
+                    """
+                    print("Dictionary result found. Result: of ")
+                    print(T1[childT1])
+                    print("and ")
+                    print(T2[childT2])
+                    print("is: ")
+                    print(dictionaryPairingResult)
+                    """
+                    
+                    dictionPairingResultToSend = [dictionaryPairingResult[0], dictionaryPairingResult[1], T2[childT2]]
 
-                # return pairingResult[0]
+                    # print("dictionPairingResultToSend: ")
+                    # print(dictionPairingResultToSend)
+
+                    distancesAndTrees[len(distancesAndTrees) - 1].append(dictionPairingResultToSend)
                 
                 # otherwise we must find the answer ourselves
                 # THIS IS THE RECURSIVE STEP
-                pairingResult = self.leastUpperBound(T1[childT1], T2[childT2])
+                else:
 
-                # self.add_Dictionary(T1[childT1], T2[childT2], pairingResult)
+                    pairingResult = self.leastUpperBound(T1[childT1], T2[childT2])
 
-                """
-                print("LUBT and edit Distance of :")
-                print(T1[childT1])
-                print("and")
-                print(T2[childT2])
-                print("is: ")
-                print(pairingResult)
-                """
+                    """
+                    print("adding to dictionary ")
+                    print(T1[childT1])
+                    print("and ")
+                    print(T2[childT2])
+                    print("as")
+                    print(pairingResult)
+                    """
 
-                # wrap the LUBT in ssome necessary brackets and send child information 
-                # incase the child needs to be duplicated
-                pairingResultToSend = [pairingResult[0], pairingResult[1], T2[childT2]]
-                # print("pairing result to send: ")
-                # print(pairingResultToSend)
+                    self.add_Dictionary(T1[childT1], T2[childT2], pairingResult)
 
-                # append the result to the list of results found for tree one
-                distancesAndTrees[len(distancesAndTrees) - 1].append(pairingResultToSend)
+                    # print("dictionary is now: ")
+                    # print(self.LUBdictionary)
+
+                    """
+                    print("LUBT and edit Distance of :")
+                    print(T1[childT1])
+                    print("and")
+                    print(T2[childT2])
+                    print("is: ")
+                    print(pairingResult)
+                    """
+
+                    # wrap the LUBT in ssome necessary brackets and send child information 
+                    # incase the child needs to be duplicated
+                    pairingResultToSend = [pairingResult[0], pairingResult[1], T2[childT2]]
+                    # print("pairing result to send: ")
+                    # print(pairingResultToSend)
+
+                    # append the result to the list of results found for tree one
+                    distancesAndTrees[len(distancesAndTrees) - 1].append(pairingResultToSend)
         """
         now that we've calculated all the pairs LUBT and edit distances we have to find the 
         best combination, i.e. how we should match children of T1 with children of T2 such that 
@@ -481,7 +507,7 @@ class Forest:
 
     # TO DO: DICTIONARY DOESN'T WORK YET
     # adds and entry to the dictionary of least upper bound trees and edit distances
-    def add_Dictionary(self, T1, T2, entry):
+    def add_Dictionary(self, T1, T2, listingToAdd):
 
         canonT1 = self.canonize_tree(T1)
         canonT2 = self.canonize_tree(T2)
@@ -491,17 +517,17 @@ class Forest:
 
             if entry[0] == canonT1:
     
-                entry.append([canonT2, entry])
+                entry.append([canonT2, listingToAdd])
 
                 return
             
             if entry[0] == canonT2:
 
-                entry.append([canonT1, entry])
+                entry.append([canonT1, listingToAdd])
 
                 return
         # at this point it just needs to be added as a completely new entry
-        self.LUBdictionary.append([canonT1, [canonT2, [entry]]])
+        self.LUBdictionary.append([canonT1, [canonT2, listingToAdd]])
         
         return
 
@@ -1285,15 +1311,16 @@ class Forest:
         T5 = ['f', ['x', ['6']], ['u', ['2', ['q'], ['M']]]]
         T6 = ['c', ['x', ['K', ['l', ['E']], ['4', ['a', ['y'], ['f'], ['l']]], ['G', ['J', ['3'], ['A']]]]], ['K', ['C']]]
         T56 = self.leastUpperBound(T5, T6)
-        # got = ['x', ['x', ['b', ['c'], ['d'], ['e']], ['C'], ['D']]]
         print("T56:")
         print(T56)
 
-        self.generate_forest(4, 5, 3)
-        print(self.forest)
+        self.add_Dictionary(T5, T6, T56)
 
-        for tree in self.forest:
-            print(tree)
+        self.generate_forest(4, 5, 3)
+        # print(self.forest)
+
+        #for tree in self.forest:
+        #    print(tree)
         
         self.gather_edit_distances_for_forest()
 
