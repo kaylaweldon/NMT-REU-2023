@@ -7,41 +7,28 @@ class RandomTreeGenerator:
 
     def create_tree(self, max_levels, list_of_siblings):
 
-        final_tree = [self.generate_random_string(1)]
-
         # if the last level
         if max_levels <= 2:
 
-            for i in range(len(list_of_siblings)):
-
-                final_tree.append(list_of_siblings[i])
-
-            return final_tree
+            return list_of_siblings
         
-        for sibling in list_of_siblings:
+        for siblingIndex in range(0, len(list_of_siblings)):
 
-            list_of_children = self.generate(self.random.randint(0,max_levels), self.max_fan)
+            subtree_rooted_at_sibling = self.generate_actual(max_levels - 1, self.max_fan, list_of_siblings[siblingIndex])
             
-            sibling.append(list_of_children)
-        
-            final_tree.append(sibling)
+            list_of_siblings[siblingIndex] = subtree_rooted_at_sibling
 
-        return final_tree
+        return list_of_siblings
 
     def generate_list_of_siblings(self, max_fan):
 
         list_of_siblings = []
         
-        number_of_siblings = self.random.randint(0, max_fan + 1)
+        number_of_siblings = self.random.randint(0, max_fan)
 
         # append the above number of empty lists
         for i in range(0, number_of_siblings):
-            list_of_siblings.append([])
-
-        # for each empty list in siblings
-        for group in list_of_siblings:
-
-            group.append(self.generate_random_string(1))
+            list_of_siblings.append([self.generate_random_string(1)])
         
         return list_of_siblings
 
@@ -57,18 +44,15 @@ class RandomTreeGenerator:
 
         return random_string
     
-    def generate(self, max_levels, max_fan):
+    def generate_actual(self, max_levels, max_fan, root):
 
         self.max_fan = max_fan
 
         #handle three special cases
-
-        #if max_levels == 0:
-           # return 
         
         if max_levels <= 1:
 
-            return [self.generate_random_string(1)]
+            return root
         
         if max_levels == 2:
 
@@ -76,29 +60,35 @@ class RandomTreeGenerator:
 
             for i in range(0, self.random.randint(1,self.max_fan)):
 
-                final_tree.append([self.generate_random_string(1)])
+                root.append([self.generate_random_string(1)])
             
-            return final_tree
+            return root
 
         # otherwise
 
         # generate list of base children
-        self.list_of_base_children = self.generate_list_of_siblings(self.max_fan)
+        list_of_base_children = self.generate_list_of_siblings(self.max_fan)
 
+        children_to_append = self.create_tree(max_levels - 1, list_of_base_children)
 
-        # return a randomly generated tree
-        return self.create_tree(max_levels - 1, self.list_of_base_children)
+        for child in children_to_append:
+            root.append(child)
+
+        return root
+
+    def generate(self, max_levels, max_fan):
+
+        max_levels_to_be_passed = self.random.randint(0, max_levels)
+
+        return self.generate_actual(max_levels_to_be_passed, max_fan, ['root'])
 
     def __init__(self):
 
-        # initialize list of base children
-        self.list_of_base_children = []
         self.max_fan = 0
 
     def main(self):
 
-        print(self.generate(6, 3))
+        print(self.generate(10, 6, ['root']))
 
 if __name__ == '__main__':
     RandomTreeGenerator().main()
-
