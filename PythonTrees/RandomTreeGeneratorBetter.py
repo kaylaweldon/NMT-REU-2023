@@ -1,4 +1,4 @@
-class RandomTreeGeneratorBetter:
+class RandomTreeGenerator:
 
     import random
     import string
@@ -91,4 +91,4 @@ class RandomTreeGeneratorBetter:
         print(self.generate(10, 6))
 
 if __name__ == '__main__':
-    RandomTreeGeneratorBetter().main()
+    RandomTreeGenerator().main()
