@@ -14,7 +14,7 @@ class RandomTreeGeneratorBetter:
         
         for siblingIndex in range(0, len(list_of_siblings)):
 
-            subtree_rooted_at_sibling = self.generate(self.random.randint(0, max_levels - 1), self.max_fan, list_of_siblings[siblingIndex])
+            subtree_rooted_at_sibling = self.generate_actual(max_levels - 1, self.max_fan, list_of_siblings[siblingIndex])
             
             list_of_siblings[siblingIndex] = subtree_rooted_at_sibling
 
@@ -44,7 +44,7 @@ class RandomTreeGeneratorBetter:
 
         return random_string
     
-    def generate(self, max_levels, max_fan, root):
+    def generate_actual(self, max_levels, max_fan, root):
 
         self.max_fan = max_fan
 
@@ -76,15 +76,19 @@ class RandomTreeGeneratorBetter:
 
         return root
 
+    def generate(self, max_levels, max_fan):
+
+        max_levels_to_be_passed = self.random.randint(0, max_levels)
+
+        return self.generate_actual(max_levels_to_be_passed, max_fan, ['root'])
+
     def __init__(self):
 
-        # initialize list of base children
-        self.list_of_base_children = []
         self.max_fan = 0
 
     def main(self):
 
-        print(self.generate(15, 6, ['root']))
+        print(self.generate(10, 6, ['root']))
 
 if __name__ == '__main__':
     RandomTreeGeneratorBetter().main()
