@@ -9,20 +9,78 @@ class Forest:
     # the list containing trees of the forest
     forest = []
 
+    # the list containing edit distances and LUBTs between each tree in the forest
+    forestEditDistanceMatrix = []
+
     # dictionary for keeping track of Least upper bounds found
     # we should store things as their canonical numbers so isomorphic trees can be found
     LUBdictionary = []
 
 
     def __get_forest__(self):
-
         return self.forest
     
-    def anonymize_forest(self, forest):
+    def build_forest_from_matrix_of_matches(self, matrixOfMatches):
         
-        leastEditDistance = forest[0][1][1]
+        anonymized_forest = []
 
-        return None
+        for pairIndex in range(0, len(matrixOfMatches)):
+
+            if pairIndex == len(matrixOfMatches) - 1:
+                continue
+
+            anonymized_forest.append(matrixOfMatches[pairIndex][2][0])
+            anonymized_forest.append(matrixOfMatches[pairIndex][2][0])
+
+        return anonymized_forest
+    
+    def anonymize_forest_greedy(self, editDistanceMatrix):
+
+        indicesOfTakenTrees = []
+        matrixOfMatches = []
+
+        for treeIndex in range(0, len(editDistanceMatrix)):
+            
+            # if it has already been paired, continue
+            if treeIndex in indicesOfTakenTrees:
+                continue
+
+            indicesOfTakenTrees.append(treeIndex)
+            
+            # this is where the edit distance for the first match is stored
+            leastEditDistanceForTree = editDistanceMatrix[treeIndex][1][1][1]
+            indexFound = 1
+
+            # for each pairing available for that tree
+            for matchIndex in range(1, len(editDistanceMatrix[treeIndex])):
+                
+                # if it has already been paired, continue
+                if matchIndex - 1 in indicesOfTakenTrees:
+                    continue
+                
+                if editDistanceMatrix[treeIndex][matchIndex][1][1] < leastEditDistanceForTree:
+
+                    leastEditDistanceForTree = editDistanceMatrix[treeIndex][matchIndex][1][1]
+                    indexFound = matchIndex
+
+                indicesOfTakenTrees.append(matchIndex - 1)
+            
+            
+            matchToAppend = [editDistanceMatrix[treeIndex][0], 
+                             editDistanceMatrix[treeIndex][matchIndex][0],
+                               editDistanceMatrix[treeIndex][matchIndex][1]]
+            
+            matrixOfMatches.append(matchToAppend)
+
+        totalEditDistance = 0
+
+        for pair in matrixOfMatches:
+
+            totalEditDistance += pair[2][1]
+        
+        matrixOfMatches.append(totalEditDistance)
+    
+        return matrixOfMatches
     
     # given a forest, calculate the edit distance and LUBT for every possible 
     # pair of trees within the forest 
@@ -55,6 +113,7 @@ class Forest:
                     LUBTandEditDistance = self.leastUpperBound(sorted_forest[tree], sorted_forest[match])
 
                 self.forestEditDistanceMatrix[tree][match + 1].append(LUBTandEditDistance)
+ 
     
 
     def generate_forest(self, number_of_trees, max_levels, max_fan):
@@ -366,18 +425,7 @@ class Forest:
 
         for child in range(1, len(distancesAndTrees)):
 
-            alteredMatrix.append(distancesAndTrees[child])
-
-            """
-            # starting from range zero so as to include the original subtree associated with the child
-            # although maybe this is not necessary
-            for alteredMatches in range(0, len(distancesAndTrees[child])):
-            
-            #  we append to our altered matrix
-            alteredMatrix[len(alteredMatrix) - 1].append(distancesAndTrees[child][alteredMatches])
-            """
-            
-        
+            alteredMatrix.append(distancesAndTrees[child])     
 
         print("altered Matrix to send recursively for first child replicate case: ")
         print(alteredMatrix)
@@ -1320,7 +1368,10 @@ class Forest:
 
     def main(self):
 
-        self.test_optimal_combination()
+        editDistanceMatrix = [[['B'], [['B'], [['B'], 0]]]]
+        print(self.anonymize_forest_greedy(editDistanceMatrix))
+
+        # self.test_optimal_combination()
         """
         # extra examples
         T5 = ['f', ['x', ['6']], ['u', ['2', ['q'], ['M']]]]
@@ -1328,22 +1379,20 @@ class Forest:
         T56 = self.leastUpperBound(T5, T6)
         print("T56:")
         print(T56)"""
-
+        """
         T7 = ['a', ['b', ['c']], ['d', ['e', ['f'], ['g'], ['h']]]]
         T8 = ['A', ['B', ['C']], ['D', ['E', ['F']]], ['G', ['H', ['I'], ['J']]], ['K', ['L']], ['M', ['N']]]
         T78 = self.leastUpperBound(T7, T8)
         ['x', ['x', ['C']], ['x', ['x', ['f'], ['I'], ['J']]], [['D', ['E', ['F']]], 2], ['K', ['L']], ['M', ['N']]]
         # with edit distance 9
         print("T78: ")
-        print(T78)
+        print(T78)"""
 
-        """self.generate_forest(4, 5, 3)
-        # print(self.forest)
+        self.generate_forest(4, 2, 2)
+        print(self.forest)
 
-        #for tree in self.forest:
-        #    print(tree)
-        
-        self.gather_edit_distances_for_forest()
+        for tree in self.forest:
+            print(tree)
         
         print("forest before sorting: ")
         for tree in self.forest:
@@ -1353,9 +1402,18 @@ class Forest:
 
         print("forest after sorting: ")
         for tree in sorted_forest:
-            print(tree)"""
-        
-        #self.anonymize_forest(sorted_forest)
+            print(tree)
+
+        self.gather_edit_distances_for_forest()
+        print("edit distance matrix not chosen yet: ")
+        print(self.forestEditDistanceMatrix)
+        print("editDistance matrix final: ")
+        anonymized_list = self.anonymize_forest_greedy(self.forestEditDistanceMatrix)
+        print(anonymized_list)
+        print("anonymous forest: ")
+        anonymized_forest = self.build_forest_from_matrix_of_matches(anonymized_list)
+        print(anonymized_forest)
+        print(len(anonymized_forest))
 
 
 
