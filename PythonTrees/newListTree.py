@@ -56,7 +56,7 @@ class newListTree:
             x=[node['x']],
             y=[node['y']],
             mode='markers',
-            marker=dict(size=15, color='rgb(100,100,100)'),
+            marker=dict(size=10, color='rgb(100,100,100)'),
             hoverinfo='none',
             showlegend=False,
         ), row=row, col=col)
@@ -89,7 +89,7 @@ class newListTree:
         return result
 
     def main(self):
-        Forest = self.Forest()
+        """Forest = self.Forest()
         Forest.generate_forest(4, 4, 4)
         niceForest = Forest.__get_forest__()
         lub = Forest.leastUpperBound(niceForest[0], niceForest[1])
@@ -104,13 +104,13 @@ class newListTree:
         lubStr = newListTree.listToString(self, lub[0])
         treeList= [niceForest0, niceForest1, lubStr]
         tree_visualizer = newListTree(treeList)
-        tree_visualizer.visualize_trees()
-        
-        """DataToList = self.DataToList()
+        tree_visualizer.visualize_trees()"""
+
+        DataToList = self.DataToList()
         treeLst = DataToList.dataToList()
         treeLst = newListTree.listToString(self, treeLst)
         tree_visualizer = newListTree(treeLst)
-        tree_visualizer.visualize_trees()"""
+        tree_visualizer.visualize_trees()
 
 if __name__ == '__main__':
     newListTree([[]]).main()
