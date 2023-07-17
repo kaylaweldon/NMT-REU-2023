@@ -1,6 +1,11 @@
 from collections import deque
 
-
+"""Random Tree 1:
+['C', ['N', ['q', ['J'], ['m'], ['f'], ['F']]], ['w', ['O', ['r']]]]
+Random Tree 2:
+['q', ['C', ['b']], ['v', ['f', ['Y'], ['h']]], ['T', ['i', ['U'], ['v'], ['u'], ['m'], ['n']]], ['L', ['T', ['i'], ['J'], ['G'], ['B']]], ['I', ['z']]]
+Common Tree & LUB:
+[['x', ['x', ['x', ['U'], ['v'], ['u'], ['m'], ['n']]], ['x', ['O', ['r']]], ['v', ['f', ['Y'], ['h']]], ['L', ['T', ['i'], ['J'], ['G'], ['B']]], ['I', ['z']]], 14]"""
 class Forest:
 
     from RandomTreeGenerator import RandomTreeGenerator
