@@ -88,7 +88,7 @@ class RandomTreeGeneratorBetter:
 
     def main(self):
 
-        print(self.generate(10, 6, ['root']))
+        print(self.generate(10, 6))
 
 if __name__ == '__main__':
     RandomTreeGeneratorBetter().main()
