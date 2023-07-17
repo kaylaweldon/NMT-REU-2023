@@ -50,7 +50,6 @@ class Forest:
             if treeIndex in indicesOfTakenTrees:
                 continue
 
-            indicesOfTakenTrees.append(treeIndex)
             
             # this is where the edit distance for the first match is stored
             leastEditDistanceForTree = editDistanceMatrix[treeIndex][1][1][1]
@@ -76,6 +75,7 @@ class Forest:
                                editDistanceMatrix[treeIndex][matchIndex][1]]
             
             matrixOfMatches.append(matchToAppend)
+            indicesOfTakenTrees.append(treeIndex)
 
         totalEditDistance = 0
 
