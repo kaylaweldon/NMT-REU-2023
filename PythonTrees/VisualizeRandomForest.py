@@ -2,7 +2,6 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 class newListTree:
     from Forest import Forest
-    from DataToList import DataToList
     def __init__(self, trees):
         self.trees = trees
         self.fig = make_subplots(rows=1, cols=len(trees), shared_yaxes=True, horizontal_spacing=0.05)
@@ -105,12 +104,6 @@ class newListTree:
         treeList= [niceForest0, niceForest1, lubStr]
         tree_visualizer = newListTree(treeList)
         tree_visualizer.visualize_trees()
-
-        """DataToList = self.DataToList()
-        treeLst = DataToList.dataToList()
-        treeLst = newListTree.listToString(self, treeLst)
-        tree_visualizer = newListTree(treeLst)
-        tree_visualizer.visualize_trees()"""
 
 if __name__ == '__main__':
     newListTree([[]]).main()
