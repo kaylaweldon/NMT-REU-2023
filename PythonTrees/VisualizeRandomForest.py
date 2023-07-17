@@ -89,7 +89,7 @@ class newListTree:
 
     def main(self):
         Forest = self.Forest()
-        Forest.generate_forest(4, 4, 4)
+        Forest.generate_forest(4, 7, 4)
         niceForest = Forest.__get_forest__()
         lub = Forest.leastUpperBound(niceForest[0], niceForest[1])
         niceForest0 = newListTree.listToString(self, niceForest[0])
