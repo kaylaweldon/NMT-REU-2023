@@ -67,7 +67,7 @@ class Main:
     nice_forest = Forest()
 
     # generate forest of 5 trees each of max 6 levels
-    nice_forest.generate_forest(4, 6)
+    nice_forest.generate_forest(4, 6, 3)
 
     list_of_trees = nice_forest.__get_forest__()
 
