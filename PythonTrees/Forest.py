@@ -26,14 +26,29 @@ class Forest:
 
         for pairIndex in range(0, len(matrixOfMatches)):
 
-            if pairIndex == len(matrixOfMatches) - 1:
-                continue
-
             anonymized_forest.append(matrixOfMatches[pairIndex][2][0])
             anonymized_forest.append(matrixOfMatches[pairIndex][2][0])
 
         return anonymized_forest
     
+    # brute force method to find the absolute best combination so forest has 2-anonymity
+
+    def anonymize_forest_brute_force(self, editDistanceMatrix):
+
+        combination_options = []
+
+        # base cases
+
+        # if the matrix is 2 x 2
+        if len(editDistanceMatrix) == 2:
+            return None
+
+        # if the matrix is 1 x 1
+        if len(editDistanceMatrix) == 1:
+            return None
+
+        return None 
+
     def anonymize_forest_greedy(self, editDistanceMatrix):
 
         indicesOfTakenTrees = []
@@ -44,14 +59,18 @@ class Forest:
             # if it has already been paired, continue
             if treeIndex in indicesOfTakenTrees:
                 continue
-
             
-            # this is where the edit distance for the first match is stored
-            leastEditDistanceForTree = editDistanceMatrix[treeIndex][1][1][1]
-            indexFound = 1
+            matchIndexToBeginComparison = 1
+
+            while matchIndexToBeginComparison - 1 in indicesOfTakenTrees:
+                matchIndexToBeginComparison += 1
+
+            # this is where the edit distance for the first match is stored 
+            leastEditDistanceForTree = editDistanceMatrix[treeIndex][matchIndexToBeginComparison][1][1]
+            indexFound = matchIndexToBeginComparison
 
             # for each pairing available for that tree
-            for matchIndex in range(1, len(editDistanceMatrix[treeIndex])):
+            for matchIndex in range(matchIndexToBeginComparison, len(editDistanceMatrix[treeIndex])):
                 
                 # if it has already been paired, continue
                 if matchIndex - 1 in indicesOfTakenTrees:
@@ -61,13 +80,13 @@ class Forest:
 
                     leastEditDistanceForTree = editDistanceMatrix[treeIndex][matchIndex][1][1]
                     indexFound = matchIndex
-
-                indicesOfTakenTrees.append(matchIndex - 1)
+                    
+            indicesOfTakenTrees.append(indexFound - 1)
             
             
             matchToAppend = [editDistanceMatrix[treeIndex][0], 
-                             editDistanceMatrix[treeIndex][matchIndex][0],
-                               editDistanceMatrix[treeIndex][matchIndex][1]]
+                             editDistanceMatrix[treeIndex][indexFound][0],
+                               editDistanceMatrix[treeIndex][indexFound][1]]
             
             matrixOfMatches.append(matchToAppend)
             indicesOfTakenTrees.append(treeIndex)
@@ -78,16 +97,18 @@ class Forest:
 
             totalEditDistance += pair[2][1]
         
-        matrixOfMatches.append(totalEditDistance)
+        # matrixOfMatches.append(totalEditDistance)
     
-        return matrixOfMatches
+        return [self.build_forest_from_matrix_of_matches(matrixOfMatches), totalEditDistance]
     
     # given a forest, calculate the edit distance and LUBT for every possible 
     # pair of trees within the forest 
     # puts them in a global structure called forestEditDistanceMatrix
+
     def gather_edit_distances_for_forest(self):
 
-        sorted_forest = self.sort_by_number_of_nodes(self.forest)
+        # conjecture that sorting high to low will yield better results than low to high
+        sorted_forest = self.sort_by_number_of_nodes_high_to_low(self.forest)
 
         self.forestEditDistanceMatrix = []
 
@@ -102,7 +123,7 @@ class Forest:
                 # this represents the trees matching with themselves along the diagonal
                 # instead of filling it in with a zero, we are going to use it to represent 
                 # the case where we choose to duplicate the tree and therefore need to 
-                # create a tree of equal number of nodes
+                # create a tree of equal number of nodes, where the LUBT is equal to the tree itself
                 if match == tree:
 
                     LUBTandEditDistance = [sorted_forest[match], self.number_of_nodes(sorted_forest[match])]
@@ -113,8 +134,9 @@ class Forest:
                     LUBTandEditDistance = self.leastUpperBound(sorted_forest[tree], sorted_forest[match])
 
                 self.forestEditDistanceMatrix[tree][match + 1].append(LUBTandEditDistance)
- 
-    
+
+        return self.forestEditDistanceMatrix
+  
 
     def generate_forest(self, number_of_trees, max_levels, max_fan):
 
@@ -922,7 +944,7 @@ class Forest:
         
         # sort the matrix for ease of further testing
         # sorts from low to high
-        successMatrix = self.sort_by_number_of_nodes(successMatrix)
+        successMatrix = self.sort_by_number_of_nodes_low_to_high(successMatrix)
 
         # if there exists a viable combination in the success matrix
         # then return true
@@ -994,8 +1016,9 @@ class Forest:
         # if we have exhausted all possibilities, no path exists
         return False
 
+
     # quicksort, it sorts from low to high number of nodes
-    def sort_by_number_of_nodes(self, forest):
+    def sort_by_number_of_nodes_high_to_low(self, forest):
 
         if len(forest) <= 1:
             return forest
@@ -1028,9 +1051,66 @@ class Forest:
         
         # sort the high and low arrays, 'same' does not need sorting
 
-        low = self.sort_by_number_of_nodes(low)
+        low = self.sort_by_number_of_nodes_high_to_low(low)
 
-        high = self.sort_by_number_of_nodes(high)
+        high = self.sort_by_number_of_nodes_high_to_low(high)
+
+        # append the three sorted arrays together
+
+        sorted_forest = high
+            
+        if len(same) > 0:
+
+            for same_item in same:
+
+                sorted_forest.append(same_item)
+
+        if len(low) > 0:
+
+            for low_item in low:
+
+                sorted_forest.append(low_item)
+
+
+        return sorted_forest
+
+    # quicksort, it sorts from low to high number of nodes
+    def sort_by_number_of_nodes_low_to_high(self, forest):
+
+        if len(forest) <= 1:
+            return forest
+
+        # choose first tree as pivot
+        pivot = forest[0]
+        number_of_nodes_in_pivot = self.number_of_nodes(pivot)
+
+        # create three arrays
+        low, same, high = [], [], []
+
+        # sort each tree into low, high, or same,
+        # depending on if it has more or less nodes than
+        # the pivot element
+
+        for tree in forest:
+
+            number_of_nodes_in_tree = self.number_of_nodes(tree)
+
+            if number_of_nodes_in_tree == number_of_nodes_in_pivot:
+                same.append(tree)
+
+            if number_of_nodes_in_tree < number_of_nodes_in_pivot:
+
+                low.append(tree)
+            
+            if number_of_nodes_in_tree > number_of_nodes_in_pivot:
+
+                high.append(tree)
+        
+        # sort the high and low arrays, 'same' does not need sorting
+
+        low = self.sort_by_number_of_nodes_low_to_high(low)
+
+        high = self.sort_by_number_of_nodes_low_to_high(high)
 
         # append the three sorted arrays together
 
@@ -1054,7 +1134,7 @@ class Forest:
     def partition_forest(self, k):
 
         # sort the forest
-        self.forest = self.sort_by_number_of_nodes(self.forest)
+        self.forest = self.sort_by_number_of_nodes_low_to_high(self.forest)
 
         # if k is too big there is nothing to be done
         if k >= len(self.forest) + 1:
@@ -1464,6 +1544,46 @@ class Forest:
 
 
     def main(self):
+        
+        self.generate_forest(4, 2, 2)
+        
+        print("forest before sorting: ")
+        for tree in self.forest:
+            print(tree)
+
+        sorted_forest = self.sort_by_number_of_nodes_low_to_high(self.forest)
+
+        print("forest after sorting: ")
+        for tree in sorted_forest:
+            print(tree)
+        
+        print("number of trees in forest: ")
+        print(len(sorted_forest))
+        
+        # testing high to low sorting
+        # highToLow = self.sort_by_number_of_nodes_high_to_low([['root1', ['h']], ['hey', ['i', ['am', ['home']]]], ['root2', ['hey'],['hey']], ['root3'], ['root4', ['l', ['j']], ['m']]])
+        # print(highToLow)
+        # self.forest = [['root1'], ['root2'], ['root3', ['a'], ['I']], ['root4', ['J'], ['q']]]
+        # self.forest = [['root1'], ['root2'], ['root3'], ['root4', ['l'], ['m']]]
+
+        self.forest = [['root4', ['l'], ['m']], ['root1'], ['root2'], ['root3']]
+
+        self.gather_edit_distances_for_forest()
+
+        print("edit distance matrix not chosen yet: ")
+        print(self.forestEditDistanceMatrix)
+
+        print("anonymized forest: ")
+        anonymized_forest = self.anonymize_forest_greedy(self.forestEditDistanceMatrix)
+
+        for tree in anonymized_forest[0]:
+            print(tree)
+
+        print("total edit distance: ")
+        print(anonymized_forest[1])
+
+        print("number of trees in anonymized forest:")
+        print(len(anonymized_forest))
 
         """
         editDistanceMatrix = [[['B'], [['B'], [['B'], 0]]]]
@@ -1500,36 +1620,7 @@ class Forest:
         # [['x', ['x', ['x', ['U'], ['v'], ['u'], ['m'], ['n']]], ['x', ['O', ['r']]], ['v', ['f', ['Y'], ['h']]], ['L', ['T', ['i'], ['J'], ['G'], ['B']]], ['I', ['z']]], 14]
         # got = ['x', ['x', ['x', ['U'], ['v'], ['u'], ['m'], ['n']]], ['x', ['x', ['Y'], ['h']]], ['C', ['b']], ['L', ['T', ['i'], ['J'], ['G'], ['B']]], ['I', ['z']]]
 
-        self.generate_forest(4, 2, 2)
-        
-        print("forest before sorting: ")
-        for tree in self.forest:
-            print(tree)
 
-        sorted_forest = self.sort_by_number_of_nodes(self.forest)
-
-        print("forest after sorting: ")
-        for tree in sorted_forest:
-            print(tree)
-        
-        print("number of trees in forest: ")
-        print(len(sorted_forest))
-
-        self.gather_edit_distances_for_forest()
-
-        print("edit distance matrix not chosen yet: ")
-        print(self.forestEditDistanceMatrix)
-
-        print("editDistance matrix final: ")
-        anonymized_list = self.anonymize_forest_greedy(self.forestEditDistanceMatrix)
-        print(anonymized_list)
-
-        print("anonymous forest: ")
-        anonymized_forest = self.build_forest_from_matrix_of_matches(anonymized_list)
-        print(anonymized_forest)
-
-        print("number of trees in anonymized forest:")
-        print(len(anonymized_forest))
 
 
 
