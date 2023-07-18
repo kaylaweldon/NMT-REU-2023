@@ -88,22 +88,27 @@ class newListTree:
         return result
 
     def main(self):
-        Forest = self.Forest()
-        Forest.generate_forest(4, 10, 6)
-        niceForest = Forest.__get_forest__()
-        lub = Forest.leastUpperBound(niceForest[0], niceForest[1])
-        niceForest0 = newListTree.listToString(self, niceForest[0])
-        niceForest1 = newListTree.listToString(self, niceForest[1])
-        print("Random Tree 1:")
-        print(niceForest[0])
-        print("Random Tree 2:")
-        print(niceForest[1])
-        print("Common Tree & LUB:")
-        print(lub)
-        lubStr = newListTree.listToString(self, lub[0])
-        treeList= [niceForest0, niceForest1, lubStr]
-        tree_visualizer = newListTree(treeList)
-        tree_visualizer.visualize_trees()
+        for i in range (1, 10):
+            #if root skip
+            
+            Forest = self.Forest()
+            Forest.generate_forest(4, 10, 4)
+            niceForest = Forest.__get_forest__()
+            lub = Forest.leastUpperBound(niceForest[0], niceForest[1])
+            niceForest0 = newListTree.listToString(self, niceForest[0])
+            niceForest1 = newListTree.listToString(self, niceForest[1])
+            if len(niceForest0) ==1 or len(niceForest1) ==1:
+                continue
+            print("Random Tree 1:")
+            print(niceForest[0])
+            print("Random Tree 2:")
+            print(niceForest[1])
+            print("Common Tree & LUB:")
+            print(lub)
+            lubStr = newListTree.listToString(self, lub[0])
+            treeList= [niceForest0, niceForest1, lubStr]
+            tree_visualizer = newListTree(treeList)
+            tree_visualizer.visualize_trees()
 
 if __name__ == '__main__':
     newListTree([[]]).main()
