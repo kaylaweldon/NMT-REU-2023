@@ -88,9 +88,7 @@ class newListTree:
         return result
 
     def main(self):
-<<<<<<< HEAD
         for i in range (1, 10):
-            
             Forest = self.Forest()
             Forest.generate_forest(4, 10, 4)
             niceForest = Forest.__get_forest__()
@@ -110,24 +108,6 @@ class newListTree:
             treeList= [niceForest0, niceForest1, lubStr]
             tree_visualizer = newListTree(treeList)
             tree_visualizer.visualize_trees()
-=======
-        Forest = self.Forest()
-        Forest.generate_forest(4, 10, 3)
-        niceForest = Forest.__get_forest__()
-        lub = Forest.leastUpperBound(niceForest[0], niceForest[2])
-        niceForest0 = newListTree.listToString(self, niceForest[0])
-        niceForest1 = newListTree.listToString(self, niceForest[2])
-        print("Random Tree 1:")
-        print(niceForest[0])
-        print("Random Tree 2:")
-        print(niceForest[2])
-        print("Common Tree & LUB:")
-        print(lub)
-        lubStr = newListTree.listToString(self, lub[0])
-        treeList= [niceForest0, niceForest1, lubStr]
-        tree_visualizer = newListTree(treeList)
-        tree_visualizer.visualize_trees()
->>>>>>> f160ae5 (comimt)
 
 if __name__ == '__main__':
     newListTree([[]]).main()

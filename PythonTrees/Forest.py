@@ -113,6 +113,7 @@ class Forest:
                     LUBTandEditDistance = self.leastUpperBound(sorted_forest[tree], sorted_forest[match])
 
                 self.forestEditDistanceMatrix[tree][match + 1].append(LUBTandEditDistance)
+        return self.forestEditDistanceMatrix
  
     
 
