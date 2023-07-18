@@ -89,16 +89,16 @@ class newListTree:
 
     def main(self):
         for i in range (1, 10):
-            #if root skip
             
             Forest = self.Forest()
             Forest.generate_forest(4, 10, 4)
             niceForest = Forest.__get_forest__()
             lub = Forest.leastUpperBound(niceForest[0], niceForest[1])
+            #if either tree is  only root skip
+            if len(niceForest[0]) ==1 or len(niceForest[1]) ==1:
+                continue
             niceForest0 = newListTree.listToString(self, niceForest[0])
             niceForest1 = newListTree.listToString(self, niceForest[1])
-            if len(niceForest0) ==1 or len(niceForest1) ==1:
-                continue
             print("Random Tree 1:")
             print(niceForest[0])
             print("Random Tree 2:")
