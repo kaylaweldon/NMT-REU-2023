@@ -11,7 +11,7 @@ class newListTree:
 
 
     def buildTree(self, tree):
-        if isinstance(tree, list):
+        """ if isinstance(tree, list):
             node = {'children': []}
             for child in tree:
                 child_node = self.buildTree(child)
@@ -19,7 +19,16 @@ class newListTree:
                     node['children'].append(child_node)
             return node
         else:
-            return {'value': tree}
+            return {'value': tree}"""
+        node = {'value': tree[0], 'children': []}
+        for child in tree[1:]:
+            if isinstance(child, list):
+                child_node = self.buildTree(child)
+                if child_node is not None:
+                    node['children'].append(child_node)
+            else:
+                node['children'].append({'value': child})
+        return node
 
     def assign_coordinates(self, node, x=0, y=0, x_shift=1):
         node['x'] = x
@@ -73,26 +82,45 @@ class newListTree:
 
         self.fig.show()
 
-
-    def listToString(self, lst): 
-        result = ""
-        if isinstance(lst, list):
-            result += "["
-            for item in lst:
-                result += self.listToString(item) + ", "
-            result = result.rstrip(", ") + "]"
-        else:
-            result += str(lst)
-        return result
-
     def main(self):
         DataToList = self.DataToList()
         treeLst = DataToList.dataToList()
-        #treeLst = [self.listToString(tree) for tree in treeLst]
         tree_visualizer = newListTree(treeLst)
         tree_visualizer.visualize_trees()
 
 if __name__ == '__main__':
-    DataToList = newListTree.DataToList()
-    treeLst = DataToList.dataToList()
-    newListTree(treeLst).main()
+    tree_data = [
+        ['hotels & travel', ['travel services', ['travel agents']], ['rv parks'], ['bed & breakfast'], 
+         ['hotels'], ['airports']],
+        ['religious organizations', ['churches']],
+        ['automotive', ['gas stations'], ['truck rental', ['trailer rental']], ['body shop'],
+         ['auto repair'], ['car dealers'], ['auto detailing'], ['auto parts']],
+        ['arts & entertainment', ['rodeo']],
+        ['health & medical', ['hospitals'], ['home health care'], ['physical therapy'], ['dentists'],
+         ['counseling & mental health']],
+        ['food', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']],
+        ['nightlife', ['bars'], ['lounges']],
+        ['public services & government', ['landmarks & historical buildings'], ['parks'], ['museums'], 
+         ['police departments'], ['post offices']],       
+        ['local services', ['cemeteries'], ['community service/non-profit'], ['shipping centers'], 
+         ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['community services/non-profit'],
+         ['appraisal services']],
+        ['restaurants', ['american (new)'], ['burgers'], ['breakfast & brunch', ['burgers', ['hot dogs']]],
+         ['chinese', ['buffets']], ['fast food', ['burgers', ['coffee & tea']]], ['fast food', 
+            ['burgers', ['ice cream & frozen yogurt']]], ['mexican'], ['pizza', ['fast food']], 
+            ['pizza', ['chicken wings', ['sandwiches']]], ['sandwiches', ['fast food']]],
+        ['pets', ['animal shelters'], ['veterinarians']],
+        ['shopping', ['discount stores'], ['mobile phones'], ['flowers & gifts'], ['fashion', ["women's clothing"]],
+         ['thrift stores'], ['home & garden', ['hardware stores']], ['home & garden'], ['art galleries'], 
+         ['flea markets'], ['department stores']],
+        ['education', ['middle & high schools'], ['elementary schools'], ['colleges & universities']],
+        ['active life', ['swimming pools'], ['fitness & instructions', ['gyms']], ['golf']],
+        ['financial services', ['banks & credit unions'], ['tax services'], ['insurance'], ['title loans']],
+        ['mass media ', ['radio stations'], ['print media']],
+        ['professional services', ['advertising'], ['web design'], ['business consulting'], ['accountants'], ['bookkeepers'], ['lawyers']],
+        ['home services', ['plumbing'], ['utilities', ['electricity suppliers']], ['real estate', ['real estate agents']], ['real estate ', ['property management']], ['real estate', ['home developers']], ['real estate', ['solar installation']]],
+        ['beauty & spas']]
+    tree_visualizer = newListTree(tree_data)
+    tree_visualizer.main()
+    """tree_visualizer = newListTree(None)
+    tree_visualizer.main()"""
