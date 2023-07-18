@@ -48,6 +48,6 @@ class DataToList:
         for category_entry in categories:
             print(category_entry)
         return categories
-        
 
-
+run = DataToList()  
+run.dataToList()
