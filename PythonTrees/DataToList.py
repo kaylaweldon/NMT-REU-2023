@@ -45,8 +45,8 @@ class DataToList:
                         category_entry.append([subcategory1])
                 categories.append(category_entry)
 
-        for category_entry in categories:
-            print(category_entry)
+        """        for category_entry in categories:
+            print(category_entry)"""
         return categories
 
 run = DataToList()  

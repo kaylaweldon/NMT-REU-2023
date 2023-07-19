@@ -38,7 +38,7 @@ class Forest:
 
     def anonymize_forest_brute_force(self):
 
-        self.gather_edit_distances_for_forest()
+        # self.gather_edit_distances_for_forest()
 
         editDistanceMatrix = self.forestEditDistanceMatrix
 
