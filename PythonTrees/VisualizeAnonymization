@@ -100,32 +100,42 @@ class newListTree:
 
     def main(self):
         Forest = self.Forest()
-        Forest.generate_forest(4, 4, 4)
-        niceForest = Forest.__get_forest__()
+        # Forest.generate_forest(7, 4, 4)
+        niceForest = [['root1', ['h']], ['hey', ['i', ['am', ['home']]]], ['root2', ['hey'],['hey']], ['root3'], ['root4', ['l', ['j']], ['m']]]
         print("original forest:")
         print(niceForest)
 
         treeList = []
-        labels = {}
         for i, tree in enumerate(niceForest):
             treeList.append(self.listToString(tree))
-            labels[i] = self.listToString(tree)
-            print(labels[i])
         
         anonymousForest = Forest.anonymize_forest_greedy() 
-        print("anonymous forest: ")
+        print("anonymous forest greedy: ")
         anonymousList = []
         for i, tree in enumerate(anonymousForest[0]):
             anonymousList.append(self.listToString(tree))
-            labels[i] = f"Anon Node {i}"
         print(anonymousList)
         print("pairs:")
         print(anonymousForest[2])
+        print("Edit distance for anonymous Forest greedy:")
+        print(anonymousForest[1])
+        
+        anonymousForestBruteForce = Forest.anonymize_forest_brute_force() 
+        print("anonymous forest brute force: ")
+        anonymousListBF = []
+        for i, tree in enumerate(anonymousForestBruteForce[0]):
+            anonymousListBF.append(self.listToString(tree))
+        print(anonymousListBF)
+        print("Edit distance for anonymous Forest brute force:")
+        print(anonymousForestBruteForce[1])
 
         original = newListTree(treeList)
         original.visualize_trees()
         anonymized = newListTree(anonymousList)
         anonymized.visualize_trees()
+        anonymizedBF = newListTree(anonymousList)
+        anonymizedBF.visualize_trees()
+
 
 if __name__ == '__main__':
     newListTree([[]]).main()

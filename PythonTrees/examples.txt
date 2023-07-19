@@ -1,0 +1,12 @@
+original forest:
+[['root', ['d', ['k'], ['a']]], ['root', ['d']], ['root', ['v', ['w'], ['r']], ['W', ['z'], ['E']]], ['root'], ['root', ['J'], ['X']], ['root', ['N', ['U'], ['C'], ['K']]], ['root']]
+anonymous forest greedy:
+['[x, [v, [w], [r]], [x, [k], [a]]]', '[x, [v, [w], [r]], [x, [k], [a]]]', '[x, [N, [U], [C], [K]]]', '[x, [N, [U], [C], [K]]]', '[root, [J], [X]]', '[root, [J], [X]]', '[root]', '[root]']
+pairs:
+[[0, 2], [1, 4], [3, 5], [6, 6]]
+Edit distance for anonymous Forest greedy:
+9
+anonymous forest brute force:
+['[x, [v, [w], [r]], [v, [w], [r]]]', '[x, [v, [w], [r]], [v, [w], [r]]]', '[x, [x, [U], [C], [K]]]', '[x, [x, [U], [C], [K]]]', '[root, [d]]', '[root, [d]]', '[root]', '[root]']
+Edit distance for anonymous Forest brute force:
+7
