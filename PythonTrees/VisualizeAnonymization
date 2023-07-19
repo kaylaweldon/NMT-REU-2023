@@ -97,9 +97,8 @@ class newListTree:
         treeList = []
         for tree in niceForest:
             treeList.append(self.listToString(tree))
-
-        editDistanceMatrix = Forest.gather_edit_distances_for_forest() 
-        anonymousForest = Forest.anonymize_forest_greedy(editDistanceMatrix) 
+        
+        anonymousForest = Forest.anonymize_forest_greedy() 
         print("anonymous forest: ")
         anonymousList = []
         for tree in anonymousForest[0]:
