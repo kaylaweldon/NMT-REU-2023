@@ -65,10 +65,16 @@ class Forest:
 
         return None 
 
-    def anonymize_forest_greedy(self, editDistanceMatrix):
+    def anonymize_forest_greedy(self):
+
+        self.gather_edit_distances_for_forest()
+
+        editDistanceMatrix = self.forestEditDistanceMatrix
 
         indicesOfTakenTrees = []
         matrixOfMatches = []
+
+        # to print out which tree was matched with which in the end if you want
         treesMatched = []
 
         for treeIndex in range(0, len(editDistanceMatrix)):
@@ -153,6 +159,7 @@ class Forest:
                     LUBTandEditDistance = self.leastUpperBound(sorted_forest[tree], sorted_forest[match])
 
                 self.forestEditDistanceMatrix[tree][match + 1].append(LUBTandEditDistance)
+
         return self.forestEditDistanceMatrix
  
     
