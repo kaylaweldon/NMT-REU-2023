@@ -1141,8 +1141,6 @@ class Forest:
 
 
         return sorted_forest
-    
-
 
     def partition_forest(self, k):
 
@@ -1587,7 +1585,38 @@ class Forest:
         # self.forest = [['root1', ['h']], ['hey', ['i', ['am', ['home']]]], ['root2', ['hey'],['hey']], ['root3'], ['root4', ['l', ['j']], ['m']]]
         # self.forest = [['root1'], ['root2'], ['root3'], ['hey', ['i', ['am', ['home']]]], ['root4', ['l', ['j']], ['m']]]
         # self.forest = [['root1'], ['root2'], ['root3'], ['root4'], ['root5']]
-
+        self.forest = [
+    ['hotels & travel', ['travel services', ['travel agents']], ['rv parks'], ['bed & breakfast'], 
+        ['hotels'], ['airports']],
+    ['religious organizations', ['churches']],
+    ['automotive', ['gas stations'], ['truck rental', ['trailer rental']], ['body shop'],
+        ['auto repair'], ['car dealers'], ['auto detailing'], ['auto parts']],
+    ['arts & entertainment', ['rodeo']],
+    ['health & medical', ['hospitals'], ['home health care'], ['physical therapy'], ['dentists'],
+        ['counseling & mental health']],
+    ['food', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']],
+    ['nightlife', ['bars'], ['lounges']],
+    ['public services & government', ['landmarks & historical buildings'], ['parks'], ['museums'], 
+        ['police departments'], ['post offices']],       
+    ['local services', ['cemeteries'], ['community service/non-profit'], ['shipping centers'], 
+        ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['community services/non-profit'],
+        ['appraisal services']],
+    ['restaurants', ['american (new)'], ['burgers'], ['breakfast & brunch', ['burgers', ['hot dogs']]],
+        ['chinese', ['buffets']], ['fast food', ['burgers', ['coffee & tea']]], ['fast food', 
+        ['burgers', ['ice cream & frozen yogurt']]], ['mexican'], ['pizza', ['fast food']], 
+        ['pizza', ['chicken wings', ['sandwiches']]], ['sandwiches', ['fast food']]],
+    ['pets', ['animal shelters'], ['veterinarians']],
+    ['shopping', ['discount stores'], ['mobile phones'], ['flowers & gifts'], ['fashion', ["women's clothing"]],
+        ['thrift stores'], ['home & garden', ['hardware stores']], ['home & garden'], ['art galleries'], 
+        ['flea markets'], ['department stores']],
+    ['education', ['middle & high schools'], ['elementary schools'], ['colleges & universities']],
+    ['active life', ['swimming pools'], ['fitness & instructions', ['gyms']], ['golf']],
+    ['financial services', ['banks & credit unions'], ['tax services'], ['insurance'], ['title loans']],
+    ['mass media ', ['radio stations'], ['print media']],
+    ['professional services', ['advertising'], ['web design'], ['business consulting'], ['accountants'], ['bookkeepers'], ['lawyers']],
+    ['home services', ['plumbing'], ['utilities', ['electricity suppliers']], ['real estate', ['real estate agents']], ['real estate ', ['property management']], ['real estate', ['home developers']], ['real estate', ['solar installation']]],
+    ['beauty & spas']
+    ]
 
         # self.gather_edit_distances_for_forest()
         print("edit distance matrix: ")
