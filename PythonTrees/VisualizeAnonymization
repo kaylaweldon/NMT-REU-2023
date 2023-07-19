@@ -105,7 +105,8 @@ class newListTree:
         for tree in anonymousForest[0]:
             anonymousList.append(self.listToString(tree))
         print(anonymousList)
-
+        print("pairs:")
+        print(anonymousForest[2])
         original = newListTree(treeList)
         original.visualize_trees()
         anonymized = newListTree(anonymousList)
