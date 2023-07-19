@@ -44,7 +44,8 @@ class newListTree:
                 self.fig.add_trace(go.Scatter(
                     x=[node['x'], child['x']],
                     y=[node['y'], child['y']],
-                    mode='lines',
+                    mode='lines+text',
+                    #text = list[child],
                     line=dict(color='rgb(210,210,210)', width=1),
                     hoverinfo='none',
                     showlegend=False,
@@ -69,10 +70,9 @@ class newListTree:
             self.add_trace(tree_dict, row = row, col = col)
             self.fig.update_xaxes(visible=False, showticklabels=False, row=row, col=col)
             self.fig.update_yaxes(visible=False, showticklabels=False, row= row, col=col)
-        
         self.fig.update_layout(
             hovermode='closest',
-            plot_bgcolor='rgb(255,255,255)'
+            plot_bgcolor='rgb(255,255,255)',
         )
         
         self.fig.show()
@@ -89,7 +89,7 @@ class newListTree:
 
     def main(self):
         Forest = self.Forest()
-        Forest.generate_forest(4, 4, 4)
+        Forest.generate_forest(7, 4, 4)
         niceForest = Forest.__get_forest__()
         print("original forest:")
         print(niceForest)

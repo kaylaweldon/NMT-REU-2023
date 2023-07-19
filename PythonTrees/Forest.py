@@ -134,15 +134,9 @@ class Forest:
                     LUBTandEditDistance = self.leastUpperBound(sorted_forest[tree], sorted_forest[match])
 
                 self.forestEditDistanceMatrix[tree][match + 1].append(LUBTandEditDistance)
-<<<<<<< HEAD
         return self.forestEditDistanceMatrix
  
     
-=======
-
-        return self.forestEditDistanceMatrix
-  
->>>>>>> d6c3dc597bd7a605bc47eb6b7f820213289fae6f
 
     def generate_forest(self, number_of_trees, max_levels, max_fan):
 
