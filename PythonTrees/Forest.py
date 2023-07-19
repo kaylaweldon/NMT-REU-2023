@@ -13,9 +13,8 @@ class Forest:
     forestEditDistanceMatrix = []
 
     # dictionary for keeping track of Least upper bounds found
-    # we should store things as their canonical numbers so isomorphic trees can be found
+    # we store trees as their canonical numbers so isomorphic trees can be found
     LUBdictionary = []
-
 
     def __get_forest__(self):
         return self.forest
@@ -35,17 +34,23 @@ class Forest:
         return anonymized_forest
     
     # brute force method to find the absolute best combination so forest has 2-anonymity
-
+    # returns the return from anonymize_forest_brute_force_recursion
+    # this is the method that the user should call, so they don't need to 
+    # pass in a matrix of matches
     def anonymize_forest_brute_force(self):
 
         # self.gather_edit_distances_for_forest()
 
         editDistanceMatrix = self.forestEditDistanceMatrix
+        
+        complexityCounter = 0
 
-        return self.anonymize_forest_brute_force_recursion(editDistanceMatrix)
+        return self.anonymize_forest_brute_force_recursion(editDistanceMatrix, complexityCounter)
 
-    # returns [anonymized_forest, totalEditdistance]
-    def anonymize_forest_brute_force_recursion(self, editDistanceMatrix):
+    # return: [anonymized forest, total edit distance]
+    def anonymize_forest_brute_force_recursion(self, editDistanceMatrix, complexityCounter):
+
+        complexityCounter += 1
         
         """
         print("edit distance matrix that was recieved in this matrix: ")
@@ -66,9 +71,9 @@ class Forest:
             print("base case reached. returning: ")
             print([[editDistanceMatrix[0][1][1][0], editDistanceMatrix[0][1][1][0]], editDistanceMatrix[0][1][1][1]])
             """
-            
+
             # you must duplicate the last element
-            return [[editDistanceMatrix[0][1][1][0], editDistanceMatrix[0][1][1][0]], editDistanceMatrix[0][1][1][1]]
+            return [[editDistanceMatrix[0][1][1][0], editDistanceMatrix[0][1][1][0]], editDistanceMatrix[0][1][1][1], complexityCounter]
 
         # for each pairing for the first tree
         for optionIndexChosen in range(1, len(editDistanceMatrix[0])):
@@ -93,7 +98,7 @@ class Forest:
 
                 if otherTreeIndex + 1 == optionIndexChosen:
                     continue
-                
+
                 """
                 treeAtOtherTreeIndex = editDistanceMatrix[otherTreeIndex][0]
                 LUBTofFirstTreeAndMatch =  editDistanceMatrix[0][optionIndexChosen][1][0]
@@ -132,7 +137,9 @@ class Forest:
             # this is the recursive step
             if len(alteredEditDistanceMatrix) > 0:
 
-                optimalAlteredPairings = self.anonymize_forest_brute_force_recursion(alteredEditDistanceMatrix)
+                optimalAlteredPairings = self.anonymize_forest_brute_force_recursion(alteredEditDistanceMatrix, complexityCounter)
+                
+                complexityCounter += optimalAlteredPairings[2]
 
                 """
                 print("optimal result of the alternative matrix: ")
@@ -156,6 +163,7 @@ class Forest:
 
         # choose the first to compare with the rest
         bestOption = combination_options[0]
+
         # edit distance of the choice of the first tree plus the total edit distance for the rest of the matrix
         # which is stored at [0][1][1]
         bestEditDistance = bestOption[0][1]
@@ -184,12 +192,7 @@ class Forest:
         for copy in range(0, numberOfCopies):
 
             anonymized_forest.append(bestOption[0][0])
-        
-        # this won't always work, only if it is paired with a tree in the forest next to it. 
 
-        """if bestOption[0][1] > 0:
-
-            anonymized_forest.append(bestOption[0][1])"""
 
         if len(bestOption) > 1:
 
@@ -205,10 +208,17 @@ class Forest:
         print([anonymized_forest, bestEditDistance])
         print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")"""
 
-        return [anonymized_forest, bestEditDistance] 
+        print("complexity Counter: ")
+        print(complexityCounter)
 
+        return [anonymized_forest, bestEditDistance, complexityCounter] 
 
+    """
+    return: [anonymized forest, total edit distance]
+    """
     def anonymize_forest_greedy(self):
+
+        complexityCounter = 0
 
         self.gather_edit_distances_for_forest()
 
@@ -237,6 +247,8 @@ class Forest:
 
             # for each pairing available for that tree
             for matchIndex in range(matchIndexToBeginComparison, len(editDistanceMatrix[treeIndex])):
+
+                complexityCounter += 1
                 
                 # if it has already been paired, continue
                 if matchIndex - 1 in indicesOfTakenTrees:
@@ -259,20 +271,22 @@ class Forest:
             treesMatched.append([treeIndex, indexFound - 1])
 
         totalEditDistance = 0
-        
 
         for pair in matrixOfMatches:
 
             totalEditDistance += pair[2][1]
         
         # matrixOfMatches.append(totalEditDistance)
+
+        print("complexity counter: ")
+        print(complexityCounter)
     
         return [self.build_forest_from_matrix_of_matches(matrixOfMatches), totalEditDistance, treesMatched]
     
     # given a forest, calculate the edit distance and LUBT for every possible 
     # pair of trees within the forest 
     # puts them in a global structure called forestEditDistanceMatrix
-
+    #
     def gather_edit_distances_for_forest(self):
 
         # conjecture that sorting high to low will yield better results than low to high
@@ -305,7 +319,9 @@ class Forest:
 
         return self.forestEditDistanceMatrix
     
-
+    """
+    generates a random forest
+    """
     def generate_forest(self, number_of_trees, max_levels, max_fan):
 
         # initialize a random tree generator
@@ -325,14 +341,7 @@ class Forest:
     """
     def leastUpperBound(self, T1, T2):
 
-        # dictionaryEntry = self.search_Dictionary(T1, T2)
-
-        # if dictionaryEntry != None:
-        #     return dictionaryEntry[0] 
-
-        # base case
-        # if either T1 or T2 consists of a single node
-
+        # base case: if either T1 or T2 consists of a single node
         if len(T1) == 1 or len(T2) == 1:
 
             T1nodes = self.number_of_nodes(T1)
@@ -373,31 +382,14 @@ class Forest:
 
             # for each child of the root of T2
             for childT2 in range(1, len(T2)):
-                
-                """
-                print("pairing with: ")
-                print(T1[childT1])
-                print("is: ")
-                print(T2[childT2])
-                """
 
                 # consult dictionary to see if trees isomorphic to childT1 and childT2 have
                 # already been evaluated
-
                 dictionaryPairingResult = self.search_Dictionary(T1[childT1], T2[childT2])
 
                 # if there was an entry in the dictionary, return the entry
                 if dictionaryPairingResult != None:
 
-                    """
-                    print("Dictionary result found. Result: of ")
-                    print(T1[childT1])
-                    print("and ")
-                    print(T2[childT2])
-                    print("is: ")
-                    print(dictionaryPairingResult)
-                    """
-                    
                     dictionPairingResultToSend = [dictionaryPairingResult[0], dictionaryPairingResult[1], T2[childT2]]
 
                     # print("dictionPairingResultToSend: ")
@@ -406,42 +398,20 @@ class Forest:
                     distancesAndTrees[len(distancesAndTrees) - 1].append(dictionPairingResultToSend)
                 
                 # otherwise we must find the answer ourselves
-                # THIS IS THE RECURSIVE STEP
+                # this is the recursive step
                 else:
 
                     pairingResult = self.leastUpperBound(T1[childT1], T2[childT2])
 
-                    """
-                    print("adding to dictionary ")
-                    print(T1[childT1])
-                    print("and ")
-                    print(T2[childT2])
-                    print("as")
-                    print(pairingResult)
-                    """
-
                     self.add_Dictionary(T1[childT1], T2[childT2], pairingResult)
-
-                    # print("dictionary is now: ")
-                    # print(self.LUBdictionary)
-
-                    """
-                    print("LUBT and edit Distance of :")
-                    print(T1[childT1])
-                    print("and")
-                    print(T2[childT2])
-                    print("is: ")
-                    print(pairingResult)
-                    """
 
                     # wrap the LUBT in ssome necessary brackets and send child information 
                     # incase the child needs to be duplicated
                     pairingResultToSend = [pairingResult[0], pairingResult[1], T2[childT2]]
-                    # print("pairing result to send: ")
-                    # print(pairingResultToSend)
 
                     # append the result to the list of results found for tree one
                     distancesAndTrees[len(distancesAndTrees) - 1].append(pairingResultToSend)
+
         """
         now that we've calculated all the pairs LUBT and edit distances we have to find the 
         best combination, i.e. how we should match children of T1 with children of T2 such that 
@@ -449,18 +419,8 @@ class Forest:
         we have another method that will find this optimal combination called optimal_pairing
         """
 
-        """
-        print("distances and trees to be sent to for optimization: ")
-        print(distancesAndTrees)"""
-        
-
         optimalPairingAndEditDistance = self.optimal_pairing(distancesAndTrees)
-
-        """
-        print("Optimal pairing and edit distance: ")
-        print(optimalPairingAndEditDistance)"""
-        
-            
+         
         # we want to use the above result to contruct a tree out of the LUBTs that it returns
         # along with any leftovers   
         # placeholder joining parent called 'x'
@@ -472,15 +432,6 @@ class Forest:
             finalLUBT.append(LUBT)
         
         finalEditDistance = optimalPairingAndEditDistance[1]
-
-        """
-        print("final return for this recursion of trees ")
-        print(T1)
-        print("and ")
-        print(T2)
-        print("is: ")
-        print([finalLUBT, finalEditDistance])"""
-        
 
         return [finalLUBT, finalEditDistance]
 
@@ -527,7 +478,6 @@ class Forest:
             least_total_edit_distance += self.number_of_nodes(distancesAndTrees[0][matchIndex][2])
         
         # now we compare this to if we had picked any other candidate in match candidates
-
         for potential_match_index in potential_main_match_indices:
 
             editDistanceForMatch = distancesAndTrees[0][potential_match_index][1]
@@ -546,7 +496,6 @@ class Forest:
 
         # now we have to add the total edit distance, which must include the number of nodes of the 
         # leftovers as they will have to be completely duplicated
-
         bestLUBT = distancesAndTrees[0][best_match_index][0]
         LUBTlistToReturn = [bestLUBT]
 
@@ -557,15 +506,6 @@ class Forest:
             
             else:
                 LUBTlistToReturn.append(distancesAndTrees[0][treeIndex][2])
-
-        # add this to the editDistance assocaited with the best pair and we have our final editDistance
-        """
-        print("LUBTlistToReturn: ")
-        print(LUBTlistToReturn)"""
-
-        # this will cause a problem with how ive set it up. really it should be wrapped in the aprentheses, all the above should, and then
-        # they should be unwrapped later.
-        # also each leftover should be appended to LUBTlist to return which starts with the main LUBT 
 
         return [LUBTlistToReturn, least_total_edit_distance]
 
@@ -583,9 +523,6 @@ class Forest:
     """
 
     def optimal_pairing(self, distancesAndTrees):
-
-        # print("distancesAndTrees:")
-        # print(distancesAndTrees)
 
         # initialize a list of leftovers to keep track of
         leftovers = []
@@ -629,68 +566,6 @@ class Forest:
             if len(distancesAndTrees[0]) > 2:
 
                 return self.deal_with_leftovers(distancesAndTrees)
-            # old way to deal with leftovers
-            """ leftover_combination_matrix = []
-
-                matches_with_least_edit_distances = []
-                        
-                leftovers = []
-
-                # find the match with least edit distance and choose that to be paried with the child
-                # pick the editDistance associated with the first match to compare to the rest
-                # as well as keep track of which LUBT it has
-                
-                bestLUBT = distancesAndTrees[0][1][0]
-                leastEditDistance = distancesAndTrees[0][1][1]
-                OGtreeofbestLUBT = distancesAndTrees[0][1][2]
-                # print("loop reached")
-
-                # compare it to the rest
-                for match in range(2, len(distancesAndTrees[0])):
-                    #print("match: ")
-                    #print(match)
-
-                    # if it is smaller 
-                    if distancesAndTrees[0][match][1] < leastEditDistance:
-
-                        # append the current best its LUBT to the leftovers list,
-                        # as it is about to be updated and will no longer be used
-                        leftovers.append(OGtreeofbestLUBT)
-
-                        # update the LUBT and leastEditDistance
-                        bestLUBT = distancesAndTrees[0][match][0]
-                        leastEditDistance = distancesAndTrees[0][match][1]
-                        OGtreeofbestLUBT = distancesAndTrees[0][match][2]
-                
-                    # else just its LUBT should be added to the leftovers (we dont care about its editDistance anymore
-                    else:
-                        leftovers.append(distancesAndTrees[0][match][2])
-                
-                # now we have to add the total edit distance, which must include the number of nodes of the 
-                # leftovers as they will have to be completely duplicated
-
-                numberOfLeftoverNodes = 0
-                LUBTlistToReturn = [bestLUBT]
-
-                print("leftovers: ")
-                print(leftovers)
-
-                for leftover in leftovers:
-
-                        numberOfLeftoverNodes += self.number_of_nodes(leftover)
-                        LUBTlistToReturn.append(leftover)
-
-                # add this to the editDistance assocaited with the best pair and we have our final editDistance
-                print("LUBTlistToReturn: ")
-                print(LUBTlistToReturn)
-
-                totalEditDistance = numberOfLeftoverNodes + leastEditDistance
-
-                # this will cause a problem with how ive set it up. really it should be wrapped in the aprentheses, all the above should, and then
-                # they should be unwrapped later.
-                # also each leftover should be appended to LUBTlist to return which starts with the main LUBT 
-
-                return [LUBTlistToReturn, totalEditDistance]"""
         
         # other wise if it is not a base case
         # we first initialize a data structure to store information about every possible combination of matches
@@ -702,37 +577,22 @@ class Forest:
         combinationOptions[len(combinationOptions) - 1].append([[distancesAndTrees[0][0]]])
         combinationOptions[len(combinationOptions) - 1][0].append(self.number_of_nodes(distancesAndTrees[0][0]))
         combinationOptions[len(combinationOptions) - 1][0].append([distancesAndTrees[0][0]])
-        """
-        print("combination options after adding first child replicate case: ")
-        print(combinationOptions)"""
+        
         
         alteredMatrix = []
 
         for child in range(1, len(distancesAndTrees)):
 
             alteredMatrix.append(distancesAndTrees[child])     
-        """
-        print("altered Matrix to send recursively for first child replicate case: ")
-        print(alteredMatrix)"""
 
         alteredMatrixBestOption = self.optimal_pairing(alteredMatrix)
-
-        """
-        print("altered matrix best option: ")
-        print(alteredMatrixBestOption)"""
 
         alteredMatrixBestOption = self.optimal_pairing(alteredMatrix)
 
         combinationOptions[len(combinationOptions) - 1].append(alteredMatrixBestOption)
-        #print("combinationOptions after adding result of altered matrix: ")
-        #print(combinationOptions)
-
     
         # for each match of the first child in the matrix (distancesAndTrees)
         for match in range(1, len(distancesAndTrees[0])):
-            """
-            print("match chosen: ")
-            print(distancesAndTrees[0][match])"""
 
             # construct a new option and append the match, 
             # which again is a list and looks like match = [LUBT(child, match), d(child, match)]
@@ -748,11 +608,9 @@ class Forest:
             # starting from 1 so as to skip the first child
             for child in range(1, len(distancesAndTrees)):
 
-                # why is this necessary?
                 alteredMatrix.append([])
                 
                 # starting from range zero so as to include the original subtree associated with the child
-                # although maybe this is not necessary
                 for alteredMatches in range(0, len(distancesAndTrees[child])):
                     
                     # if we've reached the chosen column with is taken by the match for the first child, we skip it 
@@ -765,22 +623,9 @@ class Forest:
             # now that we have constructed our altered matrix, we find its best option
             # this is the recursive step
             # it is of the form [bestLUBT, totalEditDistance, leftovers]
-            """
-            print("altered Matrix: ")
-            print(alteredMatrix)"""
-
             alteredMatrixBestOption = self.optimal_pairing(alteredMatrix)
 
-            """
-            print("altered matrix best option: ")
-            print(alteredMatrixBestOption)
-            """
-
             combinationOptions[len(combinationOptions) - 1].append(alteredMatrixBestOption)
-
-            """
-            print("combinationOptions after adding result of altered matrix: ")
-            print(combinationOptions)"""
 
         # finally sum up the edit distances of each of the options
         # assume the first one is the best and compare it to the rest
@@ -812,10 +657,7 @@ class Forest:
 
                 bestEditDistance = optionEditDistance
                 bestOption = option
-        """
-        print("best option:")
-        print(bestOption)"""
-
+    
         bestChildrenToJoin = []
 
         for match in bestOption:
@@ -1300,6 +1142,8 @@ class Forest:
 
         return sorted_forest
     
+
+
     def partition_forest(self, k):
 
         # sort the forest
@@ -1739,12 +1583,13 @@ class Forest:
         # self.forest = [['root3', ['w']], ['root2'], ['root1']]
         # self.forest = [['root4', ['l'], ['m']], ['root3', ['w']], ['root2'], ['root1']]
         # self.forest = [['root1'], ['root2'], ['root3'], ['root4', ['l'], ['m']]]
-        self.forest = [['root1'], ['root2'], ['root3', ['a'], ['I']], ['root4', ['J'], ['q']]]
+        # self.forest = [['root1'], ['root2'], ['root3', ['a'], ['I']], ['root4', ['J'], ['q']]]
         # self.forest = [['root1', ['h']], ['hey', ['i', ['am', ['home']]]], ['root2', ['hey'],['hey']], ['root3'], ['root4', ['l', ['j']], ['m']]]
         # self.forest = [['root1'], ['root2'], ['root3'], ['hey', ['i', ['am', ['home']]]], ['root4', ['l', ['j']], ['m']]]
+        # self.forest = [['root1'], ['root2'], ['root3'], ['root4'], ['root5']]
 
 
-        self.gather_edit_distances_for_forest()
+        # self.gather_edit_distances_for_forest()
         print("edit distance matrix: ")
         print(self.forestEditDistanceMatrix)
 
