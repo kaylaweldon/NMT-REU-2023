@@ -37,15 +37,31 @@ class Forest:
 
         combination_options = []
 
-        # base cases
-
-        # if the matrix is 2 x 2
-        if len(editDistanceMatrix) == 2:
-            return None
-
+        # base case
         # if the matrix is 1 x 1
         if len(editDistanceMatrix) == 1:
-            return None
+
+            # you duplicate the last element
+            return editDistanceMatrix[0][1][1]
+
+        alteredEditDistanceMatrix = []
+
+        for optionIndexChosen in range(1, len(editDistanceMatrix[0])):
+
+            combination_options.append([editDistanceMatrix[0][optionIndexChosen]])
+
+            for otherTreeIndex in range(1, len(editDistanceMatrix)):
+
+                alteredEditDistanceMatrix.append([editDistanceMatrix[otherTreeIndex][0]])
+
+                for pairingOptionIndex in range(1, editDistanceMatrix[otherTreeIndex]):
+
+                    if pairingOptionIndex == optionIndexChosen:
+                        continue
+
+                    alteredEditDistanceMatrix[len(alteredEditDistanceMatrix) - 1].append(editDistanceMatrix[otherTreeIndex][pairingOptionIndex])
+
+            combination_options[len(combination_options) - 1].append(self.anonymize_forest_brute_force(alteredEditDistanceMatrix))
 
         return None 
 
@@ -53,6 +69,7 @@ class Forest:
 
         indicesOfTakenTrees = []
         matrixOfMatches = []
+        treesMatched = []
 
         for treeIndex in range(0, len(editDistanceMatrix)):
             
@@ -90,8 +107,10 @@ class Forest:
             
             matrixOfMatches.append(matchToAppend)
             indicesOfTakenTrees.append(treeIndex)
+            treesMatched.append([treeIndex, indexFound - 1])
 
         totalEditDistance = 0
+        
 
         for pair in matrixOfMatches:
 
@@ -99,7 +118,7 @@ class Forest:
         
         # matrixOfMatches.append(totalEditDistance)
     
-        return [self.build_forest_from_matrix_of_matches(matrixOfMatches), totalEditDistance]
+        return [self.build_forest_from_matrix_of_matches(matrixOfMatches), totalEditDistance, treesMatched]
     
     # given a forest, calculate the edit distance and LUBT for every possible 
     # pair of trees within the forest 
@@ -1566,7 +1585,7 @@ class Forest:
         # self.forest = [['root1'], ['root2'], ['root3', ['a'], ['I']], ['root4', ['J'], ['q']]]
         # self.forest = [['root1'], ['root2'], ['root3'], ['root4', ['l'], ['m']]]
 
-        self.forest = [['root4', ['l'], ['m']], ['root1'], ['root2'], ['root3']]
+        self.forest = [['root4', ['l'], ['m']], ['root1', ['w']], ['root2'], ['root3']]
 
         self.gather_edit_distances_for_forest()
 
@@ -1584,6 +1603,15 @@ class Forest:
 
         print("number of trees in anonymized forest:")
         print(len(anonymized_forest))
+
+        print("which trees were matched")
+
+        for pair in anonymized_forest[2]:
+            print("=========")
+            print(pair[0])
+            print("was matched with")
+            print(pair[1])
+
 
         """
         editDistanceMatrix = [[['B'], [['B'], [['B'], 0]]]]
