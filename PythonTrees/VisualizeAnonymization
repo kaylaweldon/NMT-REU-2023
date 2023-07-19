@@ -8,7 +8,10 @@ class newListTree:
 
 
     def buildTree(self, tree):
-        node = {'children':[]}
+        if not tree:  # If tree is an empty list, return an empty dictionary
+            return {}
+        
+        node = {'children': []}
         child_str = ''
         level = 0
         for char in tree[1:]:
@@ -26,6 +29,11 @@ class newListTree:
                 child_str = ''
             else:
                 child_str += char
+
+        if child_str:
+            # If there's content in child_str, set it as the value for non-list nodes
+            node['value'] = child_str
+
         return node
 
 
@@ -45,21 +53,24 @@ class newListTree:
                     x=[node['x'], child['x']],
                     y=[node['y'], child['y']],
                     mode='lines+text',
-                    #text = list[child],
                     line=dict(color='rgb(210,210,210)', width=1),
                     hoverinfo='none',
                     showlegend=False,
                 ), row=row, col=col)
                 self.add_trace(child, row, col)
-        
+
+        label = node.get('value', '')  # Check if 'value' key exists, otherwise use empty string
+        # Add the node with a marker and label
         self.fig.add_trace(go.Scatter(
             x=[node['x']],
             y=[node['y']],
-            mode='markers',
+            mode='markers+text',  # Changed mode to markers+text for labels
             marker=dict(size=10, color='rgb(100,100,100)'),
+            text=label,  # Set the text for the node (using 'value' if available or empty string)
             hoverinfo='none',
             showlegend=False,
         ), row=row, col=col)
+
 
     def visualize_trees(self):
         for i, tree in enumerate(self.trees):
@@ -74,8 +85,8 @@ class newListTree:
             hovermode='closest',
             plot_bgcolor='rgb(255,255,255)',
         )
-        
         self.fig.show()
+
     def listToString(self, lst): 
         result = ""
         if isinstance(lst, list):
@@ -89,23 +100,28 @@ class newListTree:
 
     def main(self):
         Forest = self.Forest()
-        Forest.generate_forest(7, 4, 4)
+        Forest.generate_forest(4, 4, 4)
         niceForest = Forest.__get_forest__()
         print("original forest:")
         print(niceForest)
 
         treeList = []
-        for tree in niceForest:
+        labels = {}
+        for i, tree in enumerate(niceForest):
             treeList.append(self.listToString(tree))
+            labels[i] = self.listToString(tree)
+            print(labels[i])
         
         anonymousForest = Forest.anonymize_forest_greedy() 
         print("anonymous forest: ")
         anonymousList = []
-        for tree in anonymousForest[0]:
+        for i, tree in enumerate(anonymousForest[0]):
             anonymousList.append(self.listToString(tree))
+            labels[i] = f"Anon Node {i}"
         print(anonymousList)
         print("pairs:")
         print(anonymousForest[2])
+
         original = newListTree(treeList)
         original.visualize_trees()
         anonymized = newListTree(anonymousList)
