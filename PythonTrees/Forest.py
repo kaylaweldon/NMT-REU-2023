@@ -41,13 +41,15 @@ class Forest:
 
         return self.anonymize_forest_brute_force_recursion(editDistanceMatrix)
 
-    # returns [anonymized_forest, totalEditdistance, [pairings]]
+    # returns [anonymized_forest, totalEditdistance]
     def anonymize_forest_brute_force_recursion(self, editDistanceMatrix):
-
+        
+        """
         print("edit distance matrix that was recieved in this matrix: ")
         for child in editDistanceMatrix:
             print(child)
         print("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^")
+        """
 
         combination_options = []
 
@@ -56,9 +58,11 @@ class Forest:
         # base case
         # if the matrix is 1 x 1
         if len(editDistanceMatrix) == 1:
-            
+
+            """
             print("base case reached. returning: ")
             print([[editDistanceMatrix[0][1][1][0], editDistanceMatrix[0][1][1][0]], editDistanceMatrix[0][1][1][1]])
+            """
             
             # you must duplicate the last element
             return [[editDistanceMatrix[0][1][1][0], editDistanceMatrix[0][1][1][0]], editDistanceMatrix[0][1][1][1]]
@@ -66,12 +70,17 @@ class Forest:
         # for each pairing for the first tree
         for optionIndexChosen in range(1, len(editDistanceMatrix[0])):
 
+            """print("this is the pairing for the first tree we are appending to the combination options: ")
+            print([editDistanceMatrix[0][optionIndexChosen][1]])
+            print("________________________________________")"""
+
             # append the LUBT and edit distance associated with that pairing to a new
             # option in the combination matrix
-            print("this is the pairing for the first tree we are appending to the combination options: ")
-            print([editDistanceMatrix[0][optionIndexChosen][1]])
-            print("________________________________________")
             combination_options.append([editDistanceMatrix[0][optionIndexChosen][1]])
+
+            # let's you know how many copies of this LUBT to create at the end, in case other trees can be joined in
+            # the default is 2
+            numberOfCopies = 2
 
             #initialize an altered EditDistanceMatrix
             alteredEditDistanceMatrix = []
@@ -81,9 +90,20 @@ class Forest:
 
                 if otherTreeIndex + 1 == optionIndexChosen:
                     continue
+                
+                """
+                treeAtOtherTreeIndex = editDistanceMatrix[otherTreeIndex][0]
+                LUBTofFirstTreeAndMatch =  editDistanceMatrix[0][optionIndexChosen][1][0]
+                LUBTandED = self.leastUpperBound(editDistanceMatrix[otherTreeIndex][0], editDistanceMatrix[0][optionIndexChosen][1][0])
+                """
 
-                # alteredEditDistanceMatrix = []
+                # this is the case where a tree would already be matched with the LUBT of the first tree and its pair
+                # we do not want to add it to the editDistanceMatrix anymore so we continue
+                """if self.leastUpperBound(editDistanceMatrix[otherTreeIndex][0], editDistanceMatrix[0][optionIndexChosen][1][0])[1] == 0:
 
+                    numberOfCopies += 1
+                    continue
+                """
                 # append the tree to a list in the altered matrix
                 alteredEditDistanceMatrix.append([editDistanceMatrix[otherTreeIndex][0]])
 
@@ -99,26 +119,31 @@ class Forest:
                     pairingOption = editDistanceMatrix[otherTreeIndex][pairingOptionIndex]
 
                     alteredEditDistanceMatrix[len(alteredEditDistanceMatrix) - 1].append(pairingOption)
-
+                
+            """
             print("alteredEditdistanceMatrix to send : ")
             for child in alteredEditDistanceMatrix:
                 print(child)
-            print("+++++++++++++++++++++++++")
+            print("+++++++++++++++++++++++++")"""
+
             # this is the recursive step
             if len(alteredEditDistanceMatrix) > 0:
 
                 optimalAlteredPairings = self.anonymize_forest_brute_force_recursion(alteredEditDistanceMatrix)
 
+                """
                 print("optimal result of the alternative matrix: ")
                 print(optimalAlteredPairings)
+                """
 
                 # append to the combination associated with chosing a particular pairing for the first tree
                 combination_options[len(combination_options) - 1].append(optimalAlteredPairings)
 
+                """
                 print("combination options after appending: ")
                 for option in combination_options:
                     print(option)
-                print("==============================")
+                print("==============================")"""
 
             # else, the two last things were paired with one another
             # this means there will be a combination option which is of length one, and we need to
@@ -148,14 +173,15 @@ class Forest:
 
                 bestOption = combination_options[optionIndex]
                 bestEditDistance = optionEditDistance
-        
+        """
         print("best option: ")
         print(bestOption)
-        print("****************************************")
+        print("****************************************")"""
 
-        anonymized_forest.append(bestOption[0][0])
-        anonymized_forest.append(bestOption[0][0])
+        for copy in range(0, numberOfCopies):
 
+            anonymized_forest.append(bestOption[0][0])
+        
         # this won't always work, only if it is paired with a tree in the forest next to it. 
 
         """if bestOption[0][1] > 0:
@@ -167,14 +193,14 @@ class Forest:
             for tree in bestOption[1][0]:
 
                 anonymized_forest.append(tree)
-
+        """
         print("anonymized forest to return: ")
         print(anonymized_forest)
         print("###############################")
 
         print("end of method reached. returning: ")
         print([anonymized_forest, bestEditDistance])
-        print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+        print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")"""
 
         return [anonymized_forest, bestEditDistance] 
 
@@ -1710,8 +1736,10 @@ class Forest:
         # self.forest = [['root3', ['w']], ['root2'], ['root1']]
         # self.forest = [['root4', ['l'], ['m']], ['root3', ['w']], ['root2'], ['root1']]
         # self.forest = [['root1'], ['root2'], ['root3'], ['root4', ['l'], ['m']]]
-        # self.forest = [['root1'], ['root2'], ['root3', ['a'], ['I']], ['root4', ['J'], ['q']]]
-        self.forest = [['root1', ['h']], ['hey', ['i', ['am', ['home']]]], ['root2', ['hey'],['hey']], ['root3'], ['root4', ['l', ['j']], ['m']]]
+        self.forest = [['root1'], ['root2'], ['root3', ['a'], ['I']], ['root4', ['J'], ['q']]]
+        # self.forest = [['root1', ['h']], ['hey', ['i', ['am', ['home']]]], ['root2', ['hey'],['hey']], ['root3'], ['root4', ['l', ['j']], ['m']]]
+        # self.forest = [['root1'], ['root2'], ['root3'], ['hey', ['i', ['am', ['home']]]], ['root4', ['l', ['j']], ['m']]]
+
 
         self.gather_edit_distances_for_forest()
         print("edit distance matrix: ")
