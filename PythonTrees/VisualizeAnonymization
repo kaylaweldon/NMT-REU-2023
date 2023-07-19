@@ -6,7 +6,7 @@ class newListTree:
         self.trees = trees
         self.fig = make_subplots(rows=1, cols=len(trees), shared_yaxes=True, horizontal_spacing=0.05)
 
-
+    #checks brackets to determine how to structure the tree from a list
     def buildTree(self, tree):
         if not tree:  
             return {}
