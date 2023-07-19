@@ -37,15 +37,31 @@ class Forest:
 
         combination_options = []
 
-        # base cases
-
-        # if the matrix is 2 x 2
-        if len(editDistanceMatrix) == 2:
-            return None
-
+        # base case
         # if the matrix is 1 x 1
         if len(editDistanceMatrix) == 1:
-            return None
+
+            # you duplicate the last element
+            return editDistanceMatrix[0][1][1]
+
+        alteredEditDistanceMatrix = []
+
+        for optionIndexChosen in range(1, len(editDistanceMatrix[0])):
+
+            combination_options.append([editDistanceMatrix[0][optionIndexChosen]])
+
+            for otherTreeIndex in range(1, len(editDistanceMatrix)):
+
+                alteredEditDistanceMatrix.append([editDistanceMatrix[otherTreeIndex][0]])
+
+                for pairingOptionIndex in range(1, editDistanceMatrix[otherTreeIndex]):
+
+                    if pairingOptionIndex == optionIndexChosen:
+                        continue
+
+                    alteredEditDistanceMatrix[len(alteredEditDistanceMatrix) - 1].append(editDistanceMatrix[otherTreeIndex][pairingOptionIndex])
+
+            combination_options[len(combination_options) - 1].append(self.anonymize_forest_brute_force(alteredEditDistanceMatrix))
 
         return None 
 
