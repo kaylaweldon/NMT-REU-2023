@@ -8,7 +8,7 @@ class newListTree:
 
 
     def buildTree(self, tree):
-        if not tree:  # If tree is an empty list, return an empty dictionary
+        if not tree:  
             return {}
         
         node = {'children': []}
@@ -31,7 +31,6 @@ class newListTree:
                 child_str += char
 
         if child_str:
-            # If there's content in child_str, set it as the value for non-list nodes
             node['value'] = child_str
 
         return node
@@ -59,14 +58,13 @@ class newListTree:
                 ), row=row, col=col)
                 self.add_trace(child, row, col)
 
-        label = node.get('value', '')  # Check if 'value' key exists, otherwise use empty string
-        # Add the node with a marker and label
+        label = node.get('value', '')  
         self.fig.add_trace(go.Scatter(
             x=[node['x']],
             y=[node['y']],
-            mode='markers+text',  # Changed mode to markers+text for labels
-            marker=dict(size=10, color='rgb(100,100,100)'),
-            text=label,  # Set the text for the node (using 'value' if available or empty string)
+            mode='markers+text', 
+            marker=dict(size=20, color='rgb(100,100,100)'),
+            text=label, 
             hoverinfo='none',
             showlegend=False,
         ), row=row, col=col)
@@ -100,8 +98,9 @@ class newListTree:
 
     def main(self):
         Forest = self.Forest()
-        # Forest.generate_forest(7, 4, 4)
+        #Forest.generate_forest(7, 4, 4)
         niceForest = [['root1', ['h']], ['hey', ['i', ['am', ['home']]]], ['root2', ['hey'],['hey']], ['root3'], ['root4', ['l', ['j']], ['m']]]
+        Forest.setForest(niceForest)
         print("original forest:")
         print(niceForest)
 

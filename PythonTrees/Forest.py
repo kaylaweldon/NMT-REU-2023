@@ -20,6 +20,9 @@ class Forest:
     def __get_forest__(self):
         return self.forest
     
+    def setForest(self, userForest):
+        self.forest = userForest
+    
     def build_forest_from_matrix_of_matches(self, matrixOfMatches):
         
         anonymized_forest = []
