@@ -12,7 +12,7 @@ down = [ 0 -1];
 left  = [-1  0];
 
 % set order
-order = 2;
+order = 1;
 
 % loop draws the curve by dividing the square into smaller squares and
 % building the curve in each sub-square
@@ -37,5 +37,5 @@ end
 
 A = [0 0; cumsum(A)];
 
-plot(A(:,1), A(:,2), 'clipping', 'off')
+plot(A(:,1), A(:,2), 'clipping', 'off', 'color', 'red', LineWidth=2)
 axis equal, axis off

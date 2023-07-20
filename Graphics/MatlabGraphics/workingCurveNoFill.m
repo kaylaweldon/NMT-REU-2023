@@ -12,7 +12,7 @@ down = [ 0 -1];
 left  = [-1  0];
 
 % set order and grid size
-order = 3;
+order = 2;
 size = 2^(order);
 
 % loop draws the curve by dividing the square into smaller squares and
@@ -40,4 +40,14 @@ plot(Y,X,'k');
 axis off;
 
 plot(A(:, 1), A(:, 2), 'r-', 'clipping', 'off', LineWidth=2); 
+
+offset = 0.4;
+% add cell numbers to the grid
+for i = 0:length(A)-1
+    x_pos = A(i+1, 1); % X-coordinate of the end point of the line segment
+    y_pos = A(i+1, 2); % Y-coordinate of the end point of the line segment
+    cell_number = i;
+    text(x_pos - offset, y_pos - offset, num2str(cell_number), 'HorizontalAlignment', 'left', 'VerticalAlignment', 'bottom', 'FontSize', 9);
+end
+
 axis equal, axis off
