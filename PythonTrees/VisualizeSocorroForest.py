@@ -132,4 +132,10 @@ class newListTree:
 
 if __name__ == '__main__':
         newListTree([[]]).main() 
+        """    greedy = Forest.anonymize_forest_greedy()
+    bruteForce = Forest.anonymize_forest_brute_force()""""""    greedyViz = newListTree(greedy)
+    greedyViz.main()
+
+    bfViz = newListTree(bruteForce)
+    bfViz.main()"""
 
