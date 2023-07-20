@@ -35,7 +35,7 @@ class newListTree:
 
         return node
 
-
+    # assigns (x, y) coordinates to each node in the tree
     def assign_coordinates(self, node, x=0, y=0, x_shift=1):
         node['x'] = x
         node['y'] = y
@@ -45,25 +45,28 @@ class newListTree:
                 x_child = x + (i - (total_children - 1) / 2) * x_shift
                 self.assign_coordinates(child, x_child, y - 1, x_shift / total_children)
 
+    # adds traces for drawing each trees nodes and edges
     def add_trace(self, node, row, col):
         if 'children' in node:
             for child in node['children']:
+                # adds a trace for the edge between parent and each child
                 self.fig.add_trace(go.Scatter(
                     x=[node['x'], child['x']],
                     y=[node['y'], child['y']],
                     mode='lines+text',
-                    line=dict(color='rgb(210,210,210)', width=1),
+                    line=dict(color='black', width=1),
                     hoverinfo='none',
                     showlegend=False,
                 ), row=row, col=col)
+                # recursively adds trace for children
                 self.add_trace(child, row, col)
-
+        #adds trace for current node
         label = node.get('value', '')  
         self.fig.add_trace(go.Scatter(
             x=[node['x']],
             y=[node['y']],
             mode='markers+text', 
-            marker=dict(size=20, color='rgb(100,100,100)'),
+            marker=dict(size=20, color='blue'),
             text=label, 
             hoverinfo='none',
             showlegend=False,
