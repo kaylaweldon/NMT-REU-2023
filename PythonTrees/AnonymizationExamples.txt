@@ -1,0 +1,740 @@
+USING 4 TREES
+complexity counter: 
+6
+['x', ['gas stations'], ['x', ['travel agents']], ['body shop'], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']]
+['x', ['gas stations'], ['x', ['travel agents']], ['body shop'], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']]
+['x', ['rodeo']]
+['x', ['rodeo']]
+total edit distance greedy: 
+2
+number of trees in anonymized forest:
+3
+which trees were matched
+=========
+0
+was matched with
+1
+=========
+2
+was matched with
+3
+running...
+brute-forcedly anonymized forest: 
+['x', ['gas stations'], ['x', ['travel agents']], ['body shop'], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']]
+['x', ['gas stations'], ['x', ['travel agents']], ['body shop'], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']]
+['x', ['rodeo']]
+['x', ['rodeo']]
+total edit distance brute: 
+2
+greedily anonymized forest: 
+['x', ['gas stations'], ['x', ['travel agents']], ['body shop'], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']]
+['x', ['gas stations'], ['x', ['travel agents']], ['body shop'], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']]
+['x', ['rodeo']]
+['x', ['rodeo']]
+total edit distance greedy: 
+2
+USING 6 TREES
+complexity counter: 
+9
+['x', ['gas stations'], ['x', ['travel agents']], ['body shop'], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']]
+['x', ['gas stations'], ['x', ['travel agents']], ['body shop'], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']]
+['x', ['hospitals'], ['home health care'], ['physical therapy'], ['dentists'], ['churches']]
+['x', ['hospitals'], ['home health care'], ['physical therapy'], ['dentists'], ['churches']]
+['arts & entertainment', ['rodeo']]
+['arts & entertainment', ['rodeo']]
+total edit distance greedy: 
+8
+number of trees in anonymized forest:
+3
+which trees were matched
+=========
+0
+was matched with
+1
+=========
+2
+was matched with
+3
+=========
+4
+was matched with
+4
+running...
+brute-forcedly anonymized forest: 
+['x', ['gas stations'], ['x', ['travel agents']], ['body shop'], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']]
+['x', ['gas stations'], ['x', ['travel agents']], ['body shop'], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']]
+['health & medical', ['hospitals'], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['health & medical', ['hospitals'], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['rodeo']]
+['x', ['rodeo']]
+total edit distance brute: 
+8
+greedily anonymized forest: 
+['x', ['gas stations'], ['x', ['travel agents']], ['body shop'], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']]
+['x', ['gas stations'], ['x', ['travel agents']], ['body shop'], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']]
+['x', ['hospitals'], ['home health care'], ['physical therapy'], ['dentists'], ['churches']]
+['x', ['hospitals'], ['home health care'], ['physical therapy'], ['dentists'], ['churches']]
+['arts & entertainment', ['rodeo']]
+['arts & entertainment', ['rodeo']]
+total edit distance greedy: 
+8
+USING 7 TREES 
+complexity counter: 
+16
+['x', ['gas stations'], ['x', ['travel agents']], ['body shop'], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']]
+['x', ['gas stations'], ['x', ['travel agents']], ['body shop'], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']]
+['x', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']]
+['x', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']]
+['x', ['bars'], ['churches']]
+['x', ['bars'], ['churches']]
+['arts & entertainment', ['rodeo']]
+['arts & entertainment', ['rodeo']]
+total edit distance greedy: 
+5
+number of trees in anonymized forest:
+3
+which trees were matched
+=========
+0
+was matched with
+1
+=========
+2
+was matched with
+3
+=========
+4
+was matched with
+5
+=========
+6
+was matched with
+6
+running...
+brute-forcedly anonymized forest: 
+['x', ['gas stations'], ['x', ['travel agents']], ['body shop'], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']]
+['x', ['gas stations'], ['x', ['travel agents']], ['body shop'], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']]
+['x', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']]
+['x', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']]
+['nightlife', ['bars'], ['lounges']]
+['nightlife', ['bars'], ['lounges']]
+['x', ['rodeo']]
+['x', ['rodeo']]
+total edit distance brute: 
+5
+greedily anonymized forest: 
+['x', ['gas stations'], ['x', ['travel agents']], ['body shop'], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']]
+['x', ['gas stations'], ['x', ['travel agents']], ['body shop'], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']]
+['x', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']]
+['x', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']]
+['x', ['bars'], ['churches']]
+['x', ['bars'], ['churches']]
+['arts & entertainment', ['rodeo']]
+['arts & entertainment', ['rodeo']]
+total edit distance greedy: 
+5
+USING 8 TREES ABOUT 1 SECOND
+complexity counter: 
+20
+['x', ['gas stations'], ['x', ['travel agents']], ['body shop'], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']]
+['x', ['gas stations'], ['x', ['travel agents']], ['body shop'], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']]
+['x', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']]
+['x', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['bars'], ['lounges']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['bars'], ['lounges']]
+['x', ['rodeo']]
+['x', ['rodeo']]
+total edit distance greedy: 
+5
+number of trees in anonymized forest:
+3
+which trees were matched
+=========
+0
+was matched with
+1
+=========
+2
+was matched with
+3
+=========
+4
+was matched with
+5
+=========
+6
+was matched with
+7
+running...
+brute-forcedly anonymized forest: 
+['x', ['gas stations'], ['x', ['travel agents']], ['body shop'], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']]
+['x', ['gas stations'], ['x', ['travel agents']], ['body shop'], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']]
+['x', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']]
+['x', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['bars'], ['lounges']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['bars'], ['lounges']]
+['x', ['rodeo']]
+['x', ['rodeo']]
+total edit distance brute: 
+5
+greedily anonymized forest: 
+['x', ['gas stations'], ['x', ['travel agents']], ['body shop'], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']]
+['x', ['gas stations'], ['x', ['travel agents']], ['body shop'], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']]
+['x', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']]
+['x', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['bars'], ['lounges']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['bars'], ['lounges']]
+['x', ['rodeo']]
+['x', ['rodeo']]
+total edit distance greedy: 
+5
+USING 9 TREES TOOK ABOUT 2 SECONDS
+complexity counter: 
+25
+['x', ['cemeteries'], ['truck rental', ['trailer rental']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']]
+['x', ['cemeteries'], ['truck rental', ['trailer rental']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']]
+['x', ['truck rental', ['trailer rental']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['truck rental', ['trailer rental']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']]
+['x', ['bars'], ['churches']]
+['x', ['bars'], ['churches']]
+['arts & entertainment', ['rodeo']]
+['arts & entertainment', ['rodeo']]
+total edit distance greedy: 
+5
+number of trees in anonymized forest:
+3
+which trees were matched
+=========
+0
+was matched with
+1
+=========
+2
+was matched with
+3
+=========
+4
+was matched with
+5
+=========
+6
+was matched with
+7
+=========
+8
+was matched with
+8
+running...
+brute-forcedly anonymized forest: 
+['x', ['cemeteries'], ['truck rental', ['trailer rental']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']]
+['x', ['cemeteries'], ['truck rental', ['trailer rental']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']]
+['x', ['truck rental', ['trailer rental']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['truck rental', ['trailer rental']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']]
+['nightlife', ['bars'], ['lounges']]
+['nightlife', ['bars'], ['lounges']]
+['x', ['rodeo']]
+['x', ['rodeo']]
+total edit distance brute: 
+5
+greedily anonymized forest: 
+['x', ['cemeteries'], ['truck rental', ['trailer rental']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']]
+['x', ['cemeteries'], ['truck rental', ['trailer rental']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']]
+['x', ['truck rental', ['trailer rental']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['truck rental', ['trailer rental']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']]
+['x', ['bars'], ['churches']]
+['x', ['bars'], ['churches']]
+['arts & entertainment', ['rodeo']]
+['arts & entertainment', ['rodeo']]
+total edit distance greedy: 
+5
+
+USING 10 TREES TOOK ABOUT 6 SECONDS
+complexity counter: 
+31
+['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']]]
+['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']]]
+['x', ['cemeteries'], ['community service/non-profit'], ['hospitals'], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['cemeteries'], ['community service/non-profit'], ['hospitals'], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['steakhouses', ['seafood']], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']]
+['x', ['steakhouses', ['seafood']], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['bars'], ['lounges']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['bars'], ['lounges']]
+['x', ['rodeo']]
+['x', ['rodeo']]
+total edit distance greedy: 
+21
+number of trees in anonymized forest:
+3
+which trees were matched
+=========
+0
+was matched with
+1
+=========
+2
+was matched with
+4
+=========
+3
+was matched with
+5
+=========
+6
+was matched with
+7
+=========
+8
+was matched with
+9
+running...
+brute-forcedly anonymized forest: 
+['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']]]
+['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']]]
+['x', ['cemeteries'], ['community service/non-profit'], ['steakhouses', ['seafood']], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']]
+['x', ['cemeteries'], ['community service/non-profit'], ['steakhouses', ['seafood']], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']]
+['x', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']]
+['x', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['bars'], ['lounges']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['bars'], ['lounges']]
+['x', ['rodeo']]
+['x', ['rodeo']]
+total edit distance brute: 
+21
+greedily anonymized forest: 
+['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']]]
+['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']]]
+['x', ['cemeteries'], ['community service/non-profit'], ['hospitals'], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['cemeteries'], ['community service/non-profit'], ['hospitals'], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['steakhouses', ['seafood']], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']]
+['x', ['steakhouses', ['seafood']], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['bars'], ['lounges']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['bars'], ['lounges']]
+['x', ['rodeo']]
+['x', ['rodeo']]
+total edit distance greedy: 
+21
+
+USING 11 TREES
+complexity counter: 
+37
+['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']]]
+['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']]]
+['x', ['cemeteries'], ['community service/non-profit'], ['hospitals'], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['cemeteries'], ['community service/non-profit'], ['hospitals'], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['steakhouses', ['seafood']], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']]
+['x', ['steakhouses', ['seafood']], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['bars'], ['lounges']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['bars'], ['lounges']]
+['x', ['animal shelters'], ['churches']]
+['x', ['animal shelters'], ['churches']]
+['arts & entertainment', ['rodeo']]
+['arts & entertainment', ['rodeo']]
+total edit distance greedy: 
+24
+number of trees in anonymized forest:
+3
+which trees were matched
+=========
+0
+was matched with
+1
+=========
+2
+was matched with
+4
+=========
+3
+was matched with
+5
+=========
+6
+was matched with
+7
+=========
+8
+was matched with
+9
+=========
+10
+was matched with
+10
+running...
+brute-forcedly anonymized forest: 
+['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']]]
+['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']]]
+['local services', ['cemeteries'], ['community service/non-profit'], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']]
+['local services', ['cemeteries'], ['community service/non-profit'], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']]
+['x', ['steakhouses', ['seafood']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['steakhouses', ['seafood']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']]
+['x', ['animal shelters'], ['veterinarians']]
+['x', ['animal shelters'], ['veterinarians']]
+['x', ['rodeo']]
+['x', ['rodeo']]
+total edit distance brute: 
+24
+greedily anonymized forest: 
+['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']]]
+['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']]]
+['x', ['cemeteries'], ['community service/non-profit'], ['hospitals'], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['cemeteries'], ['community service/non-profit'], ['hospitals'], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['steakhouses', ['seafood']], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']]
+['x', ['steakhouses', ['seafood']], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['bars'], ['lounges']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['bars'], ['lounges']]
+['x', ['animal shelters'], ['churches']]
+['x', ['animal shelters'], ['churches']]
+['arts & entertainment', ['rodeo']]
+['arts & entertainment', ['rodeo']]
+total edit distance greedy: 
+24
+USING 12 TREES 
+complexity counter: 
+42
+['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']], ['department stores']]
+['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']], ['department stores']]
+['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']]
+['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']]
+['x', ['steakhouses', ['seafood']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['steakhouses', ['seafood']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']]
+['x', ['animal shelters'], ['veterinarians']]
+['x', ['animal shelters'], ['veterinarians']]
+['x', ['rodeo']]
+['x', ['rodeo']]
+total edit distance greedy: 
+14
+number of trees in anonymized forest:
+3
+which trees were matched
+=========
+0
+was matched with
+1
+=========
+2
+was matched with
+3
+=========
+4
+was matched with
+5
+=========
+6
+was matched with
+7
+=========
+8
+was matched with
+9
+=========
+10
+was matched with
+11
+running...
+brute-forcedly anonymized forest: 
+['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']], ['department stores']]
+['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']], ['department stores']]
+['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']]
+['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']]
+['x', ['steakhouses', ['seafood']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['steakhouses', ['seafood']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']]
+['x', ['animal shelters'], ['veterinarians']]
+['x', ['animal shelters'], ['veterinarians']]
+['x', ['rodeo']]
+['x', ['rodeo']]
+total edit distance brute: 
+14
+greedily anonymized forest: 
+['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']], ['department stores']]
+['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']], ['department stores']]
+['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']]
+['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']]
+['x', ['steakhouses', ['seafood']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['steakhouses', ['seafood']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']]
+['x', ['animal shelters'], ['veterinarians']]
+['x', ['animal shelters'], ['veterinarians']]
+['x', ['rodeo']]
+['x', ['rodeo']]
+total edit distance greedy: 
+14
+
+USING 13 TREES TOOK LESS THAN 10 SECONDS
+complexity counter: 
+49
+['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']], ['department stores']]
+['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']], ['department stores']]
+['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']]
+['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']]
+['x', ['steakhouses', ['seafood']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['steakhouses', ['seafood']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']]
+['x', ['middle & high schools'], ['bars'], ['lounges']]
+['x', ['middle & high schools'], ['bars'], ['lounges']]
+['x', ['animal shelters'], ['churches']]
+['x', ['animal shelters'], ['churches']]
+['arts & entertainment', ['rodeo']]
+['arts & entertainment', ['rodeo']]
+total edit distance greedy: 
+18
+number of trees in anonymized forest:
+3
+which trees were matched
+=========
+0
+was matched with
+1
+=========
+2
+was matched with
+3
+=========
+4
+was matched with
+5
+=========
+6
+was matched with
+7
+=========
+8
+was matched with
+9
+=========
+10
+was matched with
+11
+=========
+12
+was matched with
+12
+running...
+brute-forcedly anonymized forest: 
+['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']], ['department stores']]
+['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']], ['department stores']]
+['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']]
+['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']]
+['x', ['steakhouses', ['seafood']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['steakhouses', ['seafood']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']]
+['education', ['middle & high schools'], ['elementary schools'], ['colleges & universities']]
+['education', ['middle & high schools'], ['elementary schools'], ['colleges & universities']]
+['x', ['animal shelters'], ['veterinarians']]
+['x', ['animal shelters'], ['veterinarians']]
+['x', ['rodeo']]
+['x', ['rodeo']]
+total edit distance brute: 
+18
+greedily anonymized forest: 
+['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']], ['department stores']]
+['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']], ['department stores']]
+['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']]
+['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']]
+['x', ['steakhouses', ['seafood']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['steakhouses', ['seafood']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']]
+['x', ['middle & high schools'], ['bars'], ['lounges']]
+['x', ['middle & high schools'], ['bars'], ['lounges']]
+['x', ['animal shelters'], ['churches']]
+['x', ['animal shelters'], ['churches']]
+['arts & entertainment', ['rodeo']]
+['arts & entertainment', ['rodeo']]
+total edit distance greedy: 
+18
+
+USING 14 TREES TOOJK ABOUT 40 SECONDS
+complexity counter: 
+56
+['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']], ['department stores']]
+['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']], ['department stores']]
+['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']]
+['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']]
+['x', ['steakhouses', ['seafood']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['steakhouses', ['seafood']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']]
+['x', ['middle & high schools'], ['steakhouses', ['seafood']], ['colleges & universities']]
+['x', ['middle & high schools'], ['steakhouses', ['seafood']], ['colleges & universities']]
+['x', ['animal shelters'], ['veterinarians']]
+['x', ['animal shelters'], ['veterinarians']]
+['x', ['rodeo']]
+['x', ['rodeo']]
+total edit distance greedy: 
+15
+number of trees in anonymized forest:
+3
+which trees were matched
+=========
+0
+was matched with
+1
+=========
+2
+was matched with
+3
+=========
+4
+was matched with
+5
+=========
+6
+was matched with
+7
+=========
+8
+was matched with
+9
+=========
+10
+was matched with
+11
+=========
+12
+was matched with
+13
+running...
+brute-forcedly anonymized forest: 
+['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']], ['department stores']]
+['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']], ['department stores']]
+['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']]
+['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']]
+['x', ['steakhouses', ['seafood']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['steakhouses', ['seafood']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']]
+['x', ['middle & high schools'], ['steakhouses', ['seafood']], ['colleges & universities']]
+['x', ['middle & high schools'], ['steakhouses', ['seafood']], ['colleges & universities']]
+['x', ['animal shelters'], ['veterinarians']]
+['x', ['animal shelters'], ['veterinarians']]
+['x', ['rodeo']]
+['x', ['rodeo']]
+total edit distance brute: 
+15
+greedily anonymized forest: 
+['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']], ['department stores']]
+['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']], ['department stores']]
+['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']]
+['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']]
+['x', ['steakhouses', ['seafood']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['steakhouses', ['seafood']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']]
+['x', ['middle & high schools'], ['steakhouses', ['seafood']], ['colleges & universities']]
+['x', ['middle & high schools'], ['steakhouses', ['seafood']], ['colleges & universities']]
+['x', ['animal shelters'], ['veterinarians']]
+['x', ['animal shelters'], ['veterinarians']]
+['x', ['rodeo']]
+['x', ['rodeo']]
+total edit distance greedy: 
+15
+
+USING 15 TREES TOOK ABOUT 2 MINS
+complexity counter: 
+65
+['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']], ['department stores']]
+['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']], ['department stores']]
+['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']]
+['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']]
+['x', ['steakhouses', ['seafood']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['steakhouses', ['seafood']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']]
+['x', ['middle & high schools'], ['steakhouses', ['seafood']], ['colleges & universities']]
+['x', ['middle & high schools'], ['steakhouses', ['seafood']], ['colleges & universities']]
+['x', ['banks & credit unions'], ['tax services'], ['bars'], ['lounges']]
+['x', ['banks & credit unions'], ['tax services'], ['bars'], ['lounges']]
+['x', ['animal shelters'], ['churches']]
+['x', ['animal shelters'], ['churches']]
+['arts & entertainment', ['rodeo']]
+['arts & entertainment', ['rodeo']]
+total edit distance greedy: 
+20
+number of trees in anonymized forest:
+3
+which trees were matched
+=========
+0
+was matched with
+1
+=========
+2
+was matched with
+3
+=========
+4
+was matched with
+5
+=========
+6
+was matched with
+7
+=========
+8
+was matched with
+10
+=========
+9
+was matched with
+11
+=========
+12
+was matched with
+13
+=========
+14
+was matched with
+14
+running...
+brute-forcedly anonymized forest: 
+['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']], ['department stores']]
+['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']], ['department stores']]
+['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']]
+['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']]
+['x', ['steakhouses', ['seafood']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['steakhouses', ['seafood']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']]
+['active life', ['swimming pools'], ['fitness & instructions', ['gyms']], ['golf']]
+['active life', ['swimming pools'], ['fitness & instructions', ['gyms']], ['golf']]
+['x', ['banks & credit unions'], ['middle & high schools'], ['elementary schools'], ['colleges & universities']]
+['x', ['banks & credit unions'], ['middle & high schools'], ['elementary schools'], ['colleges & universities']]
+['x', ['animal shelters'], ['veterinarians']]
+['x', ['animal shelters'], ['veterinarians']]
+['x', ['rodeo']]
+['x', ['rodeo']]
+total edit distance brute: 
+20
+greedily anonymized forest: 
+['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']], ['department stores']]
+['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']], ['department stores']]
+['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']]
+['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']]
+['x', ['steakhouses', ['seafood']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['steakhouses', ['seafood']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']]
+['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']]
+['x', ['middle & high schools'], ['steakhouses', ['seafood']], ['colleges & universities']]
+['x', ['middle & high schools'], ['steakhouses', ['seafood']], ['colleges & universities']]
+['x', ['banks & credit unions'], ['tax services'], ['bars'], ['lounges']]
+['x', ['banks & credit unions'], ['tax services'], ['bars'], ['lounges']]
+['x', ['animal shelters'], ['churches']]
+['x', ['animal shelters'], ['churches']]
+['arts & entertainment', ['rodeo']]
+['arts & entertainment', ['rodeo']]
+total edit distance greedy: 
+20
