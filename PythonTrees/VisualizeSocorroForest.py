@@ -1,25 +1,14 @@
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
-import math
 
 class newListTree:
     from Forest import Forest
-    from DataToList import DataToList
     def __init__(self, trees):
         self.trees = trees    # list of trees to visualize
         self.fig = make_subplots(rows=5, cols=4, shared_yaxes=True, horizontal_spacing=0.05)
 
     # builds a tree-like dictionary from a given list
     def buildTree(self, tree):
-        """ if isinstance(tree, list):
-            node = {'children': []}
-            for child in tree:
-                child_node = self.buildTree(child)
-                if child_node is not None:
-                    node['children'].append(child_node)
-            return node
-        else:
-            return {'value': tree}"""
         node = {'value': tree[0], 'children': []}
         for child in tree[1:]:
             if isinstance(child, list):
@@ -49,7 +38,7 @@ class newListTree:
                     x=[node['x'], child['x']],
                     y=[node['y'], child['y']],
                     mode='lines',
-                    line=dict(color='rgb(210,210,210)', width=1),
+                    line=dict(color='black', width=1),
                     hoverinfo='none',
                     showlegend=False,
                 ), row=row, col=col)
@@ -60,16 +49,14 @@ class newListTree:
             x=[node['x']],
             y=[node['y']],
             mode='markers',
-            marker=dict(size=10, color='rgb(100,100,100)'),
+            marker=dict(size=10, color='blue'),
             hoverinfo='none',
             showlegend=False,
         ), row=row, col=col)
 
     # calculates number of trees to be visualized and sets up the grid layout and number of columns
     def visualize_trees(self):
-        num_trees = len(self.trees)
         num_cols = 4  # Set the number of columns per row (adjust as needed)
-        num_rows = math.ceil(num_trees / num_cols)
 
         # iterate through each tree and visualize it in a subplot
         for i, tree in enumerate(self.trees):
@@ -105,24 +92,21 @@ class newListTree:
         ['public services & government', ['landmarks & historical buildings'], ['parks'], ['museums'], 
             ['police departments'], ['post offices']],    
         ['local services', ['cemeteries'], ['community service/non-profit'], ['shipping centers'], 
-            ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['community services/non-profit'],
+            ['forestry'], ['pest control'], ['funeral services & cemeteries'],
             ['appraisal services']],
         ['restaurants', ['american (new)', ['steakhouses', ['seafood']]], ['burgers', ['fastfood']], ['breakfast & brunch', ['burgers', ['hot dogs']]],
             ['chinese', ['buffets']], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['mexican', ["breakfast & brunch"], ["burgers"]], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], 
             ['sandwiches', ['fast food']]],
         ['pets', ['animal shelters'], ['veterinarians']],
-        ['shopping', ['discount stores'], ['mobile phones'], ['flowers & gifts'], ['fashion', ["women's clothing"]],
-            ['thrift stores'], ['home & garden', ['hardware stores']], ['home & garden'], ['art galleries'], 
-            ['flea markets'], ['department stores']], ['education', ['middle & high schools'], ['elementary schools'], ['colleges & universities']],
-        ['active life', ['swimming pools'], ['fitness & instructions', ['gyms']], ['golf']],
-        ['financial services', ['banks & credit unions'], ['tax services'], ['insurance'], ['title loans']],
-        ['mass media ', ['radio stations'], ['print media']], 
+        ['shopping', ['discount stores'], ['mobile phones'], ['flowers & gifts', ['gift shops']], ['fashion', ["women's clothing"]],
+            ['thrift stores'], ['home & garden', ['hardware stores'], ['furniture stores']], ['art galleries'], 
+            ['flea markets'], ['department stores']],
         ['education', ['middle & high schools'], ['elementary schools'], ['colleges & universities']],
         ['active life', ['swimming pools'], ['fitness & instructions', ['gyms']], ['golf']],
         ['financial services', ['banks & credit unions'], ['tax services'], ['insurance'], ['title loans']],
         ['mass media ', ['radio stations'], ['print media']],
         ['professional services', ['advertising'], ['web design'], ['business consulting'], ['accountants'], ['bookkeepers'], ['lawyers']],
-        ['home services', ['plumbing'], ['utilities', ['electricity suppliers']], ['real estate', ['real estate agents']], ['real estate ', ['property management']], ['real estate', ['home developers']], ['real estate', ['solar installation']]],
+        ['home services', ['plumbing'], ['utilities', ['electricity suppliers']], ['real estate', ['real estate agents'], ['property management'], ['home developers'], ['solar installation']]],
         ['beauty & spas']]
 
         Forest.setForest(niceForest)
@@ -130,34 +114,22 @@ class newListTree:
         print("Original:")
         print(niceForest)
 
-        anonymousForestGreedy = Forest.anonymize_forest_greedy() 
+        """anonymousForestGreedy = Forest.anonymize_forest_greedy() 
         print("anonymous forest greedy: ") 
-        print(anonymousForestGreedy)
+        print(anonymousForestGreedy)"""
 
-        """        anonymousForestBF = Forest.anonymize_forest_brute_force()
+        anonymousForestBF = Forest.anonymize_forest_brute_force()
         print("anonymous forest brute force:")
-        print(anonymousForestBF)"""
+        print(anonymousForestBF)
 
         original = newListTree(niceForest)
         original.visualize_trees()
-
-        anonGreedy = newListTree(anonymousForestGreedy[0])
-        anonGreedy.visualize_trees()
-        """
+        
+        """anonGreedy = newListTree(anonymousForestGreedy[0])
+        anonGreedy.visualize_trees()"""
         anonBf = newListTree(anonymousForestBF[0])
-        anonBf.visualize_trees()"""
-
-
-
-    """        anonymized = newListTree(anonymousList)
-        anonymized.visualize_trees()"""
+        anonBf.visualize_trees()
 
 if __name__ == '__main__':
         newListTree([[]]).main() 
-        """    greedy = Forest.anonymize_forest_greedy()
-    bruteForce = Forest.anonymize_forest_brute_force()""""""    greedyViz = newListTree(greedy)
-    greedyViz.main()
-
-    bfViz = newListTree(bruteForce)
-    bfViz.main()"""
 
