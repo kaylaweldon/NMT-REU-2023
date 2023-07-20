@@ -50,7 +50,7 @@ class Forest:
     # return: [anonymized forest, total edit distance]
     def anonymize_forest_brute_force_recursion(self, editDistanceMatrix, complexityCounter):
 
-        complexityCounter += 1
+        complexityCounter = 0
         
         """
         print("edit distance matrix that was recieved in this matrix: ")
@@ -208,8 +208,8 @@ class Forest:
         print([anonymized_forest, bestEditDistance])
         print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")"""
 
-        print("complexity Counter: ")
-        print(complexityCounter)
+        """print("complexity Counter: ")
+        print(complexityCounter)"""
 
         return [anonymized_forest, bestEditDistance, complexityCounter] 
 

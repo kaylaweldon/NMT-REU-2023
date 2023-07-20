@@ -114,28 +114,22 @@ class newListTree:
         print("Original:")
         print(niceForest)
 
-        """anonymousForestGreedy = Forest.anonymize_forest_greedy() 
+        anonymousForestGreedy = Forest.anonymize_forest_greedy() 
         print("anonymous forest greedy: ") 
-        print(anonymousForestGreedy)"""
+        print(anonymousForestGreedy)
 
-        anonymousForestBF = Forest.anonymize_forest_brute_force()
+        """anonymousForestBF = Forest.anonymize_forest_brute_force()
         print("anonymous forest brute force:")
-        print(anonymousForestBF)
+        print(anonymousForestBF)"""
 
         original = newListTree(niceForest)
         original.visualize_trees()
         
-        """anonGreedy = newListTree(anonymousForestGreedy[0])
-        anonGreedy.visualize_trees()"""
-        anonBf = newListTree(anonymousForestBF[0])
-        anonBf.visualize_trees()
+        anonGreedy = newListTree(anonymousForestGreedy[0])
+        anonGreedy.visualize_trees()
+        """anonBf = newListTree(anonymousForestBF[0])
+        anonBf.visualize_trees()"""
 
 if __name__ == '__main__':
         newListTree([[]]).main() 
-        """    greedy = Forest.anonymize_forest_greedy()
-    bruteForce = Forest.anonymize_forest_brute_force()""""""    greedyViz = newListTree(greedy)
-    greedyViz.main()
-
-    bfViz = newListTree(bruteForce)
-    bfViz.main()"""
 
