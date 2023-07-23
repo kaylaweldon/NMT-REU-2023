@@ -88,26 +88,50 @@ class newListTree:
         return result
 
     def main(self):
-        for i in range (1, 10):
-            Forest = self.Forest()
-            Forest.generate_forest(4, 10, 4)
-            niceForest = Forest.__get_forest__()
-            lub = Forest.leastUpperBound(niceForest[0], niceForest[1])
-            #if either tree is  only root skip
-            if len(niceForest[0]) ==1 or len(niceForest[1]) ==1:
-                continue
-            niceForest0 = newListTree.listToString(self, niceForest[0])
-            niceForest1 = newListTree.listToString(self, niceForest[1])
-            print("Random Tree 1:")
-            print(niceForest[0])
-            print("Random Tree 2:")
-            print(niceForest[1])
-            print("Common Tree & LUB:")
-            print(lub)
-            lubStr = newListTree.listToString(self, lub[0])
-            treeList= [niceForest0, niceForest1, lubStr]
-            tree_visualizer = newListTree(treeList)
-            tree_visualizer.visualize_trees()
+        Forest = self.Forest()
+        Forest.generate_forest(3, 4, 4)
+        niceForest = Forest.__get_forest__()
+        Forest.setForest(niceForest)
+        print(niceForest)
+        niceForest0 = self.listToString(niceForest[0])
+        niceForest1= self.listToString(niceForest[1])
+        niceForest2 = self.listToString(niceForest[2])
+        niceForest = [niceForest0, niceForest1, niceForest2]
+        tree_visualizer = newListTree(niceForest)
+        tree_visualizer.visualize_trees()
+
+        greedy = Forest.anonymize_forest_greedy()
+        bf = Forest.anonymize_forest_brute_force()
+
+        print(greedy)
+        print(bf)
+
+        greedy = self.listToString(greedy[0])
+        bf = self.listToString(bf[0])
+
+        tree_visualizer = newListTree(greedy)
+        tree_visualizer.visualize_trees()
+        tree_visualizer = newListTree(bf)
+        tree_visualizer.visualize_trees()
+
+
+
+        """lub = Forest.leastUpperBound(niceForest[0], niceForest[1])
+        #if either tree is  only root skip
+        if len(niceForest[0]) ==1 or len(niceForest[1]) ==1:
+            continue
+        niceForest0 = newListTree.listToString(self, niceForest[0])
+        niceForest1 = newListTree.listToString(self, niceForest[1])
+        print("Random Tree 1:")
+        print(niceForest[0])
+        print("Random Tree 2:")
+        print(niceForest[1])
+        print("Common Tree & LUB:")
+        print(lub)
+        lubStr = newListTree.listToString(self, lub[0])
+        treeList= [niceForest0, niceForest1, lubStr]
+        tree_visualizer = newListTree(treeList)
+        tree_visualizer.visualize_trees()"""
 
 if __name__ == '__main__':
     newListTree([[]]).main()

@@ -207,12 +207,9 @@ class Forest:
         print([anonymized_forest, bestEditDistance])
         print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")"""
 
-<<<<<<< HEAD
         """print("complexity Counter: ")
         print(complexityCounter)"""
 
-=======
->>>>>>> 27b48c8 (more forest anonymous testing)
         return [anonymized_forest, bestEditDistance, complexityCounter] 
 
     """
