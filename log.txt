@@ -1,0 +1,692 @@
+Original Forest:
+[['a']]
+Num Nodes in original forest:
+1
+complexity counter:
+1
+Greedy:
+[['a'], ['a']]
+Num nodes in greedy:
+2
+
+Original Forest:
+[['a'], ['b']]
+Num Nodes in original forest:
+2
+complexity counter:
+2
+Greedy:
+[['b'], ['b']]
+Num nodes in greedy:
+2
+
+Original Forest:
+[['a', ['c']], ['b']]
+Num Nodes in original forest:
+3
+complexity counter:
+2
+Greedy:
+[['a', ['c']], ['a', ['c']]]
+Num nodes in greedy:
+4
+
+Original Forest:
+[['a', ['c'], ['d']], ['b']]
+Num Nodes in original forest:
+4
+complexity counter:
+2
+Greedy:
+[['a', ['c'], ['d']], ['a', ['c'], ['d']]]
+Num nodes in greedy:
+6
+
+Original Forest:
+[['a', ['c'], ['d']], ['b', ['e']]]
+Num Nodes in the original forest:
+5
+complexity counter:
+2
+Greedy:
+[['x', ['c'], ['e']], ['x', ['c'], ['e']]]
+Num nodes in greedy:
+6
+
+Original Forest:
+[['a', ['c'], ['d']], ['b', ['e', ['f']]]]
+Num Nodes in the original forest:
+6
+complexity counter:
+2
+Greedy:
+[['x', ['c'], ['e', ['f']]], ['x', ['c'], ['e', ['f']]]]
+Num nodes in greedy:
+8
+
+Original Forest:
+[['a', ['c'], ['d']], ['b', ['e', ['f'], ['g']]]]
+Num Nodes in the original forest:
+7
+complexity counter:
+2
+Greedy:
+[['x', ['e', ['f'], ['g']], ['d']], ['x', ['e', ['f'], ['g']], ['d']]]
+Num nodes in greedy:
+10
+
+Original Forest:
+[['a', ['c'], ['d']], ['b', ['e', ['f'], ['g']], ['h']]]
+Num Nodes in the original forest:
+8
+complexity counter:
+2
+Greedy:
+[['x', ['e', ['f'], ['g']], ['d']], ['x', ['e', ['f'], ['g']], ['d']]]
+Num nodes in greedy:
+10
+
+Original Forest:
+[['a', ['c'], ['d']], ['b', ['e', ['f'], ['g']], ['h', ['i']]]]
+Num Nodes in the original forest:
+9
+complexity counter:
+2
+Greedy:
+[['x', ['e', ['f'], ['g']], ['h', ['i']]], ['x', ['e', ['f'], ['g']], ['h', ['i']]]]
+Num nodes in greedy:
+12
+
+Original Forest:
+[['a', ['c'], ['d', ['j']]], ['b', ['e', ['f'], ['g']], ['h', ['i']]]]
+Num Nodes in the original forest:
+10
+complexity counter:
+2
+Greedy:
+[['x', ['e', ['f'], ['g']], ['x', ['j']]], ['x', ['e', ['f'], ['g']], ['x', ['j']]]]
+Num nodes in greedy:
+12
+
+Original Forest:
+[['a', ['c'], ['d', ['j']]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a']]
+Num Nodes in the original forest:
+11
+complexity counter:
+4
+Greedy:
+[['x', ['e', ['f'], ['g']], ['x', ['j']]], ['x', ['e', ['f'], ['g']], ['x', ['j']]], ['a'], ['a']]
+Num nodes in greedy:
+14
+
+Original Forest:
+[['a', ['c'], ['d', ['j']]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b']]]
+Num Nodes in the original forest:
+12
+complexity counter:
+4
+Greedy:
+[['x', ['e', ['f'], ['g']], ['x', ['j']]], ['x', ['e', ['f'], ['g']], ['x', ['j']]], ['a', ['b']], ['a', ['b']]]
+Num nodes in greedy:
+16
+
+Original Forest:
+[['a', ['c'], ['d', ['j']]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b'], ['c']]]
+Num Nodes in the original forest:
+13
+complexity counter:
+4
+Greedy:
+[['x', ['e', ['f'], ['g']], ['x', ['j']]], ['x', ['e', ['f'], ['g']], ['x', ['j']]], ['a', ['b'], ['c']], ['a', ['b'], ['c']]]
+Num nodes in greedy:
+18
+Original Forest:
+[['a', ['c'], ['d', ['j']]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b'], ['c'], ['d']]]
+Num Nodes in the original forest:
+14
+complexity counter:
+4
+Greedy:
+[['x', ['e', ['f'], ['g']], ['x', ['j']]], ['x', ['e', ['f'], ['g']], ['x', ['j']]], ['a', ['b'], ['c'], ['d']], ['a', ['b'], ['c'], ['d']]]
+Num nodes in greedy:
+20
+
+Original Forest:
+[['a', ['c'], ['d', ['j']]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b'], ['c'], ['d'], ['e']]]
+Num Nodes in the original forest:
+15
+complexity counter:
+5
+Greedy:
+[['x', ['e', ['f'], ['g']], ['x', ['j']]], ['x', ['e', ['f'], ['g']], ['x', ['j']]], ['a', ['b'], ['c'], ['d'], ['e']], ['a', ['b'], ['c'], ['d'], ['e']]]
+Num nodes in greedy:
+22
+
+Original Forest:
+[['a', ['c'], ['d', ['j']]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b'], ['c'], ['d'], ['e'], ['f']]]
+Num Nodes in the original forest:
+16
+complexity counter:
+5
+Greedy:
+[['x', ['e', ['f'], ['g']], ['x', ['j']]], ['x', ['e', ['f'], ['g']], ['x', ['j']]], ['a', ['b'], ['c'], ['d'], ['e'], ['f']], ['a', ['b'], ['c'], ['d'], ['e'], ['f']]]
+Num nodes in greedy:
+24
+
+Original Forest:
+[['a', ['c'], ['d', ['j']]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b'], ['c'], ['d'], ['e'], ['f', ['g']]]]
+Num Nodes in the original forest:
+17
+complexity counter:
+5
+Greedy:
+[['x', ['b'], ['c'], ['d'], ['c'], ['x', ['j']]], ['x', ['b'], ['c'], ['d'], ['c'], ['x', ['j']]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['b', ['e', ['f'], ['g']], ['h', ['i']]]]
+Num nodes in greedy:
+26
+
+Original Forest:
+[['a', ['c'], ['d', ['j']]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b'], ['c'], ['d'], ['e'], ['f', ['g', ['h']]]]]
+Num Nodes in the original forest:
+18
+complexity counter:
+5
+Greedy:
+[['x', ['b'], ['c'], ['d'], ['c'], ['x', ['h', ['i']]]], ['x', ['b'], ['c'], ['d'], ['c'], ['x', ['h', ['i']]]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['b', ['e', ['f'], ['g']], ['h', ['i']]]]
+Num nodes in greedy:
+28
+
+Original Forest:
+[['a', ['c'], ['d', ['j', ['k']]]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b'], ['c'], ['d'], ['e'], ['f', ['g', ['h']]]]]
+Num Nodes in the original forest:
+19
+complexity counter:
+5
+Greedy:
+[['x', ['b'], ['c'], ['d'], ['c'], ['x', ['x', ['k']]]], ['x', ['b'], ['c'], ['d'], ['c'], ['x', ['x', ['k']]]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['b', ['e', ['f'], ['g']], ['h', ['i']]]]
+Num nodes in greedy:
+28
+
+Original Forest:
+[['a', ['c'], ['d', ['l'], ['j', ['k']]]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b'], ['c'], ['d'], ['e'], ['f', ['g', ['h']]]]]
+Num Nodes in the original forest:
+20
+complexity counter:
+4
+Greedy:
+[['x', ['b'], ['c'], ['d'], ['c'], ['x', ['x', ['k']], ['l']]], ['x', ['b'], ['c'], ['d'], ['c'], ['x', ['x', ['k']], ['l']]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['b', ['e', ['f'], ['g']], ['h', ['i']]]]
+Num nodes in greedy:
+30
+
+Original Forest:
+[['a', ['c'], ['d', ['l'], ['j', ['k']]]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b'], ['c'], ['d'], ['e'], ['f', ['g', ['h']]]], ['a']]
+Num Nodes in the original forest:
+21
+complexity counter:
+6
+Greedy:
+[['x', ['b'], ['c'], ['d'], ['c'], ['x', ['x', ['k']], ['l']]], ['x', ['b'], ['c'], ['d'], ['c'], ['x', ['x', ['k']], ['l']]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['b', ['e', ['f'], ['g']], ['h', ['i']]]]
+Num nodes in greedy:
+30
+
+Original Forest:
+[['a', ['c'], ['d', ['l'], ['j', ['k']]]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b'], ['c'], ['d'], ['e'], ['f', ['g', ['h']]]], ['a', ['b']]]
+Num Nodes in the original forest:
+22
+complexity counter:
+6
+Greedy:
+[['x', ['b'], ['c'], ['d'], ['c'], ['x', ['x', ['k']], ['l']]], ['x', ['b'], ['c'], ['d'], ['c'], ['x', ['x', ['k']], ['l']]], ['x', ['e', ['f'], ['g']], ['g', ['h']]], ['x', ['e', ['f'], ['g']], ['g', ['h']]]]
+Num nodes in greedy:
+30
+
+Original Forest:
+[['a', ['c'], ['d', ['l'], ['j', ['k']]]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b'], ['c'], ['d'], ['e'], ['f', ['g', ['h']]]], ['a', ['b', ['c']]]]
+Num Nodes in the original forest:
+23
+complexity counter:
+6
+Greedy:
+[['x', ['b'], ['c'], ['d'], ['c'], ['x', ['x', ['k']], ['l']]], ['x', ['b'], ['c'], ['d'], ['c'], ['x', ['x', ['k']], ['l']]], ['x', ['e', ['f'], ['g']], ['x', ['c']]], ['x', ['e', ['f'], ['g']], ['x', ['c']]]]
+Num nodes in greedy:
+30
+
+Original Forest:
+[['a', ['c'], ['d', ['l'], ['j', ['k']]]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b'], ['c'], ['d'], ['e'], ['f', ['g', ['h']]]], ['a', ['b', ['c', ['d']]]]]
+Num Nodes in the original forest:
+24
+complexity counter:
+6
+Greedy:
+[['x', ['b'], ['c'], ['d'], ['c'], ['x', ['x', ['k']], ['l']]], ['x', ['b'], ['c'], ['d'], ['c'], ['x', ['x', ['k']], ['l']]], ['x', ['e', ['f'], ['g']], ['x', ['g', ['h']]]], ['x', ['e', ['f'], ['g']], ['x', ['g', ['h']]]]]
+Num nodes in greedy:
+32
+
+Original Forest:
+[['a', ['c'], ['d', ['l'], ['j', ['k']]]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b'], ['c'], ['d'], ['e'], ['f', ['g', ['h']]]], ['a', ['b', ['c', ['d'], ['e']]]]]
+Num Nodes in the original forest:
+25
+complexity counter:
+6
+Greedy:
+[['x', ['b'], ['c'], ['d'], ['c'], ['x', ['x', ['k']], ['l']]], ['x', ['b'], ['c'], ['d'], ['c'], ['x', ['x', ['k']], ['l']]], ['x', ['e', ['f'], ['g']], ['x', ['e', ['f'], ['g']]]], ['x', ['e', ['f'], ['g']], ['x', ['e', ['f'], ['g']]]]]
+Num nodes in greedy:
+34
+
+Original Forest:
+[['a', ['c'], ['d', ['l'], ['j', ['k']]]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b'], ['c'], ['d'], ['e'], ['f', ['g', ['h']]]], ['a', ['b', ['c', ['d'], ['e', ['f']]]]]]
+Num Nodes in the original forest:
+26
+complexity counter:
+7
+Greedy:
+[['x', ['b'], ['c'], ['d'], ['c'], ['x', ['x', ['k']], ['l']]], ['x', ['b'], ['c'], ['d'], ['c'], ['x', ['x', ['k']], ['l']]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b', ['c', ['d'], ['e', ['f']]]]], ['a', ['b', ['c', ['d'], ['e', ['f']]]]]]
+Num nodes in greedy:
+42
+
+Original Forest:
+[['a', ['c'], ['d', ['l'], ['j', ['k']]]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b'], ['c'], ['d'], ['e'], ['f', ['g', ['h']]]], ['a', ['b', ['c', ['d'], ['e', ['f']]]], ['g']]]
+Num Nodes in the original forest:
+27
+complexity counter:
+7
+Greedy:
+[['x', ['b'], ['c'], ['d'], ['c'], ['x', ['x', ['k']], ['l']]], ['x', ['b'], ['c'], ['d'], ['c'], ['x', ['x', ['k']], ['l']]], ['x', ['x', ['d', ['l'], ['j', ['k']]], ['g']], ['e', ['f']]], ['x', ['x', ['d', ['l'], ['j', ['k']]], ['g']], ['e', ['f']]]]
+Num nodes in greedy:
+36
+
+Original Forest:
+[['a', ['c'], ['d', ['l'], ['j', ['k']]]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b'], ['c'], ['d'], ['e'], ['f', ['g', ['h']]]], ['a', ['b', ['c', ['d'], ['e', ['f']]]], ['g', ['h']]]]
+Num Nodes in the original forest:
+28
+complexity counter:
+7
+Greedy:
+[['x', ['b'], ['c'], ['d'], ['c'], ['x', ['x', ['k']], ['l']]], ['x', ['b'], ['c'], ['d'], ['c'], ['x', ['x', ['k']], ['l']]], ['x', ['x', ['d', ['l'], ['j', ['k']]], ['g']], ['x', ['i']]], ['x', ['x', ['d', ['l'], ['j', ['k']]], ['g']], ['x', ['i']]]]
+Num nodes in greedy:
+36
+
+Original Forest:
+[['a', ['x'], ['c'], ['d', ['l'], ['j', ['k']]]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b'], ['c'], ['d'], ['e'], ['f', ['g', ['h']]]], ['a', ['b', ['c', ['d'], ['e', ['f']]]], ['g', ['h']]]]
+Num Nodes in the original forest:
+29
+complexity counter:
+7
+Greedy:
+[['x', ['b'], ['c'], ['x'], ['c'], ['x', ['x', ['k']], ['l']]], ['x', ['b'], ['c'], ['x'], ['c'], ['x', ['x', ['k']], ['l']]], ['x', ['x', ['d', ['l'], ['j', ['k']]], ['g']], ['x', ['i']]], ['x', ['x', ['d', ['l'], ['j', ['k']]], ['g']], ['x', ['i']]]]
+Num nodes in greedy:
+36
+
+Original Forest:
+[['a', ['x'], ['c', ['l']], ['d', ['l'], ['j', ['k']]]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b'], ['c'], ['d'], ['e'], ['f', ['g', ['h']]]], ['a', ['b', ['c', ['d'], ['e', ['f']]]], ['g', ['h']]]]
+Num Nodes in the original forest:
+30
+complexity counter:
+7
+Greedy:
+[['x', ['x'], ['x', ['i']], ['x', ['f'], ['c', ['l']]]], ['x', ['x'], ['x', ['i']], ['x', ['f'], ['c', ['l']]]], ['x', ['b'], ['c'], ['d'], ['c', ['l']], ['x', ['x', ['d'], ['e', ['f']]]]], ['x', ['b'], ['c'], ['d'], ['c', ['l']], ['x', ['x', ['d'], ['e', ['f']]]]]]
+Num nodes in greedy:
+38
+
+
+Original Forest:
+[['a', ['x'], ['c', ['l']], ['d', ['l'], ['j', ['k']]]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b'], ['c'], ['d'], ['e'], ['f', ['g', ['h']]]], ['a', ['b', ['c', ['d'], ['e', ['f']]]], ['g', ['h']]], ['z']]
+Num Nodes in the original forest:
+31
+complexity counter:
+10
+Greedy:
+[['x', ['x'], ['x', ['i']], ['x', ['f'], ['c', ['l']]]], ['x', ['x'], ['x', ['i']], ['x', ['f'], ['c', ['l']]]], ['x', ['b'], ['c'], ['d'], ['c', ['l']], ['x', ['x', ['d'], ['e', ['f']]]]], ['x', ['b'], ['c'], ['d'], ['c', ['l']], ['x', ['x', ['d'], ['e', ['f']]]]], ['z'], ['z']]
+Num nodes in greedy:
+40
+
+Original Forest:
+[['a', ['x'], ['c', ['l']], ['d', ['l'], ['j', ['k']]]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b'], ['c'], ['d'], ['e'], ['f', ['g', ['h']]]], ['a', ['b', ['c', ['d'], ['e', ['f']]]], ['g', ['h']]], ['z', ['a']]]
+Num Nodes in the original forest:
+32
+complexity counter:
+10
+Greedy:
+[['x', ['x'], ['x', ['i']], ['x', ['f'], ['c', ['l']]]], ['x', ['x'], ['x', ['i']], ['x', ['f'], ['c', ['l']]]], ['x', ['b'], ['c'], ['d'], ['c', ['l']], ['x', ['x', ['d'], ['e', ['f']]]]], ['x', ['b'], ['c'], ['d'], ['c', ['l']], ['x', ['x', ['d'], ['e', ['f']]]]], ['z', ['a']], ['z', ['a']]]
+Num nodes in greedy:
+42
+
+Original Forest:
+[['a', ['x'], ['c', ['l']], ['d', ['l'], ['j', ['k']]]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b'], ['c'], ['d'], ['e'], ['f', ['g', ['h']]]], ['a', ['b', ['c', ['d'], ['e', ['f']]]], ['g', ['h']]], ['z', ['a', ['z']]]]
+Num Nodes in the original forest:
+33
+complexity counter:
+12
+Greedy:
+[['x', ['x'], ['x', ['i']], ['x', ['f'], ['c', ['l']]]], ['x', ['x'], ['x', ['i']], ['x', ['f'], ['c', ['l']]]], ['x', ['b'], ['c'], ['d'], ['e'], ['x', ['c', ['l']]]], ['x', ['b'], ['c'], ['d'], ['e'], ['x', ['c', ['l']]]], ['a', ['b', ['c', ['d'], ['e', ['f']]]], ['g', ['h']]], ['a', ['b', ['c', ['d'], ['e', ['f']]]], ['g', ['h']]]]
+Num nodes in greedy:
+48
+
+Original Forest:
+[['a', ['x'], ['c', ['l']], ['d', ['l'], ['j', ['k']]]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b'], ['c'], ['d'], ['e'], ['f', ['g', ['h']]]], ['a', ['b', ['c', ['d'], ['e', ['f']]]], ['g', ['h']]], ['z', ['a', ['z']], ['b']]]
+Num Nodes in the original forest:
+34
+complexity counter:
+12
+Greedy:
+[['x', ['x'], ['x', ['i']], ['x', ['f'], ['c', ['l']]]], ['x', ['x'], ['x', ['i']], ['x', ['f'], ['c', ['l']]]], ['x', ['b'], ['c'], ['d'], ['b'], ['x', ['c', ['l']]]], ['x', ['b'], ['c'], ['d'], ['b'], ['x', ['c', ['l']]]], ['a', ['b', ['c', ['d'], ['e', ['f']]]], ['g', ['h']]], ['a', ['b', ['c', ['d'], ['e', ['f']]]], ['g', ['h']]]]
+Num nodes in greedy:
+48
+
+Original Forest:
+[['a', ['x'], ['c', ['l']], ['d', ['l'], ['j', ['k']]]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b'], ['c'], ['d'], ['e'], ['f', ['g', ['h']]]], ['a', ['b', ['c', ['d'], ['e', ['f']]]], ['g', ['h']]], ['z', ['a', ['z']], ['b'], ['c']]]
+Num Nodes in the original forest:
+35
+complexity counter:
+12
+Greedy:
+[['x', ['x'], ['x', ['i']], ['x', ['f'], ['c', ['l']]]], ['x', ['x'], ['x', ['i']], ['x', ['f'], ['c', ['l']]]], ['x', ['b'], ['c'], ['b'], ['c'], ['x', ['c', ['l']]]], ['x', ['b'], ['c'], ['b'], ['c'], ['x', ['c', ['l']]]], ['a', ['b', ['c', ['d'], ['e', ['f']]]], ['g', ['h']]], ['a', ['b', ['c', ['d'], ['e', ['f']]]], ['g', ['h']]]]
+Num nodes in greedy:
+48
+
+Original Forest:
+[['a', ['x'], ['c', ['l']], ['d', ['l'], ['j', ['k']]]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b'], ['c'], ['d'], ['e'], ['f', ['g', ['h']]]], ['a', ['b', ['c', ['d'], ['e', ['f']]]], ['g', ['h']]], ['z', ['a', ['z']], ['b'], ['c', ['d']]]]
+Num Nodes in the original forest:
+36
+complexity counter:
+12
+Greedy:
+[['x', ['x'], ['x', ['i']], ['x', ['f'], ['c', ['l']]]], ['x', ['x'], ['x', ['i']], ['x', ['f'], ['c', ['l']]]], ['x', ['b'], ['c'], ['c', ['l']], ['b'], ['x', ['c', ['l']]]], ['x', ['b'], ['c'], ['c', ['l']], ['b'], ['x', ['c', ['l']]]], ['a', ['b', ['c', ['d'], ['e', ['f']]]], ['g', ['h']]], ['a', ['b', ['c', ['d'], ['e', ['f']]]], ['g', ['h']]]]
+Num nodes in greedy:
+50
+
+Original Forest:
+[['a', ['x'], ['c', ['l']], ['d', ['l'], ['j', ['k']]]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b'], ['c'], ['d'], ['e'], ['f', ['g', ['h']]]], ['a', ['b', ['c', ['d'], ['e', ['f']]]], ['g', ['h']]], ['z', ['a', ['z']], ['b'], ['c', ['d', ['e']]]]]
+Num Nodes in the original forest:
+37
+complexity counter:
+10
+Greedy:
+[['x', ['b'], ['x', ['z']], ['x', ['l'], ['x', ['h']]]], ['x', ['b'], ['x', ['z']], ['x', ['l'], ['x', ['h']]]], ['x', ['b'], ['c'], ['d'], ['c', ['l']], ['x', ['x', ['d'], ['e', ['f']]]]], ['x', ['b'], ['c'], ['d'], ['c', ['l']], ['x', ['x', ['d'], ['e', ['f']]]]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['b', ['e', ['f'], ['g']], ['h', ['i']]]]
+Num nodes in greedy:
+50
+
+Original Forest:
+[['a', ['x'], ['c', ['l']], ['d', ['l'], ['j', ['k']]]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b'], ['c'], ['d'], ['e'], ['f', ['g', ['h']]]], ['a', ['b', ['c', ['d'], ['e', ['f']]]], ['g', ['h']]], ['z', ['a', ['z']], ['b'], ['c', ['d', ['e']], ['f']]]]
+Num Nodes in the original forest:
+38
+complexity counter:
+10
+Greedy:
+[['x', ['b'], ['x', ['z']], ['x', ['f'], ['x', ['e']]]], ['x', ['b'], ['x', ['z']], ['x', ['f'], ['x', ['e']]]], ['x', ['b'], ['c'], ['d'], ['c', ['l']], ['x', ['x', ['d'], ['e', ['f']]]]], ['x', ['b'], ['c'], ['d'], ['c', ['l']], ['x', ['x', ['d'], ['e', ['f']]]]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['b', ['e', ['f'], ['g']], ['h', ['i']]]]
+Num nodes in greedy:
+50
+
+Original Forest:
+[['a', ['x'], ['c', ['l']], ['d', ['l'], ['j', ['k']]]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b'], ['c'], ['d'], ['e'], ['f', ['g', ['h']]]], ['a', ['b', ['c', ['d'], ['e', ['f']]]], ['g', ['h']]], ['z', ['a', ['z']], ['b'], ['g'], ['c', ['d', ['e']], ['f']]]]
+Num Nodes in the original forest:
+39
+complexity counter:
+9
+Greedy:
+[['x', ['x', ['l']], ['b'], ['x'], ['x', ['x', ['k']], ['l']]], ['x', ['x', ['l']], ['b'], ['x'], ['x', ['x', ['k']], ['l']]], ['x', ['b'], ['c'], ['d'], ['a', ['z']], ['x', ['x', ['l'], ['j', ['k']]]]], ['x', ['b'], ['c'], ['d'], ['a', ['z']], ['x', ['x', ['l'], ['j', ['k']]]]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['b', ['e', ['f'], ['g']], ['h', ['i']]]]
+Num nodes in greedy:
+52
+
+Num Nodes in the original forest:
+40
+complexity counter: 
+11
+Greedy:
+[['x', ['b'], ['c'], ['x'], ['z', ['l']], ['x', ['x', ['k']], ['l']]], ['x', ['b'], ['c'], ['x'], ['z', ['l']], ['x', ['x', ['k']], ['l']]], ['x', ['x', ['z', ['l']]], ['b'], ['g'], ['x', ['f'], ['g']]], ['x', ['x', ['z', ['l']]], ['b'], ['g'], ['x', ['f'], ['g']]], ['a', ['b', ['c', ['d'], ['e', ['f']]]], ['g', ['h']]], ['a', ['b', ['c', ['d'], ['e', ['f']]]], ['g', ['h']]]]
+Num nodes in greedy:
+54
+
+Original Forest:
+[['a', ['x'], ['c', ['l']], ['d', ['l'], ['j', ['k']]]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b'], ['c'], ['d'], ['e'], ['f', ['g', ['h']], ['h']]], ['a', ['b', ['c', ['d'], ['e', ['f']]]], ['g', ['h']]], ['z', ['a', ['z', ['l']]], ['b'], ['g'], ['c', ['d'], ['f']]], ['a']]
+Num Nodes in the original forest:
+41
+complexity counter: 
+12
+Greedy:
+[['x', ['b'], ['c'], ['x'], ['z', ['l']], ['x', ['x', ['k']], ['l']]], ['x', ['b'], ['c'], ['x'], ['z', ['l']], ['x', ['x', ['k']], ['l']]], ['x', ['x', ['z', ['l']]], ['b'], ['g'], ['x', ['f'], ['g']]], ['x', ['x', ['z', ['l']]], ['b'], ['g'], ['x', ['f'], ['g']]], ['a', ['b', ['c', ['d'], ['e', ['f']]]], ['g', ['h']]], ['a', ['b', ['c', ['d'], ['e', ['f']]]], ['g', ['h']]]]
+Num nodes in greedy:
+54
+
+Original Forest:
+[['a', ['x'], ['c', ['l']], ['d', ['l']]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b'], ['c'], ['d'], ['e'], ['f', ['g', ['h']], ['h']]], ['a', ['b', ['c', ['d'], ['e', ['f']]]], ['g', ['h']]], ['z', ['a', ['z', ['l']]], ['b'], ['g'], ['c', ['d'], ['f']]], ['a', ['b', ['c', ['d']]]]]
+Num Nodes in the original forest:
+42
+complexity counter: 
+12
+Greedy:
+[['x', ['b'], ['a', ['z', ['l']]], ['b'], ['g'], ['x', ['z', ['l']], ['f']]], ['x', ['b'], ['a', ['z', ['l']]], ['b'], ['g'], ['x', ['z', ['l']], ['f']]], ['x', ['x', ['f', ['g', ['h']], ['h']]], ['x', ['l']], ['x']], ['x', ['x', ['f', ['g', ['h']], ['h']]], ['x', ['l']], ['x']], ['x', ['e', ['f'], ['g']], ['x', ['z', ['l']]]], ['x', ['e', ['f'], ['g']], ['x', ['z', ['l']]]]]
+Num nodes in greedy:
+54
+
+Original Forest:
+[['a', ['x'], ['c', ['l']], ['d', ['l']]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b'], ['c'], ['d'], ['e'], ['f', ['g', ['h']], ['h']]], ['a', ['b', ['c', ['d'], ['e', ['f']]]], ['g', ['h']]], ['z', ['a', ['z', ['l']]], ['b'], ['g'], ['c', ['d'], ['f']]], ['a', ['b', ['c', ['d', ['e']]]]]]
+Num Nodes in the original forest:
+43
+complexity counter: 
+13
+Greedy:
+[['x', ['b'], ['a', ['z', ['l']]], ['b'], ['g'], ['x', ['z', ['l']], ['f']]], ['x', ['b'], ['a', ['z', ['l']]], ['b'], ['g'], ['x', ['z', ['l']], ['f']]], ['x', ['x', ['x', ['x', ['l']], ['h']]], ['g', ['h']]], ['x', ['x', ['x', ['x', ['l']], ['h']]], ['g', ['h']]], ['x', ['x'], ['x', ['d'], ['h']], ['x', ['i']]], ['x', ['x'], ['x', ['d'], ['h']], ['x', ['i']]]]
+Num nodes in greedy:
+52
+
+Original Forest:
+[['a', ['x'], ['c', ['l']], ['d', ['l']]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b'], ['c'], ['d'], ['e'], ['f', ['g', ['h']], ['h']]], ['a', ['b', ['c', ['d'], ['e', ['f']]]], ['g', ['h']]], ['z', ['a', ['z', ['l']]], ['b'], ['g'], ['c', ['d'], ['f']]], ['a', ['b', ['c', ['d', ['e', ['f']]]]]]]
+Num Nodes in the original forest:
+44
+complexity counter: 
+13
+Greedy:
+[['x', ['b'], ['a', ['z', ['l']]], ['b'], ['g'], ['x', ['z', ['l']], ['f']]], ['x', ['b'], ['a', ['z', ['l']]], ['b'], ['g'], ['x', ['z', ['l']], ['f']]], ['x', ['x', ['f', ['g', ['h']], ['h']]], ['x', ['l']], ['x']], ['x', ['x', ['f', ['g', ['h']], ['h']]], ['x', ['l']], ['x']], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b', ['c', ['d', ['e', ['f']]]]]], ['a', ['b', ['c', ['d', ['e', ['f']]]]]]]
+Num nodes in greedy:
+64
+
+Original Forest:
+[['a', ['x'], ['c', ['l']], ['d', ['l']]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b'], ['c'], ['d'], ['e'], ['f', ['g', ['h']], ['h']]], ['a', ['b', ['c', ['d'], ['e', ['f']]]], ['g', ['h']]], ['z', ['a', ['z', ['l']]], ['b'], ['g'], ['c', ['d'], ['f']]], ['a', ['b', ['c', ['d', ['e', ['f']], ['g']]]]]]
+Num Nodes in the original forest:
+45
+complexity counter: 
+14
+Greedy:
+[['x', ['b'], ['a', ['z', ['l']]], ['b'], ['g'], ['x', ['z', ['l']], ['f']]], ['x', ['b'], ['a', ['z', ['l']]], ['b'], ['g'], ['x', ['z', ['l']], ['f']]], ['x', ['x', ['f', ['g', ['h']], ['h']]], ['x', ['l']], ['x']], ['x', ['x', ['f', ['g', ['h']], ['h']]], ['x', ['l']], ['x']], ['a', ['b', ['c', ['d', ['e', ['f']], ['g']]]]], ['a', ['b', ['c', ['d', ['e', ['f']], ['g']]]]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['b', ['e', ['f'], ['g']], ['h', ['i']]]]
+Num nodes in greedy:
+66
+
+Original Forest:
+[['a', ['x'], ['c', ['l']], ['d', ['l']]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b'], ['c'], ['d'], ['e'], ['f', ['g', ['h']], ['h']]], ['a', ['b', ['c', ['d'], ['e', ['f']]]], ['g', ['h']]], ['z', ['a', ['z', ['l']]], ['b'], ['g'], ['c', ['d'], ['f']]], ['a', ['x'], ['b', ['c', ['d', ['e', ['f']], ['g']]]]]]
+Num Nodes in the original forest:
+46
+complexity counter: 
+12
+Greedy:
+[['x', ['b'], ['a', ['z', ['l']]], ['b'], ['g'], ['x', ['z', ['l']], ['f']]], ['x', ['b'], ['a', ['z', ['l']]], ['b'], ['g'], ['x', ['z', ['l']], ['f']]], ['x', ['x', ['x', ['x', ['d'], ['e', ['f']]], ['h']]], ['z', ['l']]], ['x', ['x', ['x', ['x', ['d'], ['e', ['f']]], ['h']]], ['z', ['l']]], ['x', ['x'], ['x', ['d'], ['h']], ['x', ['i']]], ['x', ['x'], ['x', ['d'], ['h']], ['x', ['i']]]]
+Num nodes in greedy:
+56
+
+Original Forest:
+[['a', ['x'], ['c', ['l']], ['d', ['l']]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b'], ['c'], ['d'], ['e'], ['f', ['g', ['h']], ['h']]], ['a', ['b', ['c', ['d'], ['e', ['f']]]], ['g', ['h']]], ['z', ['a', ['z', ['l']]], ['b'], ['g'], ['c', ['d'], ['f']]], ['a', ['x'], ['b', ['c', ['d', ['e', ['f']], ['x'], ['g']]]]]]
+Num Nodes in the original forest:
+47
+complexity counter: 
+12
+Greedy:
+[['x', ['b'], ['a', ['z', ['l']]], ['b'], ['g'], ['x', ['z', ['l']], ['f']]], ['x', ['b'], ['a', ['z', ['l']]], ['b'], ['g'], ['x', ['z', ['l']], ['f']]], ['x', ['z', ['l']], ['x', ['x', ['x', ['e', ['f']], ['x'], ['f']], ['d']]]], ['x', ['z', ['l']], ['x', ['x', ['x', ['e', ['f']], ['x'], ['f']], ['d']]]], ['x', ['x'], ['x', ['d'], ['h']], ['x', ['i']]], ['x', ['x'], ['x', ['d'], ['h']], ['x', ['i']]]]
+Num nodes in greedy:
+58
+
+Original Forest:
+[['a', ['x'], ['c', ['l']], ['d', ['l']]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b'], ['c'], ['d'], ['e'], ['f', ['g', ['h']], ['h']]], ['a', ['b', ['c', ['d'], ['e', ['f']]]], ['g', ['h']]], ['z', ['a', ['z', ['l']]], ['b'], ['g'], ['c', ['d'], ['f']]], ['a', ['x'], ['b', ['c', ['d', ['e', ['f']], ['x'], ['x'], ['g']]]]]]
+Num Nodes in the original forest:
+48
+complexity counter: 
+13
+Greedy:
+[['x', ['g', ['h']], ['x', ['x', ['x', ['e', ['f']], ['x'], ['x'], ['f']], ['d']]]], ['x', ['g', ['h']], ['x', ['x', ['x', ['e', ['f']], ['x'], ['x'], ['f']], ['d']]]], ['x', ['b'], ['a', ['z', ['l']]], ['b'], ['g'], ['x', ['g', ['h']], ['f']]], ['x', ['b'], ['a', ['z', ['l']]], ['b'], ['g'], ['x', ['g', ['h']], ['f']]], ['x', ['x'], ['x', ['d'], ['h']], ['x', ['i']]], ['x', ['x'], ['x', ['d'], ['h']], ['x', ['i']]]]
+Num nodes in greedy:
+60
+
+Original Forest:
+[['a', ['x'], ['c', ['l']], ['d', ['l']]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b'], ['c'], ['d'], ['e'], ['f', ['g', ['h']], ['h']]], ['a', ['b', ['c', ['d'], ['e', ['f']]]], ['g', ['h']]], ['z', ['a', ['z', ['l']]], ['b'], ['g'], ['c', ['d'], ['f']]], ['a', ['x'], ['b', ['c', ['d', ['e', ['f']], ['x'], ['x'], ['g']]], ['x']]]]
+Num Nodes in the original forest:
+49
+complexity counter: 
+13
+Greedy:
+[['x', ['g', ['h']], ['x', ['x', ['x', ['e', ['f']], ['x'], ['x'], ['f']], ['d']], ['x']]], ['x', ['g', ['h']], ['x', ['x', ['x', ['e', ['f']], ['x'], ['x'], ['f']], ['d']], ['x']]], ['x', ['b'], ['a', ['z', ['l']]], ['b'], ['g'], ['x', ['g', ['h']], ['f']]], ['x', ['b'], ['a', ['z', ['l']]], ['b'], ['g'], ['x', ['g', ['h']], ['f']]], ['x', ['x'], ['x', ['d'], ['h']], ['x', ['i']]], ['x', ['x'], ['x', ['d'], ['h']], ['x', ['i']]]]
+Num nodes in greedy:
+62
+
+Original Forest:
+[['a', ['x'], ['c', ['l']], ['d', ['l']]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b'], ['c'], ['d'], ['e'], ['f', ['g', ['h']], ['h']]], ['a', ['b', ['c', ['d'], ['e', ['f']], ['g']]], ['g', ['h']]], ['z', ['a', ['z', ['l']]], ['b'], ['g'], ['c', ['d'], ['f']]], ['a', ['x'], ['b', ['c', ['d', ['e', ['f']], ['x'], ['x'], ['g']]], ['x']]]]
+Num Nodes in the original forest:
+50
+complexity counter: 
+15
+Greedy:
+[['x', ['g', ['h']], ['x', ['c', ['d', ['e', ['f']], ['x'], ['x'], ['g']]], ['f']]], ['x', ['g', ['h']], ['x', ['c', ['d', ['e', ['f']], ['x'], ['x'], ['g']]], ['f']]], ['x', ['b'], ['a', ['z', ['l']]], ['b'], ['g'], ['x', ['g', ['h']], ['f']]], ['x', ['b'], ['a', ['z', ['l']]], ['b'], ['g'], ['x', ['g', ['h']], ['f']]], ['x', ['x', ['c', ['d'], ['e', ['f']], ['g']]], ['x', ['l']], ['x']], ['x', ['x', ['c', ['d'], ['e', ['f']], ['g']]], ['x', ['l']], ['x']]]
+Num nodes in greedy:
+66
+
+Original Forest:
+[['hotels & travel', ['travel services', ['travel agents']], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']], ['religious organizations', ['churches']]]
+Num Nodes in the original forest:
+9
+Greedy:
+[['x', ['travel services', ['travel agents']], ['rv parks'], ['bed & breakfast'], ['hotels'], ['churches']], ['x', ['travel services', ['travel agents']], ['rv parks'], ['bed & breakfast'], ['hotels'], ['churches']]]
+Num nodes in greedy:
+14
+Original Forest:
+[['hotels & travel', ['travel services', ['travel agents']], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']], ['religious organizations', ['churches']]]
+Num Nodes in the original forest:
+9
+Greedy:
+[['x', ['travel services', ['travel agents']], ['rv parks'], ['bed & breakfast'], ['hotels'], ['churches']], ['x', ['travel services', ['travel agents']], ['rv parks'], ['bed & breakfast'], ['hotels'], ['churches']]]
+Num nodes in greedy:
+14
+Original Forest:
+[['hotels & travel', ['travel services', ['travel agents']], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']], ['religious organizations', ['churches']], ['automotive', ['gas stations'], ['truck rental', ['trailer rental']], ['body shop'], ['auto repair'], ['car dealers'], ['auto detailing'], ['auto parts']]]
+Num Nodes in the original forest:
+18
+Greedy:
+[['x', ['gas stations'], ['x', ['travel agents']], ['body shop'], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']], ['x', ['gas stations'], ['x', ['travel agents']], ['body shop'], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']], ['religious organizations', ['churches']], ['religious organizations', ['churches']]]
+Num nodes in greedy:
+22
+Original Forest:
+[['hotels & travel', ['travel services', ['travel agents']], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']], ['religious organizations', ['churches']], ['automotive', ['gas stations'], ['truck rental', ['trailer rental']], ['body shop'], ['auto repair'], ['car dealers'], ['auto detailing'], ['auto parts']], ['arts & entertainment', ['rodeo']]]
+Num Nodes in the original forest:
+20
+Greedy:
+[['x', ['gas stations'], ['x', ['travel agents']], ['body shop'], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']], ['x', ['gas stations'], ['x', ['travel agents']], ['body shop'], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']], ['x', ['rodeo']], ['x', ['rodeo']]]
+Num nodes in greedy:
+22
+Original Forest:
+[['hotels & travel', ['travel services', ['travel agents']], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']], ['religious organizations', ['churches']], ['automotive', ['gas stations'], ['truck rental', ['trailer rental']], ['body shop'], ['auto repair'], ['car dealers'], ['auto detailing'], ['auto parts']], ['arts & entertainment', ['rodeo']], ['health & medical', ['hospitals'], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']]]
+Num Nodes in the original forest:
+26
+Greedy:
+[['x', ['gas stations'], ['x', ['travel agents']], ['body shop'], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']], ['x', ['gas stations'], ['x', ['travel agents']], ['body shop'], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']], ['x', ['hospitals'], ['home health care'], ['physical therapy'], ['dentists'], ['churches']], ['x', ['hospitals'], ['home health care'], ['physical therapy'], ['dentists'], ['churches']], ['arts & entertainment', ['rodeo']], ['arts & entertainment', ['rodeo']]]
+Num nodes in greedy:
+34
+Original Forest:
+[['hotels & travel', ['travel services', ['travel agents']], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']], ['religious organizations', ['churches']], ['automotive', ['gas stations'], ['truck rental', ['trailer rental']], ['body shop'], ['auto repair'], ['car dealers'], ['auto detailing'], ['auto parts']], ['arts & entertainment', ['rodeo']], ['health & medical', ['hospitals'], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']], ['food', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']]]
+Num Nodes in the original forest:
+32
+Greedy:
+[['x', ['gas stations'], ['x', ['travel agents']], ['body shop'], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']], ['x', ['gas stations'], ['x', ['travel agents']], ['body shop'], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']], ['x', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']], ['x', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']], ['x', ['rodeo']], ['x', ['rodeo']]]
+Num nodes in greedy:
+34
+Original Forest:
+[['hotels & travel', ['travel services', ['travel agents']], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']], ['religious organizations', ['churches']], ['automotive', ['gas stations'], ['truck rental', ['trailer rental']], ['body shop'], ['auto repair'], ['car dealers'], ['auto detailing'], ['auto parts']], ['arts & entertainment', ['rodeo']], ['health & medical', ['hospitals'], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']], ['food', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']], ['nightlife', ['bars'], ['lounges']]]
+Num Nodes in the original forest:
+35
+Greedy:
+[['x', ['gas stations'], ['x', ['travel agents']], ['body shop'], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']], ['x', ['gas stations'], ['x', ['travel agents']], ['body shop'], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']], ['x', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']], ['x', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']], ['x', ['bars'], ['churches']], ['x', ['bars'], ['churches']], ['arts & entertainment', ['rodeo']], ['arts & entertainment', ['rodeo']]]
+Num nodes in greedy:
+40
+Original Forest:
+[['hotels & travel', ['travel services', ['travel agents']], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']], ['religious organizations', ['churches']], ['automotive', ['gas stations'], ['truck rental', ['trailer rental']], ['body shop'], ['auto repair'], ['car dealers'], ['auto detailing'], ['auto parts']], ['arts & entertainment', ['rodeo']], ['health & medical', ['hospitals'], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']], ['food', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']], ['nightlife', ['bars'], ['lounges']], ['public services & government', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']]]
+Num Nodes in the original forest:
+41
+Greedy:
+[['x', ['gas stations'], ['x', ['travel agents']], ['body shop'], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']], ['x', ['gas stations'], ['x', ['travel agents']], ['body shop'], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']], ['x', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']], ['x', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']], ['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['bars'], ['lounges']], ['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['bars'], ['lounges']], ['x', ['rodeo']], ['x', ['rodeo']]]
+Num nodes in greedy:
+46
+Original Forest:
+[['hotels & travel', ['travel services', ['travel agents']], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']], ['religious organizations', ['churches']], ['automotive', ['gas stations'], ['truck rental', ['trailer rental']], ['body shop'], ['auto repair'], ['car dealers'], ['auto detailing'], ['auto parts']], ['arts & entertainment', ['rodeo']], ['health & medical', ['hospitals'], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']], ['food', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']], ['nightlife', ['bars'], ['lounges']], ['public services & government', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']], ['local services', ['cemeteries'], ['community service/non-profit'], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']]]
+Num Nodes in the original forest:
+49
+Greedy:
+[['x', ['cemeteries'], ['truck rental', ['trailer rental']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']], ['x', ['cemeteries'], ['truck rental', ['trailer rental']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']], ['x', ['truck rental', ['trailer rental']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']], ['x', ['truck rental', ['trailer rental']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']], ['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']], ['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']], ['x', ['bars'], ['churches']], ['x', ['bars'], ['churches']], ['arts & entertainment', ['rodeo']], ['arts & entertainment', ['rodeo']]]
+Num nodes in greedy:
+54
+Original Forest:
+[['hotels & travel', ['travel services', ['travel agents']], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']], ['religious organizations', ['churches']], ['automotive', ['gas stations'], ['truck rental', ['trailer rental']], ['body shop'], ['auto repair'], ['car dealers'], ['auto detailing'], ['auto parts']], ['arts & entertainment', ['rodeo']], ['health & medical', ['hospitals'], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']], ['food', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']], ['nightlife', ['bars'], ['lounges']], ['public services & government', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']], ['local services', ['cemeteries'], ['community service/non-profit'], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']], ['restaurants', ['american (new)', ['steakhouses', ['seafood']]], ['burgers', ['fastfood']], ['breakfast & brunch', ['burgers', ['hot dogs']]], ['chinese', ['buffets']], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['mexican', ['breakfast & brunch'], ['burgers']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['sandwiches', ['fast food']]]]
+Num Nodes in the original forest:
+73
+Greedy:
+[['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']]], ['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']]], ['x', ['cemeteries'], ['community service/non-profit'], ['hospitals'], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']], ['x', ['cemeteries'], ['community service/non-profit'], ['hospitals'], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']], ['x', ['steakhouses', ['seafood']], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']], ['x', ['steakhouses', ['seafood']], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']], ['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['bars'], ['lounges']], ['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['bars'], ['lounges']], ['x', ['rodeo']], ['x', ['rodeo']]]
+Num nodes in greedy:
+94
+Original Forest:
+[['hotels & travel', ['travel services', ['travel agents']], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']], ['religious organizations', ['churches']], ['automotive', ['gas stations'], ['truck rental', ['trailer rental']], ['body shop'], ['auto repair'], ['car dealers'], ['auto detailing'], ['auto parts']], ['arts & entertainment', ['rodeo']], ['health & medical', ['hospitals'], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']], ['food', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']], ['nightlife', ['bars'], ['lounges']], ['public services & government', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']], ['local services', ['cemeteries'], ['community service/non-profit'], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']], ['restaurants', ['american (new)', ['steakhouses', ['seafood']]], ['burgers', ['fastfood']], ['breakfast & brunch', ['burgers', ['hot dogs']]], ['chinese', ['buffets']], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['mexican', ['breakfast & brunch'], ['burgers']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['sandwiches', ['fast food']]], ['pets', ['animal shelters'], ['veterinarians']]]
+Num Nodes in the original forest:
+76
+Greedy:
+[['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']]], ['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']]], ['x', ['cemeteries'], ['community service/non-profit'], ['hospitals'], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']], ['x', ['cemeteries'], ['community service/non-profit'], ['hospitals'], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']], ['x', ['steakhouses', ['seafood']], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']], ['x', ['steakhouses', ['seafood']], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']], ['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['bars'], ['lounges']], ['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['bars'], ['lounges']], ['x', ['animal shelters'], ['churches']], ['x', ['animal shelters'], ['churches']], ['arts & entertainment', ['rodeo']], ['arts & entertainment', ['rodeo']]]
+Num nodes in greedy:
+100
+Original Forest:
+[['hotels & travel', ['travel services', ['travel agents']], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']], ['religious organizations', ['churches']], ['automotive', ['gas stations'], ['truck rental', ['trailer rental']], ['body shop'], ['auto repair'], ['car dealers'], ['auto detailing'], ['auto parts']], ['arts & entertainment', ['rodeo']], ['health & medical', ['hospitals'], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']], ['food', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']], ['nightlife', ['bars'], ['lounges']], ['public services & government', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']], ['local services', ['cemeteries'], ['community service/non-profit'], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']], ['restaurants', ['american (new)', ['steakhouses', ['seafood']]], ['burgers', ['fastfood']], ['breakfast & brunch', ['burgers', ['hot dogs']]], ['chinese', ['buffets']], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['mexican', ['breakfast & brunch'], ['burgers']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['sandwiches', ['fast food']]], ['pets', ['animal shelters'], ['veterinarians']], ['shopping', ['discount stores'], ['mobile phones'], ['flowers & gifts', ['gift shops']], ['fashion', ["women's clothing"]], ['thrift stores'], ['home & garden', ['hardware stores'], ['furniture stores']], ['art galleries'], ['flea markets'], ['department stores']]]
+Num Nodes in the original forest:
+90
+Greedy:
+[['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']], ['department stores']], ['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']], ['department stores']], ['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']], ['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']], ['x', ['steakhouses', ['seafood']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']], ['x', ['steakhouses', ['seafood']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']], ['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']], ['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']], ['x', ['animal shelters'], ['veterinarians']], ['x', ['animal shelters'], ['veterinarians']], ['x', ['rodeo']], ['x', ['rodeo']]]
+Num nodes in greedy:
+104
+Original Forest:
+[['hotels & travel', ['travel services', ['travel agents']], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']], ['religious organizations', ['churches']], ['automotive', ['gas stations'], ['truck rental', ['trailer rental']], ['body shop'], ['auto repair'], ['car dealers'], ['auto detailing'], ['auto parts']], ['arts & entertainment', ['rodeo']], ['health & medical', ['hospitals'], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']], ['food', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']], ['nightlife', ['bars'], ['lounges']], ['public services & government', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']], ['local services', ['cemeteries'], ['community service/non-profit'], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']], ['restaurants', ['american (new)', ['steakhouses', ['seafood']]], ['burgers', ['fastfood']], ['breakfast & brunch', ['burgers', ['hot dogs']]], ['chinese', ['buffets']], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['mexican', ['breakfast & brunch'], ['burgers']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['sandwiches', ['fast food']]], ['pets', ['animal shelters'], ['veterinarians']], ['shopping', ['discount stores'], ['mobile phones'], ['flowers & gifts', ['gift shops']], ['fashion', ["women's clothing"]], ['thrift stores'], ['home & garden', ['hardware stores'], ['furniture stores']], ['art galleries'], ['flea markets'], ['department stores']], ['education', ['middle & high schools'], ['elementary schools'], ['colleges & universities']]]
+Num Nodes in the original forest:
+94
+Greedy:
+[['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']], ['department stores']], ['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']], ['department stores']], ['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']], ['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']], ['x', ['steakhouses', ['seafood']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']], ['x', ['steakhouses', ['seafood']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']], ['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']], ['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']], ['x', ['middle & high schools'], ['bars'], ['lounges']], ['x', ['middle & high schools'], ['bars'], ['lounges']], ['x', ['animal shelters'], ['churches']], ['x', ['animal shelters'], ['churches']], ['arts & entertainment', ['rodeo']], ['arts & entertainment', ['rodeo']]]
+Num nodes in greedy:
+112
+Original Forest:
+[['hotels & travel', ['travel services', ['travel agents']], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']], ['religious organizations', ['churches']], ['automotive', ['gas stations'], ['truck rental', ['trailer rental']], ['body shop'], ['auto repair'], ['car dealers'], ['auto detailing'], ['auto parts']], ['arts & entertainment', ['rodeo']], ['health & medical', ['hospitals'], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']], ['food', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']], ['nightlife', ['bars'], ['lounges']], ['public services & government', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']], ['local services', ['cemeteries'], ['community service/non-profit'], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']], ['restaurants', ['american (new)', ['steakhouses', ['seafood']]], ['burgers', ['fastfood']], ['breakfast & brunch', ['burgers', ['hot dogs']]], ['chinese', ['buffets']], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['mexican', ['breakfast & brunch'], ['burgers']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['sandwiches', ['fast food']]], ['pets', ['animal shelters'], ['veterinarians']], ['shopping', ['discount stores'], ['mobile phones'], ['flowers & gifts', ['gift shops']], ['fashion', ["women's clothing"]], ['thrift stores'], ['home & garden', ['hardware stores'], ['furniture stores']], ['art galleries'], ['flea markets'], ['department stores']], ['education', ['middle & high schools'], ['elementary schools'], ['colleges & universities']], ['active life', ['swimming pools'], ['fitness & instructions', ['gyms']], ['golf']]]
+Num Nodes in the original forest:
+99
+Greedy:
+[['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']], ['department stores']], ['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']], ['department stores']], ['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']], ['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']], ['x', ['steakhouses', ['seafood']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']], ['x', ['steakhouses', ['seafood']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']], ['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']], ['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']], ['x', ['middle & high schools'], ['steakhouses', ['seafood']], ['colleges & universities']], ['x', ['middle & high schools'], ['steakhouses', ['seafood']], ['colleges & universities']], ['x', ['animal shelters'], ['veterinarians']], ['x', ['animal shelters'], ['veterinarians']], ['x', ['rodeo']], ['x', ['rodeo']]]
+Num nodes in greedy:
+114
+Original Forest:
+[['hotels & travel', ['travel services', ['travel agents']], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']], ['religious organizations', ['churches']], ['automotive', ['gas stations'], ['truck rental', ['trailer rental']], ['body shop'], ['auto repair'], ['car dealers'], ['auto detailing'], ['auto parts']], ['arts & entertainment', ['rodeo']], ['health & medical', ['hospitals'], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']], ['food', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']], ['nightlife', ['bars'], ['lounges']], ['public services & government', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']], ['local services', ['cemeteries'], ['community service/non-profit'], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']], ['restaurants', ['american (new)', ['steakhouses', ['seafood']]], ['burgers', ['fastfood']], ['breakfast & brunch', ['burgers', ['hot dogs']]], ['chinese', ['buffets']], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['mexican', ['breakfast & brunch'], ['burgers']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['sandwiches', ['fast food']]], ['pets', ['animal shelters'], ['veterinarians']], ['shopping', ['discount stores'], ['mobile phones'], ['flowers & gifts', ['gift shops']], ['fashion', ["women's clothing"]], ['thrift stores'], ['home & garden', ['hardware stores'], ['furniture stores']], ['art galleries'], ['flea markets'], ['department stores']], ['education', ['middle & high schools'], ['elementary schools'], ['colleges & universities']], ['active life', ['swimming pools'], ['fitness & instructions', ['gyms']], ['golf']], ['financial services', ['banks & credit unions'], ['tax services'], ['insurance'], ['title loans']], ['mass media ', ['radio stations'], ['print media']]]
+Num Nodes in the original forest:
+107
+Greedy:
+[['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']], ['department stores']], ['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']], ['department stores']], ['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']], ['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']], ['x', ['steakhouses', ['seafood']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']], ['x', ['steakhouses', ['seafood']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']], ['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']], ['x', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']], ['x', ['middle & high schools'], ['steakhouses', ['seafood']], ['colleges & universities']], ['x', ['middle & high schools'], ['steakhouses', ['seafood']], ['colleges & universities']], ['x', ['banks & credit unions'], ['tax services'], ['bars'], ['lounges']], ['x', ['banks & credit unions'], ['tax services'], ['bars'], ['lounges']], ['x', ['radio stations'], ['print media']], ['x', ['radio stations'], ['print media']], ['x', ['rodeo']], ['x', ['rodeo']]]
+Num nodes in greedy:
+124
+Original Forest:
+[['hotels & travel', ['travel services', ['travel agents']], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']], ['religious organizations', ['churches']], ['automotive', ['gas stations'], ['truck rental', ['trailer rental']], ['body shop'], ['auto repair'], ['car dealers'], ['auto detailing'], ['auto parts']], ['arts & entertainment', ['rodeo']], ['health & medical', ['hospitals'], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']], ['food', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']], ['nightlife', ['bars'], ['lounges']], ['public services & government', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']], ['local services', ['cemeteries'], ['community service/non-profit'], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']], ['restaurants', ['american (new)', ['steakhouses', ['seafood']]], ['burgers', ['fastfood']], ['breakfast & brunch', ['burgers', ['hot dogs']]], ['chinese', ['buffets']], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['mexican', ['breakfast & brunch'], ['burgers']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['sandwiches', ['fast food']]], ['pets', ['animal shelters'], ['veterinarians']], ['shopping', ['discount stores'], ['mobile phones'], ['flowers & gifts', ['gift shops']], ['fashion', ["women's clothing"]], ['thrift stores'], ['home & garden', ['hardware stores'], ['furniture stores']], ['art galleries'], ['flea markets'], ['department stores']], ['education', ['middle & high schools'], ['elementary schools'], ['colleges & universities']], ['active life', ['swimming pools'], ['fitness & instructions', ['gyms']], ['golf']], ['financial services', ['banks & credit unions'], ['tax services'], ['insurance'], ['title loans']], ['mass media ', ['radio stations'], ['print media']], ['professional services', ['advertising'], ['web design'], ['business consulting'], ['accountants'], ['bookkeepers'], ['lawyers']]]
+Num Nodes in the original forest:
+114
+Greedy:
+[['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']], ['department stores']], ['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']], ['department stores']], ['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']], ['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']], ['x', ['steakhouses', ['seafood']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']], ['x', ['steakhouses', ['seafood']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']], ['x', ['advertising'], ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']], ['x', ['advertising'], ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']], ['x', ['landmarks & historical buildings'], ['banks & credit unions'], ['tax services'], ['insurance'], ['title loans']], ['x', ['landmarks & historical buildings'], ['banks & credit unions'], ['tax services'], ['insurance'], ['title loans']], ['x', ['middle & high schools'], ['steakhouses', ['seafood']], ['colleges & universities']], ['x', ['middle & high schools'], ['steakhouses', ['seafood']], ['colleges & universities']], ['x', ['animal shelters'], ['veterinarians']], ['x', ['animal shelters'], ['veterinarians']], ['x', ['radio stations'], ['churches']], ['x', ['radio stations'], ['churches']], ['arts & entertainment', ['rodeo']], ['arts & entertainment', ['rodeo']]]
+Num nodes in greedy:
+134
+Original Forest:
+[['hotels & travel', ['travel services', ['travel agents']], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']], ['religious organizations', ['churches']], ['automotive', ['gas stations'], ['truck rental', ['trailer rental']], ['body shop'], ['auto repair'], ['car dealers'], ['auto detailing'], ['auto parts']], ['arts & entertainment', ['rodeo']], ['health & medical', ['hospitals'], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']], ['food', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']], ['nightlife', ['bars'], ['lounges']], ['public services & government', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']], ['local services', ['cemeteries'], ['community service/non-profit'], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']], ['restaurants', ['american (new)', ['steakhouses', ['seafood']]], ['burgers', ['fastfood']], ['breakfast & brunch', ['burgers', ['hot dogs']]], ['chinese', ['buffets']], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['mexican', ['breakfast & brunch'], ['burgers']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['sandwiches', ['fast food']]], ['pets', ['animal shelters'], ['veterinarians']], ['shopping', ['discount stores'], ['mobile phones'], ['flowers & gifts', ['gift shops']], ['fashion', ["women's clothing"]], ['thrift stores'], ['home & garden', ['hardware stores'], ['furniture stores']], ['art galleries'], ['flea markets'], ['department stores']], ['education', ['middle & high schools'], ['elementary schools'], ['colleges & universities']], ['active life', ['swimming pools'], ['fitness & instructions', ['gyms']], ['golf']], ['financial services', ['banks & credit unions'], ['tax services'], ['insurance'], ['title loans']], ['mass media ', ['radio stations'], ['print media']], ['professional services', ['advertising'], ['web design'], ['business consulting'], ['accountants'], ['bookkeepers'], ['lawyers']], ['home services', ['plumbing'], ['utilities', ['electricity suppliers']], ['real estate', ['real estate agents'], ['property management'], ['home developers'], ['solar installation']]]]
+Num Nodes in the original forest:
+123
+Greedy:
+[['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']], ['department stores']], ['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']], ['department stores']], ['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']], ['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']], ['x', ['swimming pools'], ['x', ['gyms']], ['real estate', ['real estate agents'], ['property management'], ['home developers'], ['solar installation']]], ['x', ['swimming pools'], ['x', ['gyms']], ['real estate', ['real estate agents'], ['property management'], ['home developers'], ['solar installation']]], ['x', ['steakhouses', ['seafood']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']], ['x', ['steakhouses', ['seafood']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']], ['x', ['advertising'], ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']], ['x', ['advertising'], ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']], ['x', ['landmarks & historical buildings'], ['banks & credit unions'], ['tax services'], ['insurance'], ['title loans']], ['x', ['landmarks & historical buildings'], ['banks & credit unions'], ['tax services'], ['insurance'], ['title loans']], ['x', ['middle & high schools'], ['bars'], ['lounges']], ['x', ['middle & high schools'], ['bars'], ['lounges']], ['x', ['radio stations'], ['print media']], ['x', ['radio stations'], ['print media']], ['x', ['rodeo']], ['x', ['rodeo']]]
+Num nodes in greedy:
+144
+Original Forest:
+[['hotels & travel', ['travel services', ['travel agents']], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']], ['religious organizations', ['churches']], ['automotive', ['gas stations'], ['truck rental', ['trailer rental']], ['body shop'], ['auto repair'], ['car dealers'], ['auto detailing'], ['auto parts']], ['arts & entertainment', ['rodeo']], ['health & medical', ['hospitals'], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']], ['food', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']], ['nightlife', ['bars'], ['lounges']], ['public services & government', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']], ['local services', ['cemeteries'], ['community service/non-profit'], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']], ['restaurants', ['american (new)', ['steakhouses', ['seafood']]], ['burgers', ['fastfood']], ['breakfast & brunch', ['burgers', ['hot dogs']]], ['chinese', ['buffets']], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['mexican', ['breakfast & brunch'], ['burgers']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['sandwiches', ['fast food']]], ['pets', ['animal shelters'], ['veterinarians']], ['shopping', ['discount stores'], ['mobile phones'], ['flowers & gifts', ['gift shops']], ['fashion', ["women's clothing"]], ['thrift stores'], ['home & garden', ['hardware stores'], ['furniture stores']], ['art galleries'], ['flea markets'], ['department stores']], ['education', ['middle & high schools'], ['elementary schools'], ['colleges & universities']], ['active life', ['swimming pools'], ['fitness & instructions', ['gyms']], ['golf']], ['financial services', ['banks & credit unions'], ['tax services'], ['insurance'], ['title loans']], ['mass media ', ['radio stations'], ['print media']], ['professional services', ['advertising'], ['web design'], ['business consulting'], ['accountants'], ['bookkeepers'], ['lawyers']], ['home services', ['plumbing'], ['utilities', ['electricity suppliers']], ['real estate', ['real estate agents'], ['property management'], ['home developers'], ['solar installation']]], ['beauty & spas']]
+Num Nodes in the original forest:
+124
+Greedy:
+[['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']], ['department stores']], ['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']], ['department stores']], ['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']], ['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']], ['x', ['swimming pools'], ['x', ['gyms']], ['real estate', ['real estate agents'], ['property management'], ['home developers'], ['solar installation']]], ['x', ['swimming pools'], ['x', ['gyms']], ['real estate', ['real estate agents'], ['property management'], ['home developers'], ['solar installation']]], ['x', ['steakhouses', ['seafood']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']], ['x', ['steakhouses', ['seafood']], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']], ['x', ['advertising'], ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']], ['x', ['advertising'], ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']], ['x', ['landmarks & historical buildings'], ['banks & credit unions'], ['tax services'], ['insurance'], ['title loans']], ['x', ['landmarks & historical buildings'], ['banks & credit unions'], ['tax services'], ['insurance'], ['title loans']], ['x', ['middle & high schools'], ['bars'], ['lounges']], ['x', ['middle & high schools'], ['bars'], ['lounges']], ['x', ['radio stations'], ['print media']], ['x', ['radio stations'], ['print media']], ['x', ['rodeo']], ['x', ['rodeo']], ['beauty & spas'], ['beauty & spas']]
+Num nodes in greedy:
+146

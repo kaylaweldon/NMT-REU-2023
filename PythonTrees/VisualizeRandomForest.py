@@ -45,7 +45,7 @@ class newListTree:
                     x=[node['x'], child['x']],
                     y=[node['y'], child['y']],
                     mode='lines',
-                    line=dict(color='rgb(210,210,210)', width=1),
+                    line=dict(color='black', width=1),
                     hoverinfo='none',
                     showlegend=False,
                 ), row=row, col=col)
@@ -55,7 +55,14 @@ class newListTree:
             x=[node['x']],
             y=[node['y']],
             mode='markers',
-            marker=dict(size=10, color='rgb(100,100,100)'),
+            marker=dict(
+            color='white',
+            size=50,
+            line=dict(
+                color='blue',
+                width=8
+            )
+        ),
             hoverinfo='none',
             showlegend=False,
         ), row=row, col=col)
@@ -86,9 +93,14 @@ class newListTree:
         else:
             result += str(lst)
         return result
+    
+    def print_and_append(self, text, file_path):
+        print(text)
+        with open(file_path, 'a') as file:
+            file.write(text + '\n')
 
     def main(self):
-        Forest = self.Forest()
+        """   Forest = self.Forest()
         Forest.generate_forest(3, 4, 4)
         niceForest = Forest.__get_forest__()
         Forest.setForest(niceForest)
@@ -113,13 +125,49 @@ class newListTree:
         tree_visualizer.visualize_trees()
         tree_visualizer = newListTree(bf)
         tree_visualizer.visualize_trees()
+        """
 
+        log_file_path = "log.txt"  # Replace with the desired file path for your log
+
+        Forest = self.Forest()
+        #niceForest = [['a', ['x'], ['c', ['l']], ['d', ['l']]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b'], ['c'], ['d'], ['e'], ['f', ['g', ['h']], ['h']]],  ['a', ['b', ['c', ['d'], ['e', ['f']], ['g'] ]], ['g', ['h']]], ['z', ['a', ['z', ['l']]], ['b'], ['g'], ['c', ['d'], ['f']]], ['a', ['x'],['b', ['c', ['d', ['e', ['f']],['x'], ['x'], ['g']]], ['x']]]]
+        niceForest = [['hotels & travel', ['travel services', ['travel agents']], ['rv parks'], ['bed & breakfast'], 
+            ['hotels'], ['airports']],
+        ['religious organizations', ['churches']], ['automotive', ['gas stations'], ['truck rental', ['trailer rental']], ['body shop'],
+            ['auto repair'], ['car dealers'], ['auto detailing'], ['auto parts']], ['arts & entertainment', ['rodeo']], ['health & medical', ['hospitals'], ['home health care'], ['physical therapy'], ['dentists'],
+            ['counseling & mental health']], ['food', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']], ['nightlife', ['bars'], ['lounges']], 
+            ['public services & government', ['landmarks & historical buildings'], ['parks'], ['museums'], 
+            ['police departments'], ['post offices']], ['local services', ['cemeteries'], ['community service/non-profit'], ['shipping centers'], 
+            ['forestry'], ['pest control'], ['funeral services & cemeteries'],
+            ['appraisal services']], ['restaurants', ['american (new)', ['steakhouses', ['seafood']]], ['burgers', ['fastfood']], ['breakfast & brunch', ['burgers', ['hot dogs']]],
+            ['chinese', ['buffets']], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['mexican', ["breakfast & brunch"], ["burgers"]], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], 
+            ['sandwiches', ['fast food']]], ['pets', ['animal shelters'], ['veterinarians']], ['shopping', ['discount stores'], ['mobile phones'], ['flowers & gifts', ['gift shops']], ['fashion', ["women's clothing"]],
+            ['thrift stores'], ['home & garden', ['hardware stores'], ['furniture stores']], ['art galleries'], 
+            ['flea markets'], ['department stores']], ['education', ['middle & high schools'], ['elementary schools'], ['colleges & universities']], ['active life', ['swimming pools'], ['fitness & instructions', ['gyms']], ['golf']], ['financial services', ['banks & credit unions'], ['tax services'], ['insurance'], ['title loans']],
+            ['mass media ', ['radio stations'], ['print media']], ['professional services', ['advertising'], ['web design'], ['business consulting'], ['accountants'], ['bookkeepers'], ['lawyers']], ['home services', ['plumbing'], ['utilities', ['electricity suppliers']], ['real estate', ['real estate agents'], ['property management'], ['home developers'], ['solar installation']]],
+            ['beauty & spas']]
+
+        Forest.setForest(niceForest)
+
+        self.print_and_append("Original Forest:", log_file_path)
+        self.print_and_append(str(niceForest), log_file_path)
+
+        numNodesOg = Forest.number_of_nodes(niceForest)
+
+        self.print_and_append("Num Nodes in the original forest:", log_file_path)
+        self.print_and_append(str(numNodesOg), log_file_path)
+
+        greedy = Forest.anonymize_forest_greedy()
+
+        numNodesGreedy = Forest.number_of_nodes(greedy[0])
+        self.print_and_append("Greedy:", log_file_path)
+        self.print_and_append(str(greedy[0]), log_file_path)
+
+        self.print_and_append("Num nodes in greedy:", log_file_path)
+        self.print_and_append(str(numNodesGreedy), log_file_path)
 
 
         """lub = Forest.leastUpperBound(niceForest[0], niceForest[1])
-        #if either tree is  only root skip
-        if len(niceForest[0]) ==1 or len(niceForest[1]) ==1:
-            continue
         niceForest0 = newListTree.listToString(self, niceForest[0])
         niceForest1 = newListTree.listToString(self, niceForest[1])
         print("Random Tree 1:")

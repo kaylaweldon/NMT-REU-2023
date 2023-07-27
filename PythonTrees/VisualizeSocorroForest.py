@@ -20,7 +20,7 @@ class newListTree:
         return node
 
     # assigns (x, y) coordinates to each node in the tree
-    def assign_coordinates(self, node, x=0, y=0, x_shift=1):
+    def assign_coordinates(self, node, x=0, y=0, x_shift=100):
         node['x'] = x
         node['y'] = y
         if 'children' in node:
@@ -28,7 +28,6 @@ class newListTree:
             for i, child in enumerate(node['children']):
                 x_child = x + (i - (total_children - 1) / 2) * x_shift
                 self.assign_coordinates(child, x_child, y - 1, x_shift / total_children)
-
     # adds traces for drawing each trees nodes and edges
     def add_trace(self, node, row, col):
         if 'children' in node:
@@ -119,87 +118,27 @@ class newListTree:
         ['beauty & spas']]
 
         sortedForest = Forest.sort_by_number_of_nodes_high_to_low(niceForest)
-        print("SORTED: ")
-        count = 0
 
-
-        for tree in sortedForest:
-            print(count)
-            print(tree)
-            print("__________________________________________________")
-            count +=1
-
-        i = 0
-        brute = [['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], 
-                   ['x', ["women's clothing"]], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]],
-                     ['x', ['hardware stores'], ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], 
-                     ['steakhouses', ['seafood']], ['department stores']], ['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', 
-                ['seafood']], ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], ['fast food', ['burgers', ['coffee & tea'], 
-            ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', 
-        ['sandwiches']]], ['steakhouses', ['seafood']], ['department stores']], 
-        ['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'],
-          ['appraisal services']],
-            ['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], 
-    ['funeral services & cemeteries'], ['appraisal services']], 
-    ['x', ['swimming pools'], ['x', ['gyms']], ['real estate', ['real estate agents'], ['property management'], ['home developers'], ['solar installation']]],
-      ['x', ['swimming pools'], ['x', ['gyms']], ['real estate', ['real estate agents'], ['property management'], ['home developers'], ['solar installation']]], 
-      ['x', ['steakhouses', ['seafood']], ['web design'], ['business consulting'], ['accountants'], ['bookkeepers'], ['lawyers']],
-        ['x', ['steakhouses', ['seafood']], ['web design'], ['business consulting'], ['accountants'], ['bookkeepers'], ['lawyers']], 
-        ['x', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']],
-          ['x', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']], 
-          ['x', ['landmarks & historical buildings'], ['banks & credit unions'], ['tax services'], ['insurance'], ['title loans']], 
-          ['x', ['landmarks & historical buildings'], ['banks & credit unions'], ['tax services'], ['insurance'], ['title loans']],
-            ['x', ['middle & high schools'], ['bars'], ['lounges']], ['x', ['middle & high schools'], ['bars'], ['lounges']], 
-            ['x', ['radio stations'], ['print media']],
-              ['x', ['radio stations'], ['print media']],
-                ['x', ['rodeo']], ['x', ['rodeo']], ['beauty & spas'], 
-                ['beauty & spas']]
-        
-        for tree in brute:
-            print(i)
-            print(tree)
-            print("__________________________________________________")
-            i +=1
-        """ Forest.generate_forest(8, 6, 4)
-        niceForest = Forest.__get_forest__()"""
-        Forest.setForest(niceForest)
+        """Forest.setForest(sortedForest)
         anonymousForestGreedy = Forest.anonymize_forest_greedy() 
         print("anonymous forest greedy: ") 
-        print(anonymousForestGreedy)
+        print(anonymousForestGreedy)"""
 
         """anonymousForestBF = Forest.anonymize_forest_brute_force()
         print("anonymous forest brute force:")
         print(anonymousForestBF)"""
 
-        """original = newListTree(niceForest)
+        original = newListTree(niceForest)
         original.visualize_trees()
         
-        sorted = newListTree(sortedForest)
+        """sorted = newListTree(sortedForest)
         sorted.visualize_trees()
         anonGreedy = newListTree(anonymousForestGreedy[0])
-        anonGreedy.visualize_trees()"""
+        anonGreedy.visualize_trees()
 
-        """anonBf = newListTree(anonymousForestBF[0])
+        anonBf = newListTree(anonymousForestBF[0])
         anonBf.visualize_trees()"""
 
 if __name__ == '__main__':
         newListTree([[]]).main() 
 
-"""[[['x', ['american (new)', ['steakhouses', ['seafood']]], ['steakhouses', ['seafood']], 
-   ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], ['fast food', ['burgers', 
-    ['coffee & tea'], ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], ['furniture stores']], 
-    ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], ['steakhouses', ['seafood']], 
-    ['department stores']], ['x', ['american (new)', ['steakhouses', ['seafood']]], 
-    ['steakhouses', ['seafood']], ['x', ['steakhouses', ['seafood']]], ['x', ["women's clothing"]], 
-    ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['x', ['hardware stores'], 
-    ['furniture stores']], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], 
-    ['steakhouses', ['seafood']], ['department stores']], 
-
-    ['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'], 
- ['funeral services & cemeteries'], ['appraisal services']],
-   ['x', ['cemeteries'], ['steakhouses', ['seafood']], ['shipping centers'], ['forestry'], ['pest control'],
-     ['funeral services & cemeteries'], ['appraisal services']], 
-     ['x', ['swimming pools'], ['x', ['gyms']], ['real estate', ['real estate agents'], ['property management'], ['home developers'], ['solar installation']]], ['x', ['swimming pools'], ['x', ['gyms']], ['real estate', ['real estate agents'], ['property management'], ['home developers'], ['solar installation']]], ['x', ['steakhouses', ['seafood']], ['web design'], ['business consulting'], ['accountants'], ['bookkeepers'], ['lawyers']], ['x', ['steakhouses', ['seafood']], ['web design'], ['business consulting'], ['accountants'], ['bookkeepers'], ['lawyers']], ['x', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']], ['x', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']], ['x', ['landmarks & historical buildings'], ['banks & credit unions'], ['tax services'], ['insurance'], ['title loans']], ['x', ['landmarks & historical buildings'], ['banks & credit unions'], ['tax services'], ['insurance'], ['title loans']], ['x', ['middle & high schools'], ['bars'], ['lounges']], ['x', ['middle & high schools'], [bars'], ['lounges']], ['x', ['radio stations'], ['print media']], ['x', ['radio stations'], ['print media']], ['x', ['rodeo']], ['x', ['rodeo']], ['beauty & spas'], ['beauty & spas']], 22, 0]
-"""
-
-[ [],[],['automotive', ['gas stations'], ['truck rental', ['trailer rental']], ['body shop'], ['auto repair'], ['car dealers'], ['auto detailing'], ['auto parts']], [], ['local services', ['cemeteries'], ['community service/non-profit'], ['shipping centers'], ['forestry'], ['pest control'], ['funeral services & cemeteries'], ['appraisal services']], ['hotels & travel', ['travel services', ['travel agents']], ['rv parks'], ['bed & breakfast'], ['hotels'], ['airports']], ['professional services', ['advertising'], ['web design'], ['business consulting'], ['accountants'], ['bookkeepers'], ['lawyers']], ['health & medical', ['hospitals'], ['home health care'], ['physical therapy'], ['dentists'], ['counseling & mental health']], ['food', ['food trucks'], ['coffee & tea'], ['bakeries'], ['grocery'], ['farmers market']], ['public services & government', ['landmarks & historical buildings'], ['parks'], ['museums'], ['police departments'], ['post offices']], [],[],[],[],[],[],[],[],[],[],]
