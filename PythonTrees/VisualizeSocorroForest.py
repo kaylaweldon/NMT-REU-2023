@@ -86,7 +86,7 @@ class newListTree:
             return result
     def main(self):
         Forest = self.Forest()
-        """niceForest = [
+        niceForest = [
         ['hotels & travel', ['travel services', ['travel agents']], ['rv parks'], ['bed & breakfast'], 
             ['hotels'], ['airports']],
         ['religious organizations', ['churches']],
@@ -102,46 +102,48 @@ class newListTree:
         ['local services', ['cemeteries'], ['community service/non-profit'], ['shipping centers'], 
             ['forestry'], ['pest control'], ['funeral services & cemeteries'],
             ['appraisal services']],
-        #['restaurants', ['american (new)', ['steakhouses', ['seafood']]], ['burgers', ['fastfood']], ['breakfast & brunch', ['burgers', ['hot dogs']]],
-        #    ['chinese', ['buffets']], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['mexican', ["breakfast & brunch"], ["burgers"]], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], 
-        #    ['sandwiches', ['fast food']]],
+        ['restaurants', ['american (new)', ['steakhouses', ['seafood']]], ['burgers', ['fastfood']], ['breakfast & brunch', ['burgers', ['hot dogs']]],
+            ['chinese', ['buffets']], ['fast food', ['burgers', ['coffee & tea'], ['ice cream & frozen yogurt']]], ['mexican', ["breakfast & brunch"], ["burgers"]], ['pizza', ['fast food'], ['chicken wings', ['sandwiches']]], 
+            ['sandwiches', ['fast food']]],
         ['pets', ['animal shelters'], ['veterinarians']], 
-        #['shopping', ['discount stores'], ['mobile phones'], ['flowers & gifts', ['gift shops']], ['fashion', ["women's clothing"]],
-        #    ['thrift stores'], ['home & garden', ['hardware stores'], ['furniture stores']], ['art galleries'], 
-        #   ['flea markets'], ['department stores']],
-        ['education', ['middle & high schools'], ['elementary schools'], ['colleges & universities']]]
-        #['active life', ['swimming pools'], ['fitness & instructions', ['gyms']], ['golf']],
-        #['financial services', ['banks & credit unions'], ['tax services'], ['insurance'], ['title loans']]]
-        #['mass media ', ['radio stations'], ['print media']],
-        #['professional services', ['advertising'], ['web design'], ['business consulting'], ['accountants'], ['bookkeepers'], ['lawyers']],
-        #['home services', ['plumbing'], ['utilities', ['electricity suppliers']], ['real estate', ['real estate agents'], ['property management'], ['home developers'], ['solar installation']]]]
-        #['beauty & spas']]
-        """
+        ['shopping', ['discount stores'], ['mobile phones'], ['flowers & gifts', ['gift shops']], ['fashion', ["women's clothing"]],
+            ['thrift stores'], ['home & garden', ['hardware stores'], ['furniture stores']], ['art galleries'], 
+           ['flea markets'], ['department stores']],
+        ['education', ['middle & high schools'], ['elementary schools'], ['colleges & universities']],
+        ['active life', ['swimming pools'], ['fitness & instructions', ['gyms']], ['golf']],
+        ['financial services', ['banks & credit unions'], ['tax services'], ['insurance'], ['title loans']],
+        ['mass media ', ['radio stations'], ['print media']],
+        ['professional services', ['advertising'], ['web design'], ['business consulting'], ['accountants'], ['bookkeepers'], ['lawyers']],
+        ['home services', ['plumbing'], ['utilities', ['electricity suppliers']], ['real estate', ['real estate agents'], ['property management'], ['home developers'], ['solar installation']]],
+        ['beauty & spas']]
 
-        niceForest = [
+        """niceForest = [
             ['a',['b', ['c', ['d']], ['e'], ['f'], ['e'], ['f']]],
             ['a',['b'], ['c', ['d']], ['d', ['e', ['f']]], ['e']],
             ['a', ['b', ['c'], ['d'], ['e']],['f']], 
             ['a', ['b'],  ['c', ['d', 'e',]], ['f',['g',['h',['i',['j']]]]]]
-        ]
+        ]"""
         Forest.setForest(niceForest)
         anonymousForestGreedy = Forest.anonymize_forest_greedy() 
         print("anonymous forest greedy: ") 
         print(anonymousForestGreedy)
+        print("complexity:")
+        print(anonymousForestGreedy[3])
 
-        anonymousForestBF = Forest.anonymize_forest_brute_force()
+
+        """anonymousForestBF = Forest.anonymize_forest_brute_force()
         print("anonymous forest brute force:")
-        print(anonymousForestBF)
+        print(anonymousForestBF)"""
 
-        original = newListTree(niceForest)
-        original.visualize_trees()
+        """original = newListTree(niceForest)
+        original.visualize_trees()"""
         
 
-        anonGreedy = newListTree(anonymousForestGreedy[0])
+        """anonGreedy = newListTree(anonymousForestGreedy[0])
         anonGreedy.visualize_trees()
 
         anonBf = newListTree(anonymousForestBF[0])
-        anonBf.visualize_trees()
+        anonBf.visualize_trees()"""
 
 if __name__ == '__main__':
         newListTree([[]]).main() 

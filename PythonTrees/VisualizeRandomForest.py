@@ -94,10 +94,6 @@ class newListTree:
             result += str(lst)
         return result
     
-    def print_and_append(self, text, file_path):
-        print(text)
-        with open(file_path, 'a') as file:
-            file.write(text + '\n')
 
     def main(self):
         """   Forest = self.Forest()
@@ -126,11 +122,7 @@ class newListTree:
         tree_visualizer = newListTree(bf)
         tree_visualizer.visualize_trees()
         """
-
-        log_file_path = "log.txt"  # Replace with the desired file path for your log
-
-        Forest = self.Forest()
-        #niceForest = [['a', ['x'], ['c', ['l']], ['d', ['l']]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b'], ['c'], ['d'], ['e'], ['f', ['g', ['h']], ['h']]],  ['a', ['b', ['c', ['d'], ['e', ['f']], ['g'] ]], ['g', ['h']]], ['z', ['a', ['z', ['l']]], ['b'], ['g'], ['c', ['d'], ['f']]], ['a', ['x'],['b', ['c', ['d', ['e', ['f']],['x'], ['x'], ['g']]], ['x']]]]
+        """#niceForest = [['a', ['x'], ['c', ['l']], ['d', ['l']]], ['b', ['e', ['f'], ['g']], ['h', ['i']]], ['a', ['b'], ['c'], ['d'], ['e'], ['f', ['g', ['h']], ['h']]],  ['a', ['b', ['c', ['d'], ['e', ['f']], ['g'] ]], ['g', ['h']]], ['z', ['a', ['z', ['l']]], ['b'], ['g'], ['c', ['d'], ['f']]], ['a', ['x'],['b', ['c', ['d', ['e', ['f']],['x'], ['x'], ['g']]], ['x']]]]
         niceForest = [['hotels & travel', ['travel services', ['travel agents']], ['rv parks'], ['bed & breakfast'], 
             ['hotels'], ['airports']],
         ['religious organizations', ['churches']], ['automotive', ['gas stations'], ['truck rental', ['trailer rental']], ['body shop'],
@@ -164,22 +156,25 @@ class newListTree:
         self.print_and_append(str(greedy[0]), log_file_path)
 
         self.print_and_append("Num nodes in greedy:", log_file_path)
-        self.print_and_append(str(numNodesGreedy), log_file_path)
+        self.print_and_append(str(numNodesGreedy), log_file_path)"""
 
-
-        """lub = Forest.leastUpperBound(niceForest[0], niceForest[1])
-        niceForest0 = newListTree.listToString(self, niceForest[0])
-        niceForest1 = newListTree.listToString(self, niceForest[1])
-        print("Random Tree 1:")
-        print(niceForest[0])
-        print("Random Tree 2:")
-        print(niceForest[1])
-        print("Common Tree & LUB:")
+        Forest = self.Forest()
+        Forest.generate_forest(2, 4, 4)
+        niceForest = Forest.__get_forest__()
+        Forest.setForest(niceForest)
+        print(niceForest)
+        niceForest0 = self.listToString(niceForest[0])
+        niceForest1= self.listToString(niceForest[1])
+        niceForest = [niceForest0, niceForest1]
+        tree_visualizer = newListTree(niceForest)
+        tree_visualizer.visualize_trees()
+        lub = Forest.leastUpperBound(niceForest0, niceForest1, 0)
+        print("LUB")
         print(lub)
-        lubStr = newListTree.listToString(self, lub[0])
-        treeList= [niceForest0, niceForest1, lubStr]
-        tree_visualizer = newListTree(treeList)
-        tree_visualizer.visualize_trees()"""
+        
+
+
+
 
 if __name__ == '__main__':
     newListTree([[]]).main()
